@@ -2045,7 +2045,7 @@ function renderHome(){
  const d=new Date(),w='日一二三四五六';
  document.getElementById('page-home').innerHTML=`
   <div class="fusion-head"><div class="fusion-greet"><div><small>${d.getMonth()+1}月${d.getDate()}日 · 星期${w[d.getDay()]}</small><h1>早上好，杨XX</h1><p>深圳市发展和改革委员会</p></div><div class="fusion-avatar">杨</div></div>
-   <div class="assistant-entry" onclick="openAssistant('welcome')"><div class="ae-top"><b>${ficon('spark')}发改助手</b><span>权限内智能协同</span></div><div class="ae-input"><span>问事项、查公文、看项目、写材料</span>${ficon('send')}</div><div class="ae-context"><span>单位知识库</span><span>公文库</span><span>项目库</span><span>我的工作</span></div></div></div>
+   <div class="assistant-entry" onclick="openAssistant('welcome')"><div class="ae-top"><b>${ficon('spark')}发改助手</b><span>权限内智能协同</span></div><div class="ae-input"><span>问事项、查公文、看项目、写材料</span>${ficon('send')}</div><div class="ae-context"><span>我的工作</span><span>公文</span><span>调研报告</span><span>项目预研</span></div></div></div>
   <div class="fusion-body"><section class="fusion-block"><div class="fusion-sec-head"><h2>今日工作</h2><button onclick="openAiTodo()">进入待办 ›</button></div><div class="work-metrics"><button onclick="openAiTodo()"><b>${todos.length}</b><span>待处理</span></button><button onclick="openAiTodo()"><b class="hot">${urgent}</b><span>重点督办</span></button><button onclick="openAiTodo()"><b class="hot">1</b><span>即将超期</span></button><button onclick="openAiTodo()"><b>${reads}</b><span>待阅知</span></button></div><div class="priority-one" onclick="openAiTodo(1)"><div class="pico">${ficon('doc')}</div><div class="ptxt"><div><span class="tag urgent">紧急</span><span class="tag type">上级来文</span></div><strong>深圳市加力支持工业企业设备更新和技术改造若干措施</strong><small>市领导已圈阅 · 明天12:00前</small></div></div></section>
   <section class="fusion-block"><div class="fusion-sec-head"><h2>常用直达</h2><button onclick="go('apps');setAppCategory('常用')">管理 ›</button></div><div class="quick-home"><button onclick="openAppV3('doc-pending')"><i>${ficon('doc')}</i><span>待办公文</span></button><button onclick="openAppV3('business-trip')"><i>${ficon('plane')}</i><span>因公出差</span></button><button onclick="openAppV3('investment-dashboard')"><i>${ficon('project')}</i><span>智慧投资</span></button><button onclick="openAppV3('ai-review')"><i>${ficon('spark')}</i><span>AI+评审</span></button></div></section>
   <section class="fusion-block"><div class="fusion-sec-head"><h2>重点关注</h2><button onclick="openTrackList()">查看全部 ›</button></div><button class="focus-card-v3" onclick="openTrackDetail('track-project')"><div class="f3top"><span>项目风险提示</span><span>需关注</span></div><strong>人工智能产业创新中心项目</strong><p>专家意见汇总节点剩余3天，2项概算口径需人工复核。</p><div class="focus-progress"><i></i></div><div class="focus-foot"><span>总体进度 62%</span><span>市政府投资项目评审中心</span></div></button></section></div>`;
@@ -2098,16 +2098,16 @@ function openFusionLayer(title,html,meta=''){document.getElementById('fusionLaye
 function closeFusionLayer(){document.getElementById('fusionLayer').classList.remove('show');document.getElementById('fusionLayerBody').innerHTML=''}
 function openAssistant(mode='welcome'){
  const prompts=`<div class="prompt-grid-v3"><button onclick="sendAssistant('today')"><b>今日重点</b><span>汇总紧急待办与风险</span></button><button onclick="sendAssistant('document')"><b>公文检索</b><span>按标题、文号和语义查找</span></button><button onclick="sendAssistant('project')"><b>项目进展</b><span>状态、风险与下一步</span></button><button onclick="sendAssistant('material')"><b>材料起草</b><span>基于权限内材料形成提纲</span></button></div>`;
- const welcome=`<div class="assistant-welcome"><div class="assistant-orb">${ficon('spark')}</div><h2>今天想先处理什么？</h2><p>基于单位知识库、公文库、项目库和我的工作提供协助</p>${prompts}<div class="assistant-boundary">权限内检索 · 结果标注依据 · 关键动作人工确认</div></div><div class="assistant-compose"><input id="assistantInput" placeholder="说出你要做的事…" onkeydown="if(event.key==='Enter')sendAssistant('input')"><button onclick="sendAssistant('input')">${ficon('send')}</button></div>`;
+ const welcome=`<div class="assistant-welcome"><div class="assistant-orb">${ficon('spark')}</div><h2>今天想先处理什么？</h2><p>基于我的工作、公文、调研报告和项目预研提供协助</p>${prompts}<div class="assistant-boundary">权限内检索 · 结果标注依据 · 关键动作人工确认</div></div><div class="assistant-compose"><input id="assistantInput" placeholder="说出你要做的事…" onkeydown="if(event.key==='Enter')sendAssistant('input')"><button onclick="sendAssistant('input')">${ficon('send')}</button></div>`;
  openFusionLayer('发改助手',welcome,'受控协同');if(mode==='apps')setTimeout(()=>{const i=document.getElementById('assistantInput');if(i)i.placeholder='例如：我要申请出差'},0)
 }
 function sendAssistant(mode){
- const input=document.getElementById('assistantInput'),typed=input?.value.trim();let q='',answer='',sources=['单位知识库','我的工作'];
+ const input=document.getElementById('assistantInput'),typed=input?.value.trim();let q='',answer='',sources=['调研报告','我的工作'];
  if(mode==='input'){q=typed||'今天我最需要优先处理什么？';if(/出差|请假|申请/.test(q))mode='apps';else if(/项目|进展/.test(q))mode='project';else if(/公文|文件|政策/.test(q))mode='document';else if(/材料|提纲|汇报/.test(q))mode='material';else mode='today'}
- if(mode==='today'){q=q||'今天我最需要优先处理什么？';answer=`今天建议先处理 4 件优先事项：<br>1. 设备更新若干措施，明天12:00前，市领导已圈阅；<br>2. 二院改扩建概算调整，超过5%预警线；<br>3. 市政府重大项目推进情况催报，今天12:00前；<br>4. 坪山牵引站接入线路核准督办件。`;sources=['待办事项','公文库','督办记录']}
- if(mode==='document'){q=q||'检索近期关于重大项目推进的公文';answer=`检索到 12 份权限内材料。最相关的是《市政府办公厅关于报送2026年上半年重大项目推进情况的通知》，要求汇总832个重大项目进展及需市级协调问题。`;sources=['公文库','单位知识库']}
+ if(mode==='today'){q=q||'今天我最需要优先处理什么？';answer=`今天建议先处理 4 件优先事项：<br>1. 设备更新若干措施，明天12:00前，市领导已圈阅；<br>2. 二院改扩建概算调整，超过5%预警线；<br>3. 市政府重大项目推进情况催报，今天12:00前；<br>4. 坪山牵引站接入线路核准督办件。`;sources=['待办事项','公文','督办记录']}
+ if(mode==='document'){q=q||'检索近期关于重大项目推进的公文';answer=`检索到 12 份权限内材料。最相关的是《市政府办公厅关于报送2026年上半年重大项目推进情况的通知》，要求汇总832个重大项目进展及需市级协调问题。`;sources=['公文','调研报告']}
  if(mode==='project'){q=q||'人工智能产业创新中心项目现在到哪个节点？';answer=`项目当前处于可研评审的“专家意见汇总”节点，总体进度62%。距离计划节点还有3天，2项概算口径需人工复核，建议优先核对建设规模与单方造价。`;sources=['项目全过程系统','评审工作记录']}
- if(mode==='material'){q=q||'起草重大项目推进情况汇报提纲';answer=`已形成四段式提纲：一是总体进展与投资完成；二是新开工和续建节点；三是用地、规划、概算等突出问题；四是需市级协调事项及下一步安排。生成正式材料前请选择引用范围并人工核对数据。`;sources=['单位知识库','公文库','项目库']}
+ if(mode==='material'){q=q||'起草重大项目推进情况汇报提纲';answer=`已形成四段式提纲：一是总体进展与投资完成；二是新开工和续建节点；三是用地、规划、概算等突出问题；四是需市级协调事项及下一步安排。生成正式材料前请选择引用范围并人工核对数据。`;sources=['调研报告','公文','项目预研']}
  if(mode==='apps'){q=q||'我要申请因公出差';answer=`已找到“因公出差”原生应用，可发起出差或培训申请。助手可以协助预填，但不会代替你提交。`;sources=['应用目录','当前账号权限']}
  const action=mode==='today'?`<button class="chat-action" onclick="closeFusionLayer();openAiTodo()">查看优先待办</button>`:mode==='project'?`<button class="chat-action" onclick="openTrackDetail('track-project')">查看项目跟踪</button>`:mode==='apps'?`<button class="chat-action" onclick="openAppV3('business-trip')">打开因公出差</button>`:'';
  document.getElementById('fusionLayerBody').innerHTML=`<div class="chat-thread"><div class="chat-msg user">${esc(q)}</div><div class="chat-msg bot">${answer}<div class="chat-source">${sources.map(s=>`<span>${s}</span>`).join('')}</div>${action}</div><div class="assistant-boundary">辅助结果仅供参考，正式业务动作须由本人确认</div></div><div class="assistant-compose"><input id="assistantInput" placeholder="继续追问…" onkeydown="if(event.key==='Enter')sendAssistant('input')"><button onclick="sendAssistant('input')">${ficon('send')}</button></div>`;
@@ -2166,35 +2166,34 @@ const ASSISTANT_MODELS=[
  {id:'vision',name:'多模态识别模型',cap:'图片、扫描件与表格识别',desc:'适合扫描公文、现场图片、复杂表格和图文混合材料'}
 ];
 const ASSISTANT_CONTEXTS=[
- {id:'work',name:'我的工作',desc:'本人待办、已办、日程与关注事项'},
- {id:'orgkb',name:'单位知识库',desc:'委内制度、业务口径与沉淀材料'},
- {id:'docs',name:'公文库',desc:'权限范围内收发文与流转记录'},
- {id:'projects',name:'项目库',desc:'重大项目、政府投资项目与节点数据'},
- {id:'org',name:'组织结构',desc:'处室职责、人员与协同关系'},
- {id:'public',name:'公开政策库',desc:'国家、省、市公开政策文件'}
+ {id:'work',name:'我的工作',desc:'本人待办、已办、日程、关注事项与办理留痕'},
+ {id:'docs',name:'公文',desc:'权限范围内收发文、批示、流转记录与政策文件'},
+ {id:'orgkb',name:'调研报告',desc:'经济运行、投资形势、产业发展与改革专题研究材料'},
+ {id:'projects',name:'项目预研',desc:'重大项目谋划储备、可研论证、前期进展与要素保障材料'}
 ];
-function assistantSeed(id,title,scene,time,q,a,sources,model='deepseek',contexts=['work','orgkb','docs']){
+function normalizeAssistantContexts(ids){const valid=(Array.isArray(ids)?ids:[]).filter((id,index,list)=>list.indexOf(id)===index&&ASSISTANT_CONTEXTS.some(c=>c.id===id));return valid.length?valid:['work','docs','orgkb','projects']}
+function assistantSeed(id,title,scene,time,q,a,sources,model='deepseek',contexts=['work','docs','orgkb']){
  return {id:`seed-${id}`,title,scene,updatedAt:`2026-08-${time}`,timeLabel:`8月${time.slice(0,2)}日 ${time.slice(3)}`,model,contexts,messages:[{role:'user',text:q},{role:'bot',html:a,sources,updated:'2026-08-17 09:30'}]};
 }
 const ASSISTANT_SEEDS=[
- assistantSeed(1,'今日优先事项梳理','today','17 08:42','今天我最需要优先处理什么？','已按时限、领导批示和风险影响梳理出 <b>4 件优先事项</b>，其中设备更新措施和重大项目催报建议上午完成。',['待办事项','公文库','督办记录']),
- assistantSeed(2,'人工智能产业创新中心项目进展','project','16 16:28','人工智能产业创新中心项目进展到哪里？','项目处于可研评审的专家意见汇总节点，总体进度 <b>62%</b>，2项概算口径需要人工复核。',['项目全过程系统','评审工作记录'],'kimi',['projects','orgkb']),
- assistantSeed(3,'重大项目推进情况公文检索','document','16 10:06','查找近期重大项目推进情况公文','检索到12份权限内材料，最相关的是上半年重大项目推进情况通知及配套进度表。',['公文库','单位知识库'],'deepseek',['docs','orgkb']),
- assistantSeed(4,'营商环境专题汇报提纲','material','15 17:40','起草营商环境专题汇报提纲','已形成“总体进展—重点改革—企业感受—下一步安排”四段式提纲，并标出3处待核数据。',['单位知识库','公开政策库'],'glm',['orgkb','public']),
+ assistantSeed(1,'今日优先事项梳理','today','17 08:42','今天我最需要优先处理什么？','已按时限、领导批示和风险影响梳理出 <b>4 件优先事项</b>，其中设备更新措施和重大项目催报建议上午完成。',['待办事项','公文','督办记录']),
+ assistantSeed(2,'人工智能产业创新中心项目进展','project','16 16:28','人工智能产业创新中心项目进展到哪里？','项目处于可研评审的专家意见汇总节点，总体进度 <b>62%</b>，2项概算口径需要人工复核。',['项目预研','评审工作记录'],'kimi',['projects','orgkb']),
+ assistantSeed(3,'重大项目推进情况公文检索','document','16 10:06','查找近期重大项目推进情况公文','检索到12份权限内材料，最相关的是上半年重大项目推进情况通知及配套进度表。',['公文','调研报告'],'deepseek',['docs','orgkb']),
+ assistantSeed(4,'营商环境专题汇报提纲','material','15 17:40','起草营商环境专题汇报提纲','已形成“总体进展—重点改革—企业感受—下一步安排”四段式提纲，并标出3处待核数据。',['调研报告','公文'],'glm',['orgkb','docs']),
  assistantSeed(5,'本周超期事项梳理','overdue','15 09:18','梳理本周即将超期事项','发现1项今天到期、3项三日内到期；已按责任处室和影响程度排序。',['我的工作','督办记录']),
- assistantSeed(6,'2026年投资运行变化解读','economy','14 15:05','解释上半年投资运行主要变化','固定资产投资结构继续优化，工业技改和民间投资贡献上升；需关注部分项目开工转化偏慢。',['投资运行系统','公开政策库'],'deepseek',['projects','public']),
+ assistantSeed(6,'2026年投资运行变化解读','economy','14 15:05','解释上半年投资运行主要变化','固定资产投资结构继续优化，工业技改和民间投资贡献上升；需关注部分项目开工转化偏慢。',['投资运行系统','调研报告'],'deepseek',['projects','orgkb']),
  assistantSeed(7,'普通阅办件风险筛查','approval','14 10:22','哪些阅办件可以快速处理？','已筛出2件同环节普通阅办件；领导批示、急件和材料不全事项已自动排除。',['待办事项','公文流转规则']),
- assistantSeed(8,'周期报送事项核对','approval','13 16:12','核对本周周期报送任务','两项月度例行报送口径一致、材料齐全，可归为同一候选组逐件确认。',['我的工作','单位知识库']),
- assistantSeed(9,'会议邀请冲突检查','meeting','13 11:35','检查下周会议邀请是否冲突','共3场会议，其中1场与既有调研安排冲突；已列出可协调人员和时间窗口。',['我的工作','组织结构']),
- assistantSeed(10,'设备更新政策要点','policy','12 17:26','解读设备更新措施中的资金口径','识别到单项目资助上限与现行资金办法存在口径差异，建议在实施细则中明确衔接依据。',['公文库','公开政策库'],'deepseek',['docs','public']),
- assistantSeed(11,'医院项目附件交叉核验','file','12 14:08','核验概算调整请示和评审意见','两份附件的调整总额一致；评审意见另提示5%预警线和党组会审议要求。',['上传材料','项目库'],'kimi',['projects','orgkb']),
+ assistantSeed(8,'周期报送事项核对','approval','13 16:12','核对本周周期报送任务','两项月度例行报送口径一致、材料齐全，可归为同一候选组逐件确认。',['我的工作','公文']),
+ assistantSeed(9,'会议邀请冲突检查','meeting','13 11:35','检查下周会议邀请是否冲突','共3场会议，其中1场与既有调研安排冲突；已列出可协调人员和时间窗口。',['我的工作','调研报告']),
+ assistantSeed(10,'设备更新政策要点','policy','12 17:26','解读设备更新措施中的资金口径','识别到单项目资助上限与现行资金办法存在口径差异，建议在实施细则中明确衔接依据。',['公文','调研报告'],'deepseek',['docs','orgkb']),
+ assistantSeed(11,'医院项目附件交叉核验','file','12 14:08','核验概算调整请示和评审意见','两份附件的调整总额一致；评审意见另提示5%预警线和党组会审议要求。',['上传材料','项目预研'],'kimi',['projects','orgkb']),
  assistantSeed(12,'因公出差应用查找','apps','11 09:50','我要申请因公出差','已定位“因公出差”原生应用，可协助预填行程，但提交仍需本人确认。',['应用目录','当前账号权限'])
 ];
-const savedAssistantPrefs=fusionLoad(FUSION_STORE.assistantPrefs,{model:'deepseek',contexts:['work','orgkb','docs','projects']});
+const savedAssistantPrefs=fusionLoad(FUSION_STORE.assistantPrefs,{model:'deepseek',contexts:['work','docs','orgkb','projects']});
 const savedAssistantHistory=fusionLoad(FUSION_STORE.assistantHistory,null);
 const assistantState={
  model:ASSISTANT_MODELS.some(x=>x.id===savedAssistantPrefs.model)?savedAssistantPrefs.model:'deepseek',
- contexts:Array.isArray(savedAssistantPrefs.contexts)&&savedAssistantPrefs.contexts.length?savedAssistantPrefs.contexts.filter(x=>ASSISTANT_CONTEXTS.some(c=>c.id===x)):['work','orgkb','docs','projects'],
+ contexts:normalizeAssistantContexts(savedAssistantPrefs.contexts),
  conversations:Array.isArray(savedAssistantHistory)&&savedAssistantHistory.length?savedAssistantHistory.slice(0,30):ASSISTANT_SEEDS,
  currentId:null,
  returnView:'welcome'
@@ -2283,7 +2282,7 @@ function openAssistantHistory(){
  document.getElementById('assistantRoot').innerHTML=`<div class="assistant-shell">${assistantToolbar()}<div class="history-head"><b>历史对话</b><span>最近 ${assistantState.conversations.length} 条 · 最多保存30条</span></div>${rows||'<div class="apps-empty">暂无历史对话</div>'}</div>`;
 }
 function resumeAssistantConversation(id){
- const c=assistantState.conversations.find(x=>x.id===id);if(!c)return;assistantState.currentId=id;assistantState.model=c.model;assistantState.contexts=[...(c.contexts||['work'])];persistAssistant();renderAssistantConversation();
+ const c=assistantState.conversations.find(x=>x.id===id);if(!c)return;assistantState.currentId=id;assistantState.model=c.model;assistantState.contexts=normalizeAssistantContexts(c.contexts||['work']);persistAssistant();renderAssistantConversation();
 }
 function assistantScenario(q,mode){
  if(mode&&mode!=='input')return mode;
@@ -2291,15 +2290,15 @@ function assistantScenario(q,mode){
 }
 function assistantAnswer(scene){
  const map={
-  today:{q:'今天我最需要优先处理什么？',html:'今天建议先处理 <b>4 件优先事项</b>：<br>1. 设备更新若干措施，明天12:00前，市领导已圈阅；<br>2. 二院改扩建概算调整，超过5%预警线；<br>3. 重大项目推进情况催报，今天12:00前；<br>4. 坪山牵引站接入线路核准督办件。',sources:['待办事项','公文库','督办记录'],action:['查看优先待办',"closeFusionLayer();openAiTodo()"]},
-  document:{q:'检索近期关于重大项目推进的公文',html:'检索到 <b>12 份</b>权限内材料。最相关的是《市政府办公厅关于报送2026年上半年重大项目推进情况的通知》，涉及832个重大项目进展及需市级协调问题。',sources:['公文库','单位知识库']},
-  project:{q:'人工智能产业创新中心项目现在到哪个节点？',html:'项目处于可研评审的“专家意见汇总”节点，总体进度 <b>62%</b>。距离计划节点还有3天，2项概算口径需人工复核。',sources:['项目全过程系统','评审工作记录','概算附件'],action:['查看项目跟踪',"openTrackDetail('track-project')"]},
-  material:{q:'起草重大项目推进情况汇报提纲',html:'已形成四段式提纲：总体进展与投资完成、新开工和续建节点、突出问题、需市级协调事项。生成正式材料前需选择引用范围并人工核对数据。',sources:['单位知识库','公文库','项目库']},
-  policy:{q:'解读设备更新措施中的资金口径',html:'政策比对发现：新措施的单项目资助上限与现行产业资金办法存在差异。建议在实施细则中明确适用范围、授权依据和衔接条款。',sources:['深府办规〔2026〕1号','产业发展专项资金管理办法','公开政策库']},
-  economy:{q:'解释上半年投资运行主要变化',html:'上半年投资结构继续优化，工业技改和民间投资贡献上升；需关注部分重大项目开工转化偏慢。建议结合行业和区域拆分后再形成正式研判。',sources:['投资运行系统','经济运行月报','公开政策库']},
+  today:{q:'今天我最需要优先处理什么？',html:'今天建议先处理 <b>4 件优先事项</b>：<br>1. 设备更新若干措施，明天12:00前，市领导已圈阅；<br>2. 二院改扩建概算调整，超过5%预警线；<br>3. 重大项目推进情况催报，今天12:00前；<br>4. 坪山牵引站接入线路核准督办件。',sources:['待办事项','公文','督办记录'],action:['查看优先待办',"closeFusionLayer();openAiTodo()"]},
+  document:{q:'检索近期关于重大项目推进的公文',html:'检索到 <b>12 份</b>权限内材料。最相关的是《市政府办公厅关于报送2026年上半年重大项目推进情况的通知》，涉及832个重大项目进展及需市级协调问题。',sources:['公文','调研报告']},
+  project:{q:'人工智能产业创新中心项目现在到哪个节点？',html:'项目处于可研评审的“专家意见汇总”节点，总体进度 <b>62%</b>。距离计划节点还有3天，2项概算口径需人工复核。',sources:['项目预研','评审工作记录','概算附件'],action:['查看项目跟踪',"openTrackDetail('track-project')"]},
+  material:{q:'起草重大项目推进情况汇报提纲',html:'已形成四段式提纲：总体进展与投资完成、新开工和续建节点、突出问题、需市级协调事项。生成正式材料前需选择引用范围并人工核对数据。',sources:['调研报告','公文','项目预研']},
+  policy:{q:'解读设备更新措施中的资金口径',html:'政策比对发现：新措施的单项目资助上限与现行产业资金办法存在差异。建议在实施细则中明确适用范围、授权依据和衔接条款。',sources:['深府办规〔2026〕1号','产业发展专项资金管理办法','公文']},
+  economy:{q:'解释上半年投资运行主要变化',html:'上半年投资结构继续优化，工业技改和民间投资贡献上升；需关注部分重大项目开工转化偏慢。建议结合行业和区域拆分后再形成正式研判。',sources:['投资运行系统','经济运行月报','调研报告']},
   overdue:{q:'梳理本周即将超期事项',html:'发现 <b>1项今天到期、3项三日内到期</b>。已按影响程度排序，并标明责任处室、停留时长和下一步节点。',sources:['我的工作','督办记录','公文流转记录'],action:['进入待办核对',"closeFusionLayer();openAiTodo()"]},
   approval:{q:'哪些事项可以安全归并处理？',html:'当前形成4个候选组：内部请休假、普通阅办件、周期性例行报送、会议邀请。领导批示、急件、资金合同、人事和风险事项均已排除。',sources:['待办事项','审批规则库','风险检查记录'],action:['查看批量候选',"closeFusionLayer();openAiTodo();setTimeout(openBatch,220)"]},
-  meeting:{q:'检查近期会议邀请和日程冲突',html:'两项常规会议邀请时间无冲突，责任处室和材料安排明确；另有1场调研与既有日程重叠，未进入批量候选。',sources:['我的工作','会议通知','组织结构']},
+  meeting:{q:'检查近期会议邀请和日程冲突',html:'两项常规会议邀请时间无冲突，责任处室和材料安排明确；另有1场调研与既有日程重叠，未进入批量候选。',sources:['我的工作','公文','调研报告']},
   apps:{q:'我要申请因公出差',html:'已找到“因公出差”原生应用，可发起出差或培训申请。助手可以协助预填，但不会代替本人提交。',sources:['应用目录','当前账号权限'],action:['打开因公出差',"openAppV3('business-trip')"]}
  };
  return map[scene]||map.today;
@@ -2502,7 +2501,7 @@ function renderLeaderBriefings(){
 }
 const r6RenderHomeBase=renderHome;
 renderHome=function(){
- r6RenderHomeBase();const page=document.getElementById('page-home'),heading=[...page.querySelectorAll('.fusion-sec-head h2')].find(h=>h.textContent.trim()==='常用直达');if(heading)heading.closest('.fusion-block')?.remove()
+ r6RenderHomeBase();const page=document.getElementById('page-home'),context=page.querySelector('.ae-context'),heading=[...page.querySelectorAll('.fusion-sec-head h2')].find(h=>h.textContent.trim()==='常用直达');if(context)context.innerHTML='<span>我的工作</span><span>公文</span><span>调研报告</span><span>项目预研</span>';if(heading)heading.closest('.fusion-block')?.remove()
 };
 function openLeaderBriefing(id){
  const b=LEADER_BRIEFINGS.find(x=>x.id===id);if(!b)return;
