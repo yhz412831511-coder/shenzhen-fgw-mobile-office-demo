@@ -118,16 +118,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .aikey{background:var(--blue-l);border-radius:10px;padding:9px 12px;font-size:13px;color:#2B4A77;line-height:1.6;position:relative}
 .aikey .s-mark{position:absolute;top:-7px;left:8px;font-size:9px;background:var(--blue);color:#fff;padding:0 5px;border-radius:4px;letter-spacing:1px}
 
-.file-row{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px;margin-bottom:6px;cursor:pointer;transition:.15s}
-.file-row:active{background:#F4F7FB;border-color:#C9D8EC}
-.file-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.file-row{width:100%;max-width:100%;min-width:0;box-sizing:border-box;display:flex;align-items:center;gap:9px;background:#F9FBFE;border:1px solid #E0E8F3;border-radius:12px;padding:10px;margin-bottom:7px;cursor:pointer;overflow:hidden;transition:.15s}
+.file-row:active{background:#F1F6FC;border-color:#B8CDEA;transform:scale(.995)}
+.file-ico{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .file-ico.doc{background:#E8F0FB;color:#2E63B4}
 .file-ico.atta{background:#FBF3E8;color:#D97A1E}
 .file-ico svg{width:16px;height:16px}
-.file-nm{flex:1;min-width:0}
-.file-nm b{display:block;font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.file-nm span{font-size:10.5px;color:var(--ink-3)}
-.file-open{font-size:12px;color:var(--blue);font-weight:600;flex-shrink:0}
+.file-nm{flex:1;min-width:0;overflow:hidden}
+.file-nm b{display:-webkit-box;font-size:12px;line-height:1.4;font-weight:600;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-break:break-all;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.file-nm span{display:block;font-size:10px;color:var(--ink-3);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.file-open{font-size:10.5px;color:var(--blue);font-weight:600;flex-shrink:0;background:#EAF2FC;border-radius:7px;padding:5px 7px;line-height:1;white-space:nowrap}
 
 .flow-fold{font-size:13px;color:var(--ink-2);background:#fff;border:1px dashed var(--line);border-radius:10px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
 .flow-fold b{font-weight:500}
@@ -144,6 +144,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .f-info b{display:block;font-size:13px;font-weight:600}
 .f-info.cur b{color:var(--blue)}
 .f-info span{font-size:11px;color:var(--ink-3)}
+.doc-flow-section{padding:0!important;overflow:hidden}.doc-flow-toggle{width:100%;border:0;background:linear-gradient(135deg,#FBFCFE,#F4F8FD);color:var(--ink);padding:12px;display:flex;align-items:center;justify-content:space-between;text-align:left;cursor:pointer}.doc-flow-toggle:active{background:#EDF4FC}.doc-flow-toggle>span:first-child{display:flex;align-items:baseline;gap:7px}.doc-flow-toggle b{font-size:12.5px}.doc-flow-toggle small{font-size:9.5px;color:var(--ink-3)}.doc-flow-action{font-size:10.5px;color:var(--blue);font-weight:600}.doc-flow-toggle.open .doc-flow-action{color:var(--ink-3)}.doc-flow-list{padding:11px 12px 12px;border-top:1px solid #E8EDF4;background:#fff}.doc-flow-list[hidden]{display:none}.doc-flow-list .f-info{min-width:0;flex:1}.doc-flow-list .f-info b{font-size:11.5px}.doc-flow-list .f-info span{display:block;font-size:10px;margin-top:2px}.doc-flow-list .flow-opinion{display:block;margin-top:4px;padding:5px 7px;border-radius:7px;background:#F4F7FB;color:var(--ink-2);font-size:9.8px;line-height:1.5}.doc-flow-list .cooperate .f-dot{border-color:#5D9C7C}.doc-flow-list .cooperate::before{background:#CDE5D7}
 
 /* 决策按钮 */
 .decide{display:flex;gap:8px;margin-top:3px}
@@ -482,6 +483,7 @@ body.bigfont .fusion-page,body.bigfont .fusion-layer{font-size:115%}body.bigfont
 .ai-task-row{width:100%;border:1px solid transparent;background:#fff;border-radius:14px;padding:12px;margin-bottom:8px;box-shadow:var(--shadow);text-align:left;cursor:pointer;color:var(--ink);position:relative;overflow:hidden}.ai-task-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue)}.ai-task-row.hot::before{background:var(--red)}.ai-task-row.read::before{background:var(--green)}.ai-task-row:active{transform:scale(.99);border-color:#D4E0EF}.ai-task-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.ai-task-top .tags{margin:0}.ai-order{font-size:9.5px;color:var(--ink-3)}.ai-task-row strong{display:block;font-size:13.5px;line-height:1.45;margin-top:6px}.ai-task-row>p{font-size:10.8px;color:var(--ink-2);margin-top:4px;line-height:1.5}.ai-priority-reason{display:flex;align-items:flex-start;gap:5px;background:#F4F7FB;border-radius:8px;padding:6px 7px;margin-top:7px;font-size:9.8px;color:var(--blue-d)}.ai-priority-reason svg{width:12px;flex:none;margin-top:1px}.ai-task-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:7px;font-size:9.5px;color:var(--ink-3)}.ai-task-meta span{display:flex;align-items:center;gap:3px}.ai-task-meta svg{width:11px}.ai-task-go{display:flex;justify-content:flex-end;margin-top:8px}.ai-task-go span{font-size:10.5px;color:var(--blue);font-weight:600}
 .ai-drill-pager{display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:12px;padding:9px 10px;margin-top:5px;box-shadow:var(--shadow)}.ai-drill-pager span{font-size:10.5px;color:var(--ink-3)}.ai-drill-pager div{display:flex;gap:6px}.ai-drill-pager button{border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:8px;padding:5px 9px;font-size:10.5px}.ai-drill-pager button:disabled{color:#B8C0CC;background:#F5F6F8}
 .ai-task-detail .detail-back{border:0;background:none;color:var(--blue);padding:0 0 9px;font-size:11.5px;cursor:pointer}.ai-task-detail h1{font-size:19px;line-height:1.4}.ai-detail-summary{background:linear-gradient(135deg,#EDF3FC,#F5F3FD);border:1px solid #DCE5F3;border-radius:13px;padding:11px;margin-top:11px}.ai-detail-summary b{font-size:11.5px;color:var(--blue-d)}.ai-detail-summary p{font-size:12px;color:var(--ink-2);margin-top:4px}.ai-detail-section{background:#fff;border-radius:13px;padding:12px;margin-top:9px;box-shadow:var(--shadow)}.ai-detail-section h3{font-size:12.5px;margin-bottom:6px}.ai-detail-line{display:grid;grid-template-columns:67px 1fr;gap:6px;font-size:10.8px;padding:5px 0;border-bottom:1px solid #EEF1F5}.ai-detail-line:last-child{border-bottom:0}.ai-detail-line b{color:var(--ink-3);font-weight:500}.ai-detail-line span{color:var(--ink-2)}.ai-detail-actions{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:7px;margin-top:11px}.ai-detail-actions button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 3px;font-size:11px;font-weight:600;color:var(--ink-2)}.ai-detail-actions .yes{background:var(--blue);border-color:var(--blue);color:#fff}.ai-detail-actions .read{grid-column:1/-1;background:var(--green);border-color:var(--green);color:#fff}.ai-done-row{background:#fff;border-radius:13px;padding:11px 12px;margin-bottom:8px;box-shadow:var(--shadow)}.ai-done-row .adr-top{display:flex;justify-content:space-between;gap:8px;font-size:9.5px;color:var(--ink-3)}.ai-done-row strong{display:block;font-size:13px;margin-top:5px}.ai-done-row p{font-size:10.8px;color:var(--ink-2);margin-top:4px}
+.office-opinion-text{font-size:11.5px;color:var(--ink-2);line-height:1.8;text-align:justify}.office-opinion-text p{margin:0}.office-opinion-text p+p{margin-top:10px}
 
 /* ================= 第六轮：AI 领导工作编排与固定视窗待办 ================= */
 .briefing-head-note{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(90deg,#EEF3FC,#F2EFFC);color:#4E52A8;border-radius:999px;padding:4px 8px;font-size:9.5px;font-weight:600}.briefing-head-note svg{width:11px}
@@ -504,22 +506,24 @@ body.bigfont .leader-briefing{grid-template-columns:55px 1fr 14px;padding:13px}b
 @media(max-width:499px){.phone{height:100dvh;min-height:620px;max-height:100dvh}}
 
 /* ================= 第七轮：应用页高密度导航 ================= */
-#page-apps{scrollbar-width:none;scroll-padding-top:126px}#page-apps::-webkit-scrollbar{display:none}
+#page-apps{scrollbar-width:none;scroll-padding-top:126px;overflow-anchor:none}#page-apps::-webkit-scrollbar{display:none}
 .apps-sticky-shell{position:sticky;top:0;z-index:18;background:rgba(244,246,249,.97);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(34,65,108,.07)}
 .apps-v3-head{position:relative;padding:15px 14px 10px;transition:padding .22s ease;background:linear-gradient(135deg,#173E79,#2E63B4 72%,#4F7CBD)}
 .apps-title-row{max-height:46px;overflow:hidden;transition:max-height .22s ease,opacity .18s ease,margin .22s ease;display:flex;align-items:flex-start;justify-content:space-between}.apps-title-row h1{font-size:20px}.apps-title-row p{font-size:11px;opacity:.72;margin-top:1px}
 .apps-search-row{display:flex;align-items:center;gap:7px;margin-top:10px;transition:margin .22s ease}.apps-search{min-width:0;flex:1;margin:0;padding:8px 10px;border-radius:11px}.apps-search input{min-width:0;font-size:12.5px}.apps-ai-search{width:38px;height:38px;flex:none;border:1px solid rgba(255,255,255,.26);border-radius:11px;background:rgba(255,255,255,.17);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}.apps-ai-search svg{width:18px}.apps-ai-search:active{transform:scale(.95)}
 #page-apps.apps-compact .apps-v3-head{padding-top:8px;padding-bottom:8px}#page-apps.apps-compact .apps-title-row{max-height:0;opacity:0;margin:0}#page-apps.apps-compact .apps-search-row{margin-top:0}
 .app-catbar{position:relative;top:auto;z-index:auto;background:transparent;padding:8px 12px 7px;gap:6px}.app-catbar button{padding:6px 11px;border-color:#D9E1EC;background:rgba(255,255,255,.9)}
-.app-subbar{display:flex;gap:6px;padding:0 12px 8px;overflow-x:auto;scrollbar-width:none}.app-subbar:empty{display:none}.app-subbar::-webkit-scrollbar{display:none}.app-subbar button{flex:none;border:0;background:#E8EDF4;color:var(--ink-3);border-radius:8px;padding:5px 10px;font-size:10.5px;cursor:pointer}.app-subbar button.on{background:#DCE8F8;color:var(--blue-d);font-weight:600}
+.app-subbar{display:none}
 .track-link.compact{width:calc(100% - 24px);margin:9px 12px 4px;padding:8px 10px;border-radius:11px;background:#FFF9F1}.track-link.compact .ti{width:27px;height:27px;border-radius:8px}.track-link.compact b{font-size:12px}.track-link.compact span{font-size:9.8px}.track-link.compact>.track-go{width:15px;color:#A97832}
-.apps-body-v3{padding:7px 12px 92px}.apps-flat-head{min-height:31px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 2px 8px}.apps-flat-head>div{min-width:0}.apps-flat-head h2{font-size:14.5px}.apps-flat-head p{font-size:9.8px;color:var(--ink-3);margin-top:1px}.apps-flat-head button{border:0;background:none;color:var(--blue);font-size:11.5px;font-weight:600;padding:6px;cursor:pointer;white-space:nowrap}.apps-flat-head .manage-state{color:#A56612;background:#FFF3DF;border-radius:8px;padding:5px 8px}
+.apps-body-v3{padding:0 12px 92px}.apps-flat-head{min-height:31px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 2px 9px}.apps-flat-head>div{min-width:0}.apps-flat-head h2{font-size:14.5px}.apps-flat-head p{font-size:9.8px;color:var(--ink-3);margin-top:1px}.apps-flat-head button{border:0;background:none;color:var(--blue);font-size:11.5px;font-weight:600;padding:6px;cursor:pointer;white-space:nowrap}.apps-flat-head .manage-state{color:#A56612;background:#FFF3DF;border-radius:8px;padding:5px 8px}
+.apps-split{display:flex;align-items:stretch;min-height:calc(100dvh - 220px);margin:0 -12px;background:#fff;border-top:1px solid #E7ECF3;border-bottom:1px solid #E7ECF3}.apps-main{flex:1;min-width:0;padding:0 9px 16px}.apps-side-rail{box-sizing:border-box;align-self:stretch;flex:0 0 79px;display:flex;flex-direction:column;gap:5px;padding:10px 5px;background:#F2F5F9;border-right:1px solid #E0E6EE}.apps-side-rail button{position:relative;width:100%;min-height:43px;border:0;background:transparent;border-radius:9px;padding:6px 4px;color:#65738A;font-size:10px;line-height:1.35;word-break:break-all;cursor:pointer}.apps-side-rail button.on{background:#fff;color:var(--blue-d);font-weight:700;box-shadow:0 2px 7px rgba(36,80,141,.1)}.apps-side-rail button.on::before{content:"";position:absolute;left:-5px;top:11px;bottom:11px;width:3px;border-radius:0 3px 3px 0;background:var(--blue)}.apps-side-rail button:active{transform:scale(.97)}
 .app-grid-v3{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.app-grid-v3.common{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.app-grid-v3.with-side{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.app-grid-v3.with-side .app-v3{min-height:84px}
 .app-v3{min-height:80px;border-radius:12px;padding:9px 2px 6px;box-shadow:0 2px 9px rgba(29,54,91,.065);display:flex;flex-direction:column;align-items:center;justify-content:center}.app-v3 .av3-icon{width:35px;height:35px;border-radius:10px;margin:0}.app-v3 .av3-icon svg{width:18px}.app-v3 b{font-size:10.5px;line-height:1.25;margin-top:6px;max-width:100%;padding:0 2px}.app-grid-v3.common .app-v3{min-height:88px}.app-grid-v3.common .app-v3 .av3-icon{width:39px;height:39px}.app-grid-v3.common .app-v3 b{font-size:11.5px}
 .app-v3 .fav{display:none;right:3px;top:3px;width:24px;height:24px;border-radius:8px;background:rgba(255,255,255,.92);box-shadow:0 1px 5px rgba(27,48,78,.12);z-index:2}.apps-managing .app-v3 .fav{display:block}.app-v3 .fav.on{color:#E6A324}.apps-managing .app-v3{border-color:#D8E2EF}.apps-managing .app-v3:active{transform:none}
 .app-v3 .app-badge{left:4px;top:4px;font-size:7.5px}.app-external{position:absolute;right:6px;bottom:5px;width:14px;height:14px;border-radius:5px;background:#EEF2F7;color:#6E7B8E;font-size:9px;line-height:14px;text-align:center;font-weight:700}
 .apps-empty{background:#fff;border-radius:14px;margin-top:8px;padding:38px 12px}.apps-empty b{display:block;color:var(--ink-2);font-size:13px}.apps-empty span{display:block;margin-top:4px;font-size:10.5px}
-body.bigfont .app-v3{min-height:90px}body.bigfont .app-v3 b{font-size:12px}body.bigfont .app-subbar button{font-size:12px}
+body.bigfont .app-v3{min-height:90px}body.bigfont .app-v3 b{font-size:12px}body.bigfont .apps-side-rail{flex-basis:86px}body.bigfont .apps-side-rail button{font-size:11px}
 </style>
 </head>
 <body>
@@ -1965,10 +1969,10 @@ const FUSION_APPS=[
  {id:'doc-pending',name:'待办公文',category:'办公协同',group:'公文处理',description:'待签批、阅示与流转公文',icon:'doc',external:false,badge:'待办'},
  {id:'doc-done',name:'已办公文',category:'办公协同',group:'公文处理',description:'查询本人已办理公文',icon:'doc',external:false},
  {id:'doc-search',name:'公文综合查询',category:'办公协同',group:'公文处理',description:'按标题、文号与处室检索',icon:'search',external:false},
- {id:'doc-new',name:'轻量新增公文',category:'办公协同',group:'公文处理',description:'会议通知等轻量发文草稿',icon:'doc',external:false},
+ {id:'doc-new',name:'新增公文',category:'办公协同',group:'公文处理',description:'新增公文及会议通知等发文草稿',icon:'doc',external:false},
  {id:'leave',name:'请休假申请',category:'办公协同',group:'个人事务',description:'发起请假、休假流程',icon:'clock',external:false},
- {id:'business-trip',name:'因公出差',category:'办公协同',group:'个人事务',description:'出差、培训申请与行程',icon:'plane',external:false},
- {id:'private-exit',name:'因私出境',category:'办公协同',group:'个人事务',description:'因私出国（境）审批',icon:'map',external:false},
+ {id:'business-trip',name:'因公出差（培训）申请',category:'办公协同',group:'个人事务',description:'出差、培训申请与行程',icon:'plane',external:false},
+ {id:'private-exit',name:'因私出差（境）申请',category:'办公协同',group:'个人事务',description:'因私出国（境）审批',icon:'map',external:false},
  {id:'gate-pass',name:'放行条',category:'办公协同',group:'个人事务',description:'人员、车辆或物品放行',icon:'shield',external:false},
  {id:'info-publish',name:'信息发布',category:'办公协同',group:'流程查询',description:'信息发布申请与审核',icon:'send',external:false},
  {id:'data-change',name:'数据调整申请',category:'办公协同',group:'流程查询',description:'业务数据更正与留痕',icon:'project',external:false},
@@ -1979,8 +1983,8 @@ const FUSION_APPS=[
  {id:'supplies',name:'办公物资申领',category:'办公协同',group:'资产物资',description:'办公用品和耗材领用',icon:'box',external:false},
  {id:'all-supplies',name:'所有申领',category:'办公协同',group:'资产物资',description:'管理员查看申领记录',icon:'box',external:false},
  {id:'my-assets',name:'我的资产',category:'办公协同',group:'资产物资',description:'查看本人名下资产',icon:'apps',external:false},
- {id:'asset-ledger',name:'资产台账',category:'办公协同',group:'资产物资',description:'全量资产登记与盘点',icon:'todo',external:false},
- {id:'org',name:'组织结构',category:'办公协同',group:'组织通讯',description:'查处室、人员与职责关系',icon:'people',external:false},
+ {id:'asset-ledger',name:'所有资产台账',category:'办公协同',group:'资产物资',description:'全量资产登记与盘点',icon:'todo',external:false},
+ {id:'org',name:'通讯录',category:'办公协同',group:'组织通讯',description:'查找委内人员与联系方式',icon:'people',external:false},
  {id:'my-process',name:'我的办事',category:'办公协同',group:'流程查询',description:'本人相关流程合集',icon:'todo',external:false},
  {id:'process-done',name:'已办办事',category:'办公协同',group:'流程查询',description:'本人已处理流程记录',icon:'shield',external:false},
  {id:'process-search',name:'办事查询',category:'办公协同',group:'流程查询',description:'跨类型检索历史流程',icon:'search',external:false},
@@ -2004,8 +2008,7 @@ const FUSION_APPS=[
  {id:'ai-investment',name:'AI+投资',category:'智能应用',group:'专业智能体',description:'投资分析、项目谋划与风险识别',icon:'spark',external:true},
  {id:'ai-economy',name:'AI+经济',category:'智能应用',group:'专业智能体',description:'经济指标解释与运行研判',icon:'spark',external:true},
  {id:'ai-review',name:'AI+评审',category:'智能应用',group:'专业智能体',description:'可研解析、合规初筛与评审清单',icon:'spark',external:true,badge:'推荐'},
- {id:'ai-odi',name:'AI+ODI',category:'智能应用',group:'专业智能体',description:'境外投资备案材料辅助审查',icon:'spark',external:true},
- {id:'future-agent',name:'智能体广场',category:'智能应用',group:'规划能力',description:'更多受控业务智能体持续接入',icon:'apps',external:true,badge:'规划'}
+ {id:'ai-odi',name:'AI+ODI',category:'智能应用',group:'专业智能体',description:'境外投资备案材料辅助审查',icon:'spark',external:true}
 ];
 const APP_CATEGORIES=['常用','办公协同','投资项目','运行监测','专题服务','智能应用'];
 let fusionAppCategory='常用',fusionAppGroup='全部',fusionAppQuery='',fusionAppManage=false;
@@ -2034,7 +2037,7 @@ todoPage.insertAdjacentHTML('beforebegin',`<div class="page hidden-r fusion-page
 todoPage.insertAdjacentHTML('afterbegin',`<div class="ai-todo-back" onclick="go('home')">${ficon('back')}返回智能首页 · 当前为 AI 整理后的全部待办</div>`);
 const appsPage=document.getElementById('page-wb');
 appsPage.id='page-apps';appsPage.className='page hidden-r fusion-page';
-appsPage.innerHTML=`<div class="apps-sticky-shell"><div class="apps-v3-head"><div class="apps-title-row"><div><h1>应用</h1><p>全量业务能力，一屏快速定位</p></div></div><div class="apps-search-row"><label class="apps-search">${ficon('search')}<input id="appsSearch" placeholder="搜索应用，或直接描述想办什么" oninput="searchApps(this.value)"></label><button class="apps-ai-search" aria-label="让发改助手找应用" onclick="openAssistant('apps')">${ficon('spark')}</button></div></div><div class="app-catbar" id="appCatbar"></div><div class="app-subbar" id="appSubbar"></div></div><button class="track-link compact" onclick="openTrackList()"><div class="ti">${ficon('track')}</div><div><b>督办与事项跟踪</b><span>我负责、参与和关注的工作</span></div><span class="track-go">›</span></button><div class="apps-body-v3" id="appsBody"></div>`;
+appsPage.innerHTML=`<div class="apps-sticky-shell"><div class="apps-v3-head"><div class="apps-title-row"><div><h1>应用</h1><p>全量业务能力，一屏快速定位</p></div></div><div class="apps-search-row"><label class="apps-search">${ficon('search')}<input id="appsSearch" placeholder="搜索应用，或直接描述想办什么" oninput="searchApps(this.value)"></label><button class="apps-ai-search" aria-label="让发改助手找应用" onclick="openAssistant('apps')">${ficon('spark')}</button></div></div><div class="app-catbar" id="appCatbar"></div></div><div class="apps-body-v3" id="appsBody"></div>`;
 appsPage.addEventListener('scroll',()=>appsPage.classList.toggle('apps-compact',appsPage.scrollTop>18),{passive:true});
 document.querySelector('.tabbar').innerHTML=`
  <button class="tab" data-role="primary" onclick="goPrimary()"><span id="primaryIcon">${ficon('home')}</span><span id="primaryLabel">首页</span><span class="badge" id="tabBadge">14</span></button>
@@ -2072,20 +2075,34 @@ function openAiTodo(id){go('todo');if(id)setTimeout(()=>{const c=document.getEle
 function renderApps(){
  document.getElementById('appCatbar').innerHTML=APP_CATEGORIES.map(c=>`<button class="${fusionAppCategory===c?'on':''}" onclick="setAppCategory('${c}')">${c}</button>`).join('');
  const groups=fusionAppCategory==='常用'?[]:[...new Set(FUSION_APPS.filter(a=>a.category===fusionAppCategory).map(a=>a.group))];
- const subbar=document.getElementById('appSubbar');
- subbar.innerHTML=!fusionAppQuery&&groups.length?['全部',...groups].map(g=>`<button class="${fusionAppGroup===g?'on':''}" onclick="setAppGroup('${g}')">${g}</button>`).join(''):'';
- let list=FUSION_APPS.filter(a=>fusionAppCategory==='常用'?fusionFavorites.includes(a.id):a.category===fusionAppCategory&&(fusionAppGroup==='全部'||a.group===fusionAppGroup));
+ if(groups.length&&!groups.includes(fusionAppGroup))fusionAppGroup=groups[0];
+ let list=FUSION_APPS.filter(a=>fusionAppCategory==='常用'?fusionFavorites.includes(a.id):a.category===fusionAppCategory&&a.group===fusionAppGroup);
  if(fusionAppQuery)list=FUSION_APPS.filter(a=>(a.name+a.category+a.group+a.description).toLowerCase().includes(fusionAppQuery.toLowerCase()));
  const common=!fusionAppQuery&&fusionAppCategory==='常用';
- const title=fusionAppQuery?'搜索结果':fusionAppManage?'选择常用应用':common?'常用应用':fusionAppGroup==='全部'?fusionAppCategory:fusionAppGroup;
+ const useSideRail=!fusionAppQuery&&groups.length;
+ const main=`<div class="apps-main">${appMainMarkup(list,common,useSideRail)}</div>`;
+ const rail=useSideRail?`<aside class="apps-side-rail" aria-label="${fusionAppCategory}业务分类">${groups.map(g=>`<button class="${fusionAppGroup===g?'on':''}" onclick="setAppGroup('${g}')">${g}</button>`).join('')}</aside>`:'';
+ document.getElementById('appsBody').classList.toggle('apps-managing',fusionAppManage);
+ document.getElementById('appsBody').innerHTML=useSideRail?`<div class="apps-split">${rail}${main}</div>`:main;
+}
+function appMainMarkup(list,common=false,useSideRail=false){
+ const title=fusionAppQuery?'搜索结果':fusionAppManage?'选择常用应用':common?'常用应用':fusionAppGroup;
  const note=fusionAppQuery?`找到 ${list.length} 项匹配能力`:fusionAppManage?'点击星标调整常用，应用能力保持不变':common?'按日常使用习惯集中呈现':`${list.length} 项能力 · 点击即可进入`;
  const manageButton=(common||fusionAppManage)?`<button class="${fusionAppManage?'manage-state':''}" onclick="toggleAppManage()">${fusionAppManage?'完成':'管理'}</button>`:'';
- document.getElementById('appsBody').classList.toggle('apps-managing',fusionAppManage);
- document.getElementById('appsBody').innerHTML=list.length?`<div class="apps-flat-head"><div><h2>${title}</h2><p>${note}</p></div>${manageButton}</div><div class="app-grid-v3 ${common?'common':''}">${list.map(appTile).join('')}</div>`:`<div class="apps-empty"><b>未找到相关应用</b><span>换个关键词，或点搜索框右侧让发改助手理解你的意图</span></div>`;
+ return `<div class="apps-flat-head"><div><h2>${title}</h2><p>${note}</p></div>${manageButton}</div>${list.length?`<div class="app-grid-v3 ${common?'common':''} ${useSideRail?'with-side':''}">${list.map(appTile).join('')}</div>`:`<div class="apps-empty"><b>未找到相关应用</b><span>换个关键词，或点搜索框右侧让发改助手理解你的意图</span></div>`}`;
 }
 function appTile(a){const colors={办公协同:['#E8F0FB','#2E63B4'],投资项目:['#EAF5EF','#1E7B4F'],运行监测:['#E8F6F8','#167A8B'],专题服务:['#FBF3E8','#D97A1E'],智能应用:['#F0EDFC','#5B4FC9']},c=colors[a.category]||colors['办公协同'];return `<div class="app-v3" onclick="openAppV3('${a.id}')">${a.badge?`<span class="app-badge">${a.badge}</span>`:''}<button class="fav ${fusionFavorites.includes(a.id)?'on':''}" aria-label="${fusionFavorites.includes(a.id)?'取消常用':'加入常用'}" onclick="toggleFavoriteV3(event,'${a.id}')">${ficon('star')}</button><div class="av3-icon" style="background:${c[0]};color:${c[1]}">${ficon(a.icon)}</div><b>${a.name}</b>${a.external?'<span class="app-external" title="外部业务系统">↗</span>':''}</div>`}
-function setAppCategory(c){fusionAppCategory=c;fusionAppGroup='全部';fusionAppQuery='';const q=document.getElementById('appsSearch');if(q)q.value='';renderApps();requestAnimationFrame(()=>{appsPage.scrollTop=0;appsPage.classList.remove('apps-compact')})}
-function setAppGroup(g){fusionAppGroup=g;renderApps();requestAnimationFrame(()=>{const head=document.querySelector('#page-apps .track-link');if(head)appsPage.scrollTo({top:Math.max(0,head.offsetTop+head.offsetHeight-8),behavior:'smooth'})})}
+function setAppCategory(c){fusionAppCategory=c;fusionAppGroup=c==='常用'?'':([...(new Set(FUSION_APPS.filter(a=>a.category===c).map(a=>a.group)))][0]||'');fusionAppQuery='';const q=document.getElementById('appsSearch');if(q)q.value='';renderApps();requestAnimationFrame(()=>{appsPage.scrollTop=0;appsPage.classList.remove('apps-compact')})}
+function setAppGroup(g){
+ if(fusionAppGroup===g)return;const scrollTop=appsPage.scrollTop;fusionAppGroup=g;
+ const body=document.getElementById('appsBody'),main=body?.querySelector('.apps-main');
+ if(main&&!fusionAppQuery){
+  const list=FUSION_APPS.filter(a=>a.category===fusionAppCategory&&a.group===fusionAppGroup);
+  main.innerHTML=appMainMarkup(list,false,true);
+  body.querySelectorAll('.apps-side-rail button').forEach(b=>b.classList.toggle('on',b.textContent===g));
+ }else renderApps();
+ requestAnimationFrame(()=>{appsPage.scrollTop=scrollTop});
+}
 function searchApps(v){fusionAppQuery=v.trim();renderApps()}
 function toggleAppManage(){fusionAppManage=!fusionAppManage;fusionAppQuery='';const q=document.getElementById('appsSearch');if(q)q.value='';renderApps()}
 function toggleFavoriteV3(e,id){e.stopPropagation();fusionFavorites.includes(id)?fusionFavorites=fusionFavorites.filter(x=>x!==id):fusionFavorites.push(id);fusionSave(FUSION_STORE.favorites,fusionFavorites);renderApps();toast(fusionFavorites.includes(id)?'已加入常用':'已取消常用')}
@@ -2462,6 +2479,40 @@ function r5AiItems(kind='all'){
 }
 function r5AiKindInfo(kind){return {all:['全部待处理','按批示、时限、风险和停留时长综合排序'],urgent:['重点督办','领导批示、督办及特急事项优先呈现'],overdue:['即将超期','聚焦今天到期或已进入红色时限的事项'],read:['待阅办','集中呈现只需阅办或知悉的事项'],doc:['待办公文','权限范围内待签批、阅示和流转公文'],batch:['安全归并候选','仅展示已通过同类型、同规则和风险核验的事项']}[kind]||['全部待处理','按优先级智能整理']}
 function r5AiReason(item){if(item.leaderCmt||item.p==='leader')return'含领导批示，需优先核对批示要求';if(item.p==='sup')return'督办事项，办理进度影响后续节点';if(item.p==='urgent')return'特急且今天到期，剩余办理时间最短';if(r5IsOverdue(item))return'已进入临期窗口，建议本时段完成';if(item.type==='read')return'阅办类事项，可快速核对后完成';if(item.batchEligible)return'规则稳定且风险核验通过，可进入安全归并';return'结合收文时间、停留时长和事项影响排序'}
+function officeOpinionHtml(it){
+ const qualify=(it.pQualify||'该事项已按程序完成初步核对').replace(/[。；]+$/,'');
+ const advice=(it.pAdvice||it.sum||'建议按既定程序办理').replace(/^拟同意/,'建议').replace(/^拟请/,'建议请').replace(/[。；]+$/,'');
+ const background=(it.pBg||'有关处室已完成初步核对，并按程序提出办理建议').replace(/[。；]+$/,'');
+ const risk=it.pRisk&&it.pRisk!=='未发现明确风险'?it.pRisk.replace(/[。；]+$/,''):'';
+ return `<section class="ai-detail-section office-opinion"><h3>拟办意见</h3><div class="office-opinion-text"><p>来文收悉。经初步核对，${esc(qualify)}。</p><p>${esc(background)}。</p><p>拟办意见：${esc(advice)}。${risk?`同时，${esc(risk)}。`:''}妥否，请审示。</p></div></section>`;
+}
+function docFlowEntries(it){
+ const entries=(it.flow||[]).map(f=>({s:f.s,p:f.p,t:f.t,cur:!!f.cur,note:f.note||''}));
+ if(!entries.length)entries.push({s:'收文登记',p:'机要室',t:'已登记'},{s:'拟办',p:it.sig||'承办处室',t:'已提出拟办意见'},{s:'领导审阅',p:'待办',t:'当前环节',cur:true});
+ if(!entries.some(f=>/协办|会办|意见/.test(`${f.s}${f.p}`))){
+  const isProject=/项目|投资|概算|评审/.test(it.title||'');
+  const offices=isProject?'投资处、评审中心':'政策法规处、财务处';
+  const note=it.pRisk?`意见：请结合“${String(it.pRisk).slice(0,42)}${String(it.pRisk).length>42?'…':''}”进一步核实。`:'意见：已阅，原则同意拟办意见，请按程序办理。';
+  const at=Math.max(1,entries.findIndex(f=>f.cur));entries.splice(at<1?entries.length-1:at,0,{s:'协办处室意见',p:offices,t:'已反馈',note,cooperate:true});
+ }
+ return entries;
+}
+function docFlowHtml(it){
+ if(it.type!=='doc')return'';const entries=docFlowEntries(it);
+ return `<section class="ai-detail-section doc-flow-section"><button class="doc-flow-toggle" type="button" aria-expanded="false" onclick="toggleDocFlow(this)"><span><b>流转信息</b><small>${entries.length} 个环节 · 含协办处室意见</small></span><span class="doc-flow-action">展开 ▾</span></button><div class="doc-flow-list" hidden>${entries.map(f=>`<div class="f-step ${f.cur?'cur':''} ${f.cooperate?'cooperate':''}"><div class="f-dot"></div><div class="f-info ${f.cur?'cur':''}"><b>${esc(f.s)}${f.cur?' · 当前':''}</b><span>${esc(f.p)} · ${esc(f.t)}</span>${f.note?`<em class="flow-opinion">${esc(f.note)}</em>`:''}</div></div>`).join('')}</div></section>`;
+}
+function toggleDocFlow(button){const panel=button.nextElementSibling,open=button.classList.toggle('open');button.setAttribute('aria-expanded',String(open));panel.hidden=!open;button.querySelector('.doc-flow-action').textContent=open?'收起 ▴':'展开 ▾'}
+const r14OpenTradTaskDetailBase=openTradTaskDetail;
+openTradTaskDetail=function(id){
+ r14OpenTradTaskDetailBase(id);const it=state.items.find(x=>x.id===id&&x.status==='todo');if(!it)return;
+ const legacy=[...document.querySelectorAll('#fusionLayerBody .ai-detail-section')].find(s=>s.querySelector('h3')?.textContent.includes('五段结构'));
+ if(legacy)legacy.outerHTML=officeOpinionHtml(it);
+ if(it.type==='doc'){
+  const attachment=[...document.querySelectorAll('#fusionLayerBody .ai-detail-section')].find(s=>s.querySelector('h3')?.textContent.trim()==='正文与附件');
+  const oldFlow=attachment?.nextElementSibling?.querySelector('.flow-fold');
+  if(oldFlow)oldFlow.closest('section').outerHTML=docFlowHtml(it);else attachment?.insertAdjacentHTML('afterend',docFlowHtml(it));
+ }
+}
 function r5AiTaskRow(item,index,start,kind,page){
  const hot=r5IsUrgent(item)||r5IsOverdue(item),read=item.type==='read';return `<button class="ai-task-row ${hot?'hot':''} ${read?'read':''}" data-item-id="${item.id}" onclick="openAiTaskDetail(${item.id},'${kind}',${page})"><div class="ai-task-top"><div class="tags">${tagHtml(item)}</div><span class="ai-order">优先序 ${start+index+1}</span></div><strong>${esc(item.title)}</strong><p>${esc(item.sum||item.pAdvice||'请进入详情核对办理信息')}</p><div class="ai-priority-reason">${ficon('spark')}<span>${esc(r5AiReason(item))}</span></div><div class="ai-task-meta"><span>${ficon('people')}${esc(item.from)}</span>${item.docNo?`<span>${ficon('doc')}${esc(item.docNo)}</span>`:''}${item.ddl?`<span>${ficon('clock')}${esc(item.ddl)}</span>`:''}</div><div class="ai-task-go"><span>${read?'查看并阅办':'查看并办理'} ›</span></div></button>`;
 }
@@ -2479,7 +2530,13 @@ function openAiTaskDrill(kind='all',page=0){
 openAiTodo=function(id){if(state.uMode==='ai'){id?openAiTaskDetail(id,'all',0):openAiTaskDrill('all',0)}else openTradTaskView('all',id||null)};
 function openAiTaskDetail(id,returnKind='all',returnPage=0){
  const it=state.items.find(x=>x.id===id&&x.status==='todo');if(!it){toast('该事项状态已更新');openAiTaskDrill(returnKind,returnPage);return}const read=it.type==='read';
- openFusionLayer('事项详情',`<div class="ai-task-detail"><button class="detail-back" onclick="openAiTaskDrill('${returnKind}',${returnPage})">← 返回${r5AiKindInfo(returnKind)[0]}</button><div class="detail-badges"><span>${TYPE_NAME[it.type]||'事项'}</span>${it.p!=='normal'?`<span>${it.p==='leader'?'领导批示':it.p==='urgent'?'特急':'督办'}</span>`:''}${it.ddl?`<span>${it.ddl}</span>`:''}</div><h1>${esc(it.title)}</h1><div class="ai-detail-summary"><b>智能整理摘要</b><p>${esc(it.sum||it.pAdvice||'请核对办理信息和相关材料')}</p><div class="ai-priority-reason">${ficon('spark')}<span>${esc(r5AiReason(it))}</span></div></div><section class="ai-detail-section"><h3>办理信息</h3><div class="ai-detail-line"><b>来文来源</b><span>${esc(it.from)}</span></div>${it.docNo?`<div class="ai-detail-line"><b>文号</b><span>${esc(it.docNo)}</span></div>`:''}<div class="ai-detail-line"><b>办理处室</b><span>${esc(it.sig||it.from)}</span></div><div class="ai-detail-line"><b>停留时间</b><span>${it.stay?`已停留 ${it.stay} 天`:'当日到达'}</span></div></section><section class="ai-detail-section"><h3>拟办意见 · 五段结构</h3><div class="ai-detail-line"><b>来文定性</b><span>${esc(it.pQualify||'常规办理事项')}</span></div><div class="ai-detail-line"><b>拟办建议</b><span>${esc(it.pAdvice||it.sum||'请阅办')}</span></div><div class="ai-detail-line"><b>风险关联</b><span>${esc(it.pRisk||'未发现明确风险')}</span></div><div class="ai-detail-line"><b>情况说明</b><span>${esc(it.pBg||'无补充说明')}</span></div><div class="ai-detail-line"><b>管理链条</b><span>${esc(it.pCc||'按既定流程流转')}</span></div></section><section class="ai-detail-section"><h3>正文与附件</h3><button class="file-row" onclick="openReader(${it.id},'body')"><span class="file-ico doc">${ficon('doc')}</span><span class="file-nm"><b>查看正文</b><span>${esc(it.docNo||it.from)}</span></span><span class="file-open">查看</span></button>${(it.files||[]).map(f=>`<button class="file-row" onclick="openReader(${it.id},'att','${esc(f.n.slice(0,18))}')"><span class="file-ico atta">${ficon('box')}</span><span class="file-nm"><b>${esc(f.n)}</b><span>${esc(f.s)}</span></span><span class="file-open">打开</span></button>`).join('')}</section><div class="ai-detail-actions">${read?`<button class="read" onclick="aiTaskDo(${it.id},'read')">确认已阅办</button>`:`<button onclick="aiTaskDo(${it.id},'no')">不同意</button><button onclick="aiTaskDo(${it.id},'hold')">稍后处理</button><button class="yes" onclick="aiTaskDo(${it.id},'yes')">同意并确认</button>`}</div><div class="assistant-boundary">智能整理仅辅助阅读；批示、转办和阅办结果均由本人确认并留痕</div></div>`,'AI模式 · 依据可追溯');
+ openFusionLayer('事项详情',`<div class="ai-task-detail"><button class="detail-back" onclick="openAiTaskDrill('${returnKind}',${returnPage})">← 返回${r5AiKindInfo(returnKind)[0]}</button><div class="detail-badges"><span>${TYPE_NAME[it.type]||'事项'}</span>${it.p!=='normal'?`<span>${it.p==='leader'?'领导批示':it.p==='urgent'?'特急':'督办'}</span>`:''}${it.ddl?`<span>${it.ddl}</span>`:''}</div><h1>${esc(it.title)}</h1><div class="ai-detail-summary"><b>智能整理摘要</b><p>${esc(it.sum||it.pAdvice||'请核对办理信息和相关材料')}</p><div class="ai-priority-reason">${ficon('spark')}<span>${esc(r5AiReason(it))}</span></div></div><section class="ai-detail-section"><h3>办理信息</h3><div class="ai-detail-line"><b>来文来源</b><span>${esc(it.from)}</span></div>${it.docNo?`<div class="ai-detail-line"><b>文号</b><span>${esc(it.docNo)}</span></div>`:''}<div class="ai-detail-line"><b>办理处室</b><span>${esc(it.sig||it.from)}</span></div><div class="ai-detail-line"><b>停留时间</b><span>${it.stay?`已停留 ${it.stay} 天`:'当日到达'}</span></div></section>${officeOpinionHtml(it)}<section class="ai-detail-section"><h3>正文与附件</h3><button class="file-row" onclick="openReader(${it.id},'body')"><span class="file-ico doc">${ficon('doc')}</span><span class="file-nm"><b>查看正文</b><span>${esc(it.docNo||it.from)}</span></span><span class="file-open">查看</span></button>${(it.files||[]).map(f=>`<button class="file-row" onclick="openReader(${it.id},'att','${esc(f.n.slice(0,18))}')"><span class="file-ico atta">${ficon('box')}</span><span class="file-nm"><b>${esc(f.n)}</b><span>${esc(f.s)}</span></span><span class="file-open">打开</span></button>`).join('')}</section><div class="ai-detail-actions">${read?`<button class="read" onclick="aiTaskDo(${it.id},'read')">确认已阅办</button>`:`<button onclick="aiTaskDo(${it.id},'no')">不同意</button><button onclick="aiTaskDo(${it.id},'hold')">稍后处理</button><button class="yes" onclick="aiTaskDo(${it.id},'yes')">同意并确认</button>`}</div><div class="assistant-boundary">智能整理仅辅助阅读；批示、转办和阅办结果均由本人确认并留痕</div></div>`,'AI模式 · 依据可追溯');
+}
+const r19OpenAiTaskDetailBase=openAiTaskDetail;
+openAiTaskDetail=function(id,returnKind='all',returnPage=0){
+ r19OpenAiTaskDetailBase(id,returnKind,returnPage);const it=state.items.find(x=>x.id===id&&x.status==='todo');if(!it||it.type!=='doc')return;
+ const attachment=[...document.querySelectorAll('#fusionLayerBody .ai-detail-section')].find(s=>s.querySelector('h3')?.textContent.trim()==='正文与附件');
+ if(attachment&&!attachment.nextElementSibling?.classList.contains('doc-flow-section'))attachment.insertAdjacentHTML('afterend',docFlowHtml(it));
 }
 function aiTaskDo(id,action){closeFusionLayer();if(action==='read')markRead(id);else if(action==='hold')decide(id,'hold');else if(action==='no')decide(id,'no');else openSheet(id)}
 function openAiDoneDrill(){
