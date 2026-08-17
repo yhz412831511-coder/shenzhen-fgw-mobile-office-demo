@@ -461,6 +461,7 @@ body.bigfont .fusion-page,body.bigfont .fusion-layer{font-size:115%}body.bigfont
 .assistant-compose .attach-btn input{display:none}.assistant-compose .send-btn{width:42px}
 .assistant-audit{margin-top:7px;border-top:1px dashed var(--line);padding-top:7px;font-size:9.5px;color:var(--ink-3);line-height:1.5}
 .assistant-audit b{color:var(--green);font-weight:600}.chat-model{font-size:9.5px;color:#6558B5;background:#F0EDFC;border-radius:5px;padding:2px 6px;display:inline-block;margin-bottom:7px}
+.assistant-result-note{margin:3px 0 9px;font-size:11px;color:var(--ink-2);line-height:1.55}.assistant-doc-list{display:flex;flex-direction:column;gap:7px;margin:8px 0}.assistant-doc-link{width:100%;border:1px solid #DCE5F2;background:#F8FAFD;color:var(--ink);border-radius:10px;padding:9px 10px;text-align:left;text-decoration:none;display:block;cursor:pointer;font:inherit}.assistant-doc-link:active{transform:scale(.99);border-color:var(--blue)}.assistant-doc-link>span{display:block;font-size:9.5px;color:var(--blue);font-weight:600}.assistant-doc-link b{display:block;font-size:11px;line-height:1.45;margin-top:3px}.assistant-doc-link em{display:block;font-size:9.5px;color:var(--ink-3);font-style:normal;margin-top:3px}.assistant-original{border-left:3px solid #9FB8DD;background:#F6F9FD;border-radius:0 9px 9px 0;padding:7px 9px;margin-top:7px}.assistant-original b{display:block;font-size:10px;color:var(--blue-d)}.assistant-original p{font-size:10.5px;color:var(--ink-2);line-height:1.55;margin-top:3px}
 .picker-list{display:flex;flex-direction:column;gap:8px}.picker-option{border:1px solid var(--line);background:#fff;border-radius:13px;padding:12px;display:flex;gap:10px;align-items:flex-start;cursor:pointer;text-align:left}.picker-option.on{border-color:var(--blue);background:var(--blue-l)}.picker-option .pick-check{width:21px;height:21px;border:1.5px solid #C8D2E1;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;margin-top:1px}.picker-option.on .pick-check{background:var(--blue);border-color:var(--blue);color:#fff}.picker-option svg{width:12px}.picker-option .pick-text{flex:1}.picker-option b{display:block;font-size:13px}.picker-option p{font-size:10.5px;color:var(--ink-3);margin-top:3px;line-height:1.45}.picker-note{margin:10px 0;background:#F5F7FA;border-radius:10px;padding:9px 10px;font-size:10.5px;color:var(--ink-3);line-height:1.55}.picker-done{width:100%;border:0;background:var(--blue);color:#fff;border-radius:11px;padding:11px;font-weight:600;cursor:pointer}
 .history-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.history-head b{font-size:14px}.history-head span{font-size:10.5px;color:var(--ink-3)}
 .history-card{background:#fff;border-radius:13px;padding:11px 12px;margin-bottom:8px;box-shadow:var(--shadow);cursor:pointer}.history-card .h-top{display:flex;justify-content:space-between;gap:8px}.history-card strong{font-size:13px}.history-card time{font-size:9.5px;color:var(--ink-3);white-space:nowrap}.history-card p{font-size:10.8px;color:var(--ink-2);margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.history-meta{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.history-meta span{font-size:9px;background:#EEF2F7;color:var(--ink-3);padding:2px 6px;border-radius:5px}
@@ -2158,6 +2159,7 @@ const fusionBaseFinish=finish;finish=function(id,mark,cmt,hold){fusionBaseFinish
 /* ================= 融合版补充优化：共享数据 ================= */
 FUSION_STORE.assistantPrefs='fgw-fusion-assistant-prefs';
 FUSION_STORE.assistantHistory='fgw-fusion-assistant-history';
+FUSION_STORE.assistantHistoryVersion='fgw-fusion-assistant-history-version';
 
 const ASSISTANT_MODELS=[
  {id:'deepseek',name:'DeepSeek-R1 政务版',cap:'政策问答与复杂推理',desc:'适合政策比对、依据追溯、风险推演和复杂事项研判'},
@@ -2175,32 +2177,23 @@ function normalizeAssistantContexts(ids){const valid=(Array.isArray(ids)?ids:[])
 function assistantSeed(id,title,scene,time,q,a,sources,model='deepseek',contexts=['work','docs','orgkb']){
  return {id:`seed-${id}`,title,scene,updatedAt:`2026-08-${time}`,timeLabel:`8月${time.slice(0,2)}日 ${time.slice(3)}`,model,contexts,messages:[{role:'user',text:q},{role:'bot',html:a,sources,updated:'2026-08-17 09:30'}]};
 }
-const ASSISTANT_SEEDS=[
- assistantSeed(1,'今日优先事项梳理','today','17 08:42','今天我最需要优先处理什么？','已按时限、领导批示和风险影响梳理出 <b>4 件优先事项</b>，其中设备更新措施和重大项目催报建议上午完成。',['待办事项','公文','督办记录']),
- assistantSeed(2,'人工智能产业创新中心项目进展','project','16 16:28','人工智能产业创新中心项目进展到哪里？','项目处于可研评审的专家意见汇总节点，总体进度 <b>62%</b>，2项概算口径需要人工复核。',['项目预研','评审工作记录'],'kimi',['projects','orgkb']),
- assistantSeed(3,'重大项目推进情况公文检索','document','16 10:06','查找近期重大项目推进情况公文','检索到12份权限内材料，最相关的是上半年重大项目推进情况通知及配套进度表。',['公文','调研报告'],'deepseek',['docs','orgkb']),
- assistantSeed(4,'营商环境专题汇报提纲','material','15 17:40','起草营商环境专题汇报提纲','已形成“总体进展—重点改革—企业感受—下一步安排”四段式提纲，并标出3处待核数据。',['调研报告','公文'],'glm',['orgkb','docs']),
- assistantSeed(5,'本周超期事项梳理','overdue','15 09:18','梳理本周即将超期事项','发现1项今天到期、3项三日内到期；已按责任处室和影响程度排序。',['我的工作','督办记录']),
- assistantSeed(6,'2026年投资运行变化解读','economy','14 15:05','解释上半年投资运行主要变化','固定资产投资结构继续优化，工业技改和民间投资贡献上升；需关注部分项目开工转化偏慢。',['投资运行系统','调研报告'],'deepseek',['projects','orgkb']),
- assistantSeed(7,'普通阅办件风险筛查','approval','14 10:22','哪些阅办件可以快速处理？','已筛出2件同环节普通阅办件；领导批示、急件和材料不全事项已自动排除。',['待办事项','公文流转规则']),
- assistantSeed(8,'周期报送事项核对','approval','13 16:12','核对本周周期报送任务','两项月度例行报送口径一致、材料齐全，可归为同一候选组逐件确认。',['我的工作','公文']),
- assistantSeed(9,'会议邀请冲突检查','meeting','13 11:35','检查下周会议邀请是否冲突','共3场会议，其中1场与既有调研安排冲突；已列出可协调人员和时间窗口。',['我的工作','调研报告']),
- assistantSeed(10,'设备更新政策要点','policy','12 17:26','解读设备更新措施中的资金口径','识别到单项目资助上限与现行资金办法存在口径差异，建议在实施细则中明确衔接依据。',['公文','调研报告'],'deepseek',['docs','orgkb']),
- assistantSeed(11,'医院项目附件交叉核验','file','12 14:08','核验概算调整请示和评审意见','两份附件的调整总额一致；评审意见另提示5%预警线和党组会审议要求。',['上传材料','项目预研'],'kimi',['projects','orgkb']),
- assistantSeed(12,'因公出差应用查找','apps','11 09:50','我要申请因公出差','已定位“因公出差”原生应用，可协助预填行程，但提交仍需本人确认。',['应用目录','当前账号权限'])
-];
+const ASSISTANT_ARCHIVE_ANSWER=`<div class="assistant-result-note">已按当前四类知识范围返回 <b>5 份直接相关材料</b>。以下保留原文定位，不作二次加工或结论性改写。</div><div class="assistant-doc-list"><button class="assistant-doc-link" onclick="openAiTaskDetail(1,'urgent',0)"><span>我的工作 · 待核事项</span><b>设备更新实施细则拟办事项</b><em>打开待办详情 ›</em></button><button class="assistant-doc-link" onclick="openReader(1,'body')"><span>公文 · 权限内材料</span><b>深圳市加力支持工业企业设备更新和技术改造若干措施</b><em>打开正文与附件 ›</em></button><a class="assistant-doc-link" href="https://zfxxgk.ndrc.gov.cn/web/iteminfo.jsp?id=20220" target="_blank" rel="noopener"><span>公文 · 公开依据</span><b>投资项目可行性研究报告编写大纲及说明</b><em>打开国家发展改革委原文 ›</em></a><a class="assistant-doc-link" href="https://fgw.sz.gov.cn/gkmlpt/content/12/12846/post_12846529.html?jump=true" target="_blank" rel="noopener"><span>调研报告 · 经济与投资研判</span><b>深圳市2025年国民经济和社会发展计划执行情况与2026年计划草案的报告</b><em>打开深圳市发展改革委原文 ›</em></a><a class="assistant-doc-link" href="https://fgw.sz.gov.cn/gkmlpt/content/12/12666/post_12666579.html" target="_blank" rel="noopener"><span>项目预研 · 储备与前期工作</span><b>深圳市2026年政府投资项目计划</b><em>打开深圳市发展改革委原文 ›</em></a></div><div class="assistant-original"><b>关键原文 · 我的工作</b><p>“请发改委牵头提出实施细则，一周内报我。”</p></div><div class="assistant-original"><b>关键原文 · 公文</b><p>“建设必要性、方案可行性及风险可控性三大目标。”</p></div><div class="assistant-original"><b>关键原文 · 调研报告</b><p>“加强‘十五五’重大项目储备。”</p></div><div class="assistant-original"><b>关键原文 · 项目预研</b><p>“加强项目前期预研谋划和策划生成管理。”</p></div>`;
+const ASSISTANT_SEEDS=[assistantSeed(1,'设备更新与重大项目专题会材料检索','comprehensive','17 09:36','请为下周设备更新和重大项目投资专题会，汇总我需要确认的事项、政策公文、经济研判与项目预研材料。',ASSISTANT_ARCHIVE_ANSWER,['我的工作','公文','调研报告','项目预研'],'deepseek',['work','docs','orgkb','projects'])];
+const ASSISTANT_HISTORY_VERSION='r11-comprehensive-document-sample';
 const savedAssistantPrefs=fusionLoad(FUSION_STORE.assistantPrefs,{model:'deepseek',contexts:['work','docs','orgkb','projects']});
 const savedAssistantHistory=fusionLoad(FUSION_STORE.assistantHistory,null);
+const savedAssistantHistoryVersion=fusionLoad(FUSION_STORE.assistantHistoryVersion,'');
 const assistantState={
  model:ASSISTANT_MODELS.some(x=>x.id===savedAssistantPrefs.model)?savedAssistantPrefs.model:'deepseek',
  contexts:normalizeAssistantContexts(savedAssistantPrefs.contexts),
- conversations:Array.isArray(savedAssistantHistory)&&savedAssistantHistory.length?savedAssistantHistory.slice(0,30):ASSISTANT_SEEDS,
+ conversations:savedAssistantHistoryVersion===ASSISTANT_HISTORY_VERSION&&Array.isArray(savedAssistantHistory)&&savedAssistantHistory.length?savedAssistantHistory.slice(0,30):ASSISTANT_SEEDS,
  currentId:null,
  returnView:'welcome'
 };
 function persistAssistant(){
  fusionSave(FUSION_STORE.assistantPrefs,{model:assistantState.model,contexts:assistantState.contexts});
  fusionSave(FUSION_STORE.assistantHistory,assistantState.conversations.slice(0,30));
+ fusionSave(FUSION_STORE.assistantHistoryVersion,ASSISTANT_HISTORY_VERSION);
 }
 function modelInfo(id=assistantState.model){return ASSISTANT_MODELS.find(x=>x.id===id)||ASSISTANT_MODELS[0]}
 function contextNames(ids=assistantState.contexts){return ids.map(id=>ASSISTANT_CONTEXTS.find(x=>x.id===id)?.name).filter(Boolean)}
