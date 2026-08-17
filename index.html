@@ -500,6 +500,24 @@ body.trad #page-todo>#doneSubnav{margin-top:7px;margin-bottom:5px}
 .trad-detail h1{font-size:19px;line-height:1.42;margin-top:7px}.trad-detail .detail-badges{margin-top:0}.trad-detail-summary{background:#fff;border-left:3px solid var(--blue);border-radius:0 12px 12px 0;padding:10px 11px;margin-top:11px;box-shadow:var(--shadow)}.trad-detail-summary b{font-size:11px;color:var(--blue-d)}.trad-detail-summary p{font-size:11.5px;color:var(--ink-2);line-height:1.55;margin-top:3px}.trad-detail .leader-cmt{margin-top:8px}.trad-detail-actions{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:7px;margin-top:12px}.trad-detail-actions button{border:1px solid var(--line);background:#fff;border-radius:11px;padding:11px 3px;font-size:11.5px;font-weight:600;color:var(--ink-2)}.trad-detail-actions .yes{background:var(--blue);border-color:var(--blue);color:#fff}.trad-detail-actions .read{grid-column:1/-1;background:var(--green);border-color:var(--green);color:#fff}
 body.bigfont .leader-briefing{grid-template-columns:55px 1fr 14px;padding:13px}body.bigfont .briefing-main strong{font-size:15px}body.bigfont .trad-list-card strong{font-size:16px}body.bigfont .trad-list-card>p{font-size:13px}body.bigfont .trad-detail-actions button{min-height:48px;font-size:13px}body.bigfont #page-todo.todo-head-compact>.hero{max-height:64px}
 @media(max-width:499px){.phone{height:100dvh;min-height:620px;max-height:100dvh}}
+
+/* ================= 第七轮：应用页高密度导航 ================= */
+#page-apps{scrollbar-width:none;scroll-padding-top:126px}#page-apps::-webkit-scrollbar{display:none}
+.apps-sticky-shell{position:sticky;top:0;z-index:18;background:rgba(244,246,249,.97);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(34,65,108,.07)}
+.apps-v3-head{position:relative;padding:15px 14px 10px;transition:padding .22s ease;background:linear-gradient(135deg,#173E79,#2E63B4 72%,#4F7CBD)}
+.apps-title-row{max-height:46px;overflow:hidden;transition:max-height .22s ease,opacity .18s ease,margin .22s ease;display:flex;align-items:flex-start;justify-content:space-between}.apps-title-row h1{font-size:20px}.apps-title-row p{font-size:11px;opacity:.72;margin-top:1px}
+.apps-search-row{display:flex;align-items:center;gap:7px;margin-top:10px;transition:margin .22s ease}.apps-search{min-width:0;flex:1;margin:0;padding:8px 10px;border-radius:11px}.apps-search input{min-width:0;font-size:12.5px}.apps-ai-search{width:38px;height:38px;flex:none;border:1px solid rgba(255,255,255,.26);border-radius:11px;background:rgba(255,255,255,.17);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}.apps-ai-search svg{width:18px}.apps-ai-search:active{transform:scale(.95)}
+#page-apps.apps-compact .apps-v3-head{padding-top:8px;padding-bottom:8px}#page-apps.apps-compact .apps-title-row{max-height:0;opacity:0;margin:0}#page-apps.apps-compact .apps-search-row{margin-top:0}
+.app-catbar{position:relative;top:auto;z-index:auto;background:transparent;padding:8px 12px 7px;gap:6px}.app-catbar button{padding:6px 11px;border-color:#D9E1EC;background:rgba(255,255,255,.9)}
+.app-subbar{display:flex;gap:6px;padding:0 12px 8px;overflow-x:auto;scrollbar-width:none}.app-subbar:empty{display:none}.app-subbar::-webkit-scrollbar{display:none}.app-subbar button{flex:none;border:0;background:#E8EDF4;color:var(--ink-3);border-radius:8px;padding:5px 10px;font-size:10.5px;cursor:pointer}.app-subbar button.on{background:#DCE8F8;color:var(--blue-d);font-weight:600}
+.track-link.compact{width:calc(100% - 24px);margin:9px 12px 4px;padding:8px 10px;border-radius:11px;background:#FFF9F1}.track-link.compact .ti{width:27px;height:27px;border-radius:8px}.track-link.compact b{font-size:12px}.track-link.compact span{font-size:9.8px}.track-link.compact>.track-go{width:15px;color:#A97832}
+.apps-body-v3{padding:7px 12px 92px}.apps-flat-head{min-height:31px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 2px 8px}.apps-flat-head>div{min-width:0}.apps-flat-head h2{font-size:14.5px}.apps-flat-head p{font-size:9.8px;color:var(--ink-3);margin-top:1px}.apps-flat-head button{border:0;background:none;color:var(--blue);font-size:11.5px;font-weight:600;padding:6px;cursor:pointer;white-space:nowrap}.apps-flat-head .manage-state{color:#A56612;background:#FFF3DF;border-radius:8px;padding:5px 8px}
+.app-grid-v3{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.app-grid-v3.common{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.app-v3{min-height:80px;border-radius:12px;padding:9px 2px 6px;box-shadow:0 2px 9px rgba(29,54,91,.065);display:flex;flex-direction:column;align-items:center;justify-content:center}.app-v3 .av3-icon{width:35px;height:35px;border-radius:10px;margin:0}.app-v3 .av3-icon svg{width:18px}.app-v3 b{font-size:10.5px;line-height:1.25;margin-top:6px;max-width:100%;padding:0 2px}.app-grid-v3.common .app-v3{min-height:88px}.app-grid-v3.common .app-v3 .av3-icon{width:39px;height:39px}.app-grid-v3.common .app-v3 b{font-size:11.5px}
+.app-v3 .fav{display:none;right:3px;top:3px;width:24px;height:24px;border-radius:8px;background:rgba(255,255,255,.92);box-shadow:0 1px 5px rgba(27,48,78,.12);z-index:2}.apps-managing .app-v3 .fav{display:block}.app-v3 .fav.on{color:#E6A324}.apps-managing .app-v3{border-color:#D8E2EF}.apps-managing .app-v3:active{transform:none}
+.app-v3 .app-badge{left:4px;top:4px;font-size:7.5px}.app-external{position:absolute;right:6px;bottom:5px;width:14px;height:14px;border-radius:5px;background:#EEF2F7;color:#6E7B8E;font-size:9px;line-height:14px;text-align:center;font-weight:700}
+.apps-empty{background:#fff;border-radius:14px;margin-top:8px;padding:38px 12px}.apps-empty b{display:block;color:var(--ink-2);font-size:13px}.apps-empty span{display:block;margin-top:4px;font-size:10.5px}
+body.bigfont .app-v3{min-height:90px}body.bigfont .app-v3 b{font-size:12px}body.bigfont .app-subbar button{font-size:12px}
 </style>
 </head>
 <body>
@@ -1988,7 +2006,7 @@ const FUSION_APPS=[
  {id:'future-agent',name:'智能体广场',category:'智能应用',group:'规划能力',description:'更多受控业务智能体持续接入',icon:'apps',external:true,badge:'规划'}
 ];
 const APP_CATEGORIES=['常用','办公协同','投资项目','运行监测','专题服务','智能应用'];
-let fusionAppCategory='常用',fusionAppQuery='';
+let fusionAppCategory='常用',fusionAppGroup='全部',fusionAppQuery='',fusionAppManage=false;
 let fusionFavorites=fusionLoad(FUSION_STORE.favorites,['doc-pending','business-trip','investment-dashboard','ai-review','org','supplies']);
 let officePrefs=fusionLoad(FUSION_STORE.prefs,{home:['今日待办','重点项目'],doc:[],style:'简洁直接',batch:true});
 state.aiPref=[...(officePrefs.doc||[])];
@@ -2014,7 +2032,8 @@ todoPage.insertAdjacentHTML('beforebegin',`<div class="page hidden-r fusion-page
 todoPage.insertAdjacentHTML('afterbegin',`<div class="ai-todo-back" onclick="go('home')">${ficon('back')}返回智能首页 · 当前为 AI 整理后的全部待办</div>`);
 const appsPage=document.getElementById('page-wb');
 appsPage.id='page-apps';appsPage.className='page hidden-r fusion-page';
-appsPage.innerHTML=`<div class="apps-v3-head"><h1>应用</h1><p>全量功能与业务系统入口</p><label class="apps-search">${ficon('search')}<input id="appsSearch" placeholder="搜索应用名称或业务关键词" oninput="searchApps(this.value)"></label></div><button class="intent-link" onclick="openAssistant('apps')"><b>${ficon('spark')}不知道应用名称？直接说要做什么</b>${ficon('back','style="transform:rotate(180deg)"')}</button><button class="track-link" onclick="openTrackList()"><div class="ti">${ficon('track')}</div><div><b>督办与事项跟踪</b><span>跨系统查看我负责、参与和关注的工作</span></div>${ficon('back','style="transform:rotate(180deg)"')}</button><div class="app-catbar" id="appCatbar"></div><div class="apps-body-v3" id="appsBody"></div>`;
+appsPage.innerHTML=`<div class="apps-sticky-shell"><div class="apps-v3-head"><div class="apps-title-row"><div><h1>应用</h1><p>全量业务能力，一屏快速定位</p></div></div><div class="apps-search-row"><label class="apps-search">${ficon('search')}<input id="appsSearch" placeholder="搜索应用，或直接描述想办什么" oninput="searchApps(this.value)"></label><button class="apps-ai-search" aria-label="让发改助手找应用" onclick="openAssistant('apps')">${ficon('spark')}</button></div></div><div class="app-catbar" id="appCatbar"></div><div class="app-subbar" id="appSubbar"></div></div><button class="track-link compact" onclick="openTrackList()"><div class="ti">${ficon('track')}</div><div><b>督办与事项跟踪</b><span>我负责、参与和关注的工作</span></div><span class="track-go">›</span></button><div class="apps-body-v3" id="appsBody"></div>`;
+appsPage.addEventListener('scroll',()=>appsPage.classList.toggle('apps-compact',appsPage.scrollTop>18),{passive:true});
 document.querySelector('.tabbar').innerHTML=`
  <button class="tab" data-role="primary" onclick="goPrimary()"><span id="primaryIcon">${ficon('home')}</span><span id="primaryLabel">首页</span><span class="badge" id="tabBadge">14</span></button>
  <button class="tab" data-p="apps" onclick="go('apps')">${ficon('apps')}应用</button>
@@ -2050,14 +2069,23 @@ function openAiTodo(id){go('todo');if(id)setTimeout(()=>{const c=document.getEle
 
 function renderApps(){
  document.getElementById('appCatbar').innerHTML=APP_CATEGORIES.map(c=>`<button class="${fusionAppCategory===c?'on':''}" onclick="setAppCategory('${c}')">${c}</button>`).join('');
- let list=FUSION_APPS.filter(a=>fusionAppCategory==='常用'?fusionFavorites.includes(a.id):a.category===fusionAppCategory);
+ const groups=fusionAppCategory==='常用'?[]:[...new Set(FUSION_APPS.filter(a=>a.category===fusionAppCategory).map(a=>a.group))];
+ const subbar=document.getElementById('appSubbar');
+ subbar.innerHTML=!fusionAppQuery&&groups.length?['全部',...groups].map(g=>`<button class="${fusionAppGroup===g?'on':''}" onclick="setAppGroup('${g}')">${g}</button>`).join(''):'';
+ let list=FUSION_APPS.filter(a=>fusionAppCategory==='常用'?fusionFavorites.includes(a.id):a.category===fusionAppCategory&&(fusionAppGroup==='全部'||a.group===fusionAppGroup));
  if(fusionAppQuery)list=FUSION_APPS.filter(a=>(a.name+a.category+a.group+a.description).toLowerCase().includes(fusionAppQuery.toLowerCase()));
- const groups=[...new Set(list.map(a=>a.group))];
- document.getElementById('appsBody').innerHTML=list.length?groups.map(g=>`<section class="app-group-v3"><div class="app-group-title"><b>${g}</b><span>${list.filter(a=>a.group===g).length} 项</span></div><div class="app-grid-v3">${list.filter(a=>a.group===g).map(appTile).join('')}</div></section>`).join(''):`<div class="apps-empty">未找到相关应用，请换个关键词试试</div>`;
+ const common=!fusionAppQuery&&fusionAppCategory==='常用';
+ const title=fusionAppQuery?'搜索结果':fusionAppManage?'选择常用应用':common?'常用应用':fusionAppGroup==='全部'?fusionAppCategory:fusionAppGroup;
+ const note=fusionAppQuery?`找到 ${list.length} 项匹配能力`:fusionAppManage?'点击星标调整常用，应用能力保持不变':common?'按日常使用习惯集中呈现':`${list.length} 项能力 · 点击即可进入`;
+ const manageButton=(common||fusionAppManage)?`<button class="${fusionAppManage?'manage-state':''}" onclick="toggleAppManage()">${fusionAppManage?'完成':'管理'}</button>`:'';
+ document.getElementById('appsBody').classList.toggle('apps-managing',fusionAppManage);
+ document.getElementById('appsBody').innerHTML=list.length?`<div class="apps-flat-head"><div><h2>${title}</h2><p>${note}</p></div>${manageButton}</div><div class="app-grid-v3 ${common?'common':''}">${list.map(appTile).join('')}</div>`:`<div class="apps-empty"><b>未找到相关应用</b><span>换个关键词，或点搜索框右侧让发改助手理解你的意图</span></div>`;
 }
-function appTile(a){const colors={办公协同:['#E8F0FB','#2E63B4'],投资项目:['#EAF5EF','#1E7B4F'],运行监测:['#E8F6F8','#167A8B'],专题服务:['#FBF3E8','#D97A1E'],智能应用:['#F0EDFC','#5B4FC9']},c=colors[a.category]||colors['办公协同'];return `<div class="app-v3" onclick="openAppV3('${a.id}')">${a.badge?`<span class="app-badge">${a.badge}</span>`:''}<button class="fav ${fusionFavorites.includes(a.id)?'on':''}" onclick="toggleFavoriteV3(event,'${a.id}')">${ficon('star')}</button><div class="av3-icon" style="background:${c[0]};color:${c[1]}">${ficon(a.icon)}</div><b>${a.name}</b><small>${a.external?'业务系统':'原生功能'}</small></div>`}
-function setAppCategory(c){fusionAppCategory=c;fusionAppQuery='';const q=document.getElementById('appsSearch');if(q)q.value='';renderApps()}
+function appTile(a){const colors={办公协同:['#E8F0FB','#2E63B4'],投资项目:['#EAF5EF','#1E7B4F'],运行监测:['#E8F6F8','#167A8B'],专题服务:['#FBF3E8','#D97A1E'],智能应用:['#F0EDFC','#5B4FC9']},c=colors[a.category]||colors['办公协同'];return `<div class="app-v3" onclick="openAppV3('${a.id}')">${a.badge?`<span class="app-badge">${a.badge}</span>`:''}<button class="fav ${fusionFavorites.includes(a.id)?'on':''}" aria-label="${fusionFavorites.includes(a.id)?'取消常用':'加入常用'}" onclick="toggleFavoriteV3(event,'${a.id}')">${ficon('star')}</button><div class="av3-icon" style="background:${c[0]};color:${c[1]}">${ficon(a.icon)}</div><b>${a.name}</b>${a.external?'<span class="app-external" title="外部业务系统">↗</span>':''}</div>`}
+function setAppCategory(c){fusionAppCategory=c;fusionAppGroup='全部';fusionAppQuery='';const q=document.getElementById('appsSearch');if(q)q.value='';renderApps();requestAnimationFrame(()=>{appsPage.scrollTop=0;appsPage.classList.remove('apps-compact')})}
+function setAppGroup(g){fusionAppGroup=g;renderApps();requestAnimationFrame(()=>{const head=document.querySelector('#page-apps .track-link');if(head)appsPage.scrollTo({top:Math.max(0,head.offsetTop+head.offsetHeight-8),behavior:'smooth'})})}
 function searchApps(v){fusionAppQuery=v.trim();renderApps()}
+function toggleAppManage(){fusionAppManage=!fusionAppManage;fusionAppQuery='';const q=document.getElementById('appsSearch');if(q)q.value='';renderApps()}
 function toggleFavoriteV3(e,id){e.stopPropagation();fusionFavorites.includes(id)?fusionFavorites=fusionFavorites.filter(x=>x!==id):fusionFavorites.push(id);fusionSave(FUSION_STORE.favorites,fusionFavorites);renderApps();toast(fusionFavorites.includes(id)?'已加入常用':'已取消常用')}
 function openAppV3(id){
  const a=FUSION_APPS.find(x=>x.id===id);if(!a)return;
