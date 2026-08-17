@@ -2502,7 +2502,7 @@ function renderLeaderBriefings(){
 }
 const r6RenderHomeBase=renderHome;
 renderHome=function(){
- r6RenderHomeBase();const page=document.getElementById('page-home'),heading=[...page.querySelectorAll('.fusion-sec-head h2')].find(h=>h.textContent.trim()==='常用直达');if(heading){const block=heading.closest('.fusion-block');block.classList.add('leader-briefing-block');block.innerHTML=renderLeaderBriefings()}
+ r6RenderHomeBase();const page=document.getElementById('page-home'),heading=[...page.querySelectorAll('.fusion-sec-head h2')].find(h=>h.textContent.trim()==='常用直达');if(heading)heading.closest('.fusion-block')?.remove()
 };
 function openLeaderBriefing(id){
  const b=LEADER_BRIEFINGS.find(x=>x.id===id);if(!b)return;
