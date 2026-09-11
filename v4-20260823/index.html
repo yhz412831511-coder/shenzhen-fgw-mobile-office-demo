@@ -2,7 +2,7 @@
 <html lang="zh-CN" data-theme="light" class=""><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>深圳市发改委移动办公</title>
+<title>深圳市XXXXX委员会移动办公</title>
 <style>
 :root{
   --blue:#1B4B8F; --blue-d:#153A72; --blue-l:#EFF4FB; --blue-m:#3E6DB5;
@@ -533,18 +533,23 @@ body.bigfont .ai-domain-tabs{grid-template-columns:repeat(2,1fr)}body.bigfont .a
 .workflow-confirm-hero{padding:13px;border-radius:14px;background:linear-gradient(140deg,#EDF3FC,#F7F9FD);border:1px solid #D8E4F3}.workflow-confirm-hero small{display:block;color:var(--ink-3);font-size:10px}.workflow-confirm-hero h2{margin-top:4px;font-size:18px;line-height:1.35}.workflow-confirm-hero p{margin-top:5px;color:var(--ink-2);font-size:11px;line-height:1.55}.workflow-confirm-note{width:100%;min-height:86px;margin-top:10px;padding:10px;border:1px solid #D7E0EC;border-radius:11px;resize:none;font:inherit;font-size:13px;line-height:1.55;outline:none}.workflow-confirm-note:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(27,75,143,.09)}
 .workflow-option-list{display:grid;gap:8px}.workflow-option{width:100%;min-height:58px;border:1px solid #DCE4EF;border-radius:12px;background:#fff;padding:10px 11px;text-align:left;color:var(--ink);cursor:pointer}.workflow-option b{display:block;font-size:13px}.workflow-option span{display:block;margin-top:3px;color:var(--ink-3);font-size:10px}.workflow-option:active{border-color:#AFC6E6;background:#F6F9FD}.workflow-caution{margin-top:10px;padding:9px 10px;border-radius:10px;background:#FFF7EA;color:#8B5A1C;font-size:10.5px;line-height:1.5}
 body.bigfont .workflow-action-bar button{font-size:15px}
+
+/* 公开测试环境标识：全页面固定可见，不随业务内容滚动 */
+.demo-env-badge{position:absolute;top:8px;right:12px;z-index:160;display:inline-flex;align-items:center;min-height:22px;padding:3px 8px;border:1px solid rgba(255,255,255,.58);border-radius:999px;background:rgba(145,45,38,.92);box-shadow:0 2px 8px rgba(36,31,31,.16);color:#fff;font-size:10px;font-weight:700;line-height:1;letter-spacing:.5px;pointer-events:none}
+body.bigfont .demo-env-badge{font-size:12px;min-height:26px}
 </style>
 </head>
 <body>
 <div class="phone" id="phone">
+  <div class="demo-env-badge" aria-label="当前为测试演示环境">测试演示环境</div>
 
   <!-- ===== 待办页 ===== -->
   <div class="page hidden-l" id="page-todo">
     <div class="hero">
       <div class="hero-date" id="heroDate">8月17日 星期一</div>
       <div class="hero-row">
-        <div class="hero-hi">早上好，杨XX</div>
-        <div class="hero-name">深圳市发展和改革委员会</div>
+        <div class="hero-hi">早上好，测试用户</div>
+        <div class="hero-name">深圳市XXXXX委员会</div>
       </div>
       <div class="statbar">
         <div class="stat"><b id="stTodo">12</b><span>今日待办</span></div>
@@ -568,7 +573,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
     <div id="aiTipBox"><div class="ai-tip" onclick="openBatch()">
    <div class="ai-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2zM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"></path></svg></div>
    <div class="ai-tip-txt"><div class="ai-tip-t">已为您归并 <span class="ai-tag">智能</span></div>
-   <div class="ai-tip-d">3 项常规事务（创新发展处、秘书处等），类型相同、结论一致</div></div>
+   <div class="ai-tip-d">3 项常规事务（业务处室A、综合处室A等），类型相同、结论一致</div></div>
    <div class="ai-tip-go">一键办理 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"></path></svg></div>
   </div></div>
     <div class="list" id="todoList"><div class="grp-tip">优先处理</div><div class="card  dl2" id="card-1">
@@ -577,27 +582,27 @@ body.bigfont .workflow-action-bar button{font-size:15px}
   <div class="card-top" onclick="toggleCard(1)">
    
    <div class="tags"><span class="tag type">公文</span><span class="tag leader">市领导批示</span></div>
-   <div class="ctitle">深圳市人民政府办公厅关于印发深圳市加力支持工业企业设备更新和技术改造若干措施的通知</div>
-   <div class="csum"><span class="s-mark">摘</span>市领导已圈阅。建议创新发展处牵头制定实施细则，8月20日前呈报。</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>市政府办公厅</i><i>深府办规〔2026〕1号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 1</i><i class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>明天 12:00 前</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
+   <div class="ctitle">深圳市XXXXX办公厅关于印发深圳市加力支持工业企业设备更新和技术改造若干措施的通知</div>
+   <div class="csum"><span class="s-mark">摘</span>市领导已圈阅。建议业务处室A牵头制定实施细则，8月20日前呈报。</div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>市XXXXX办公厅</i><i>深府办规〔2026〕1号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 1</i><i class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>明天 12:00 前</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
   </div>
   
  <div class="expand">
-  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path></svg>市领导批示</div><div class="leader-cmt"><div class="q">“请发改委牵头提出实施细则，一周内报我。”</div><div class="who">—— 市政府领导 · 8月12日</div></div></div>
+  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path></svg>市领导批示</div><div class="leader-cmt"><div class="q">“请XXXXX委员会牵头提出实施细则，一周内报我。”</div><div class="who">—— 市政府领导 · 8月12日</div></div></div>
   <div class="blk"><div class="blk-t">拟办意见 · 五段结构</div>
-   <div class="pd-qualify"><b>来文定性</b><span>市政府规范性文件，属工业领域设备更新财政支持政策，明确由我委牵头组织实施</span></div>
-   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意由创新发展处牵头，会同工业和资讯化局制定实施细则：8月18日前形成初稿，8月20日呈报市领导审定</div></div>
+   <div class="pd-qualify"><b>来文定性</b><span>市政府规范性文件，属工业领域设备更新财政支持政策，明确由本单位牵头组织实施</span></div>
+   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意由业务处室A牵头，会同市XXXXX局制定实施细则：8月18日前形成初稿，8月20日呈报市领导审定</div></div>
    <div class="pd-risk"><span class="ric">!</span><span class="rtx">文内第七条资金安排口径与《深圳市产业发展专项资金管理办法》（深府办规〔2021〕4号）存在差异，实施细则须先行明确衔接口径，防范资金审计风险</span></div><div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
-   <div class="pd-bg-b">① 依据国务院《推动大规模设备更新和消费品以旧换新行动方案》及我省实施方案；② 市领导8月12日圈阅批示，要求我委牵头、一周内报送；③ 市政府常务会议已审议通过该若干措施</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：创新发展处、工业和资讯化局</span></div>
-   <div class="sig" style="margin-top:8px">秘书处 · 8月14日</div>
+   <div class="pd-bg-b">① 依据国务院《推动大规模设备更新和消费品以旧换新行动方案》及我省实施方案；② 市领导8月12日圈阅批示，要求本单位牵头、一周内报送；③ 市政府常务会议已审议通过该若干措施</div></div>
+   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：业务处室A、市XXXXX局</span></div>
+   <div class="sig" style="margin-top:8px">综合处室A · 8月14日</div>
   </div>
-  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>该文要求8月底前出台实施细则，创新发展处已完成政策库比对稿，时间可行。建议重点关注第七条资金口径差异。</div></div>
+  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>该文要求8月底前出台实施细则，业务处室A已完成政策库比对稿，时间可行。建议重点关注第七条资金口径差异。</div></div>
   <div class="blk"><div class="blk-t">正文与附件</div>
    <div class="file-row" onclick="event.stopPropagation();openReader(1,'body')">
     <div class="file-ico doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"></path></svg></div>
-    <div class="file-nm"><b>深圳市人民政府办公厅关于印发深圳市加力支持工业企业设备更新和技术改造若干措施的通知</b><span>深府办规〔2026〕1号 · 支持要点与数字定位</span></div>
+    <div class="file-nm"><b>深圳市XXXXX办公厅关于印发深圳市加力支持工业企业设备更新和技术改造若干措施的通知</b><span>深府办规〔2026〕1号 · 支持要点与数字定位</span></div>
     <div class="file-open">查看</div>
    </div>
    <div class="file-row" onclick="event.stopPropagation();openReader(1,'att','深圳市加力支持工业企业设备更新和技术')">
@@ -605,7 +610,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
     <div class="file-nm"><b>深圳市加力支持工业企业设备更新和技术改造的若干措施.docx</b><span>2.1 MB</span></div><div class="file-open">打开</div></div>
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（3 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>收文登记</b><span>机要室 · 8月12日 09:20</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>拟办</b><span>秘书处 · 8月14日 10:35</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>收文登记</b><span>综合处室F · 8月12日 09:20</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>拟办</b><span>综合处室A · 8月14日 10:35</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
   <div class="decide">
     <button class="dbtn no" onclick="event.stopPropagation();decide(1,'no')">不同意</button>
     <button class="dbtn hold" onclick="event.stopPropagation();decide(1,'hold')">稍后处理</button>
@@ -618,37 +623,37 @@ body.bigfont .workflow-action-bar button{font-size:15px}
   <div class="card-top" onclick="toggleCard(3)">
    
    <div class="tags"><span class="tag type">公文</span><span class="tag sup">督办</span></div>
-   <div class="ctitle">关于深圳市第二人民医院改扩建工程（一期）项目概算调整的请示</div>
+   <div class="ctitle">关于深圳市第X人民医院改扩建工程（一期）项目概算调整的请示</div>
    <div class="csum"><span class="s-mark">摘</span>调整幅度+8.3%，事由充分，复核已完成，建议同意并提请党组会审议。</div><div class="risk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l10 18H2L12 3zM12 10v4M12 17.5h.01"></path></svg>概算调整幅度 8.3%，超过 5% 预警线</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>投资处</i><i>深发改呈〔2026〕38号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 2</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 2 天</i></div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>业务处室D</i><i>深发改呈〔2026〕38号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 2</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 2 天</i></div>
   </div>
   
  <div class="expand">
   
   <div class="blk"><div class="blk-t">拟办意见 · 五段结构</div>
    <div class="pd-qualify"><b>来文定性</b><span>市本级政府投资项目概算调整请示，属重大项目投资变更审批事项</span></div>
-   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意概算由127,400万元调整至138,000万元（调增10,600万元、幅度8.3%），提请委党组会审议</div></div>
+   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意概算由127,400万元调整至138,000万元（调增10,600万元、幅度8.3%），提请单位党组会审议</div></div>
    <div class="pd-risk"><span class="ric">!</span><span class="rtx">调整幅度超过《深圳市政府投资项目管理办法》规定的5%预警线，须党组会集体决策；调增资金涉及医疗设备采购，须同步明确招标方式</span></div><div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
-   <div class="pd-bg-b">① 调整事由：医疗设备价格市场更新（调增6,800万元）+感染楼抗震标准提升（调增3,800万元）；② 评审中心已完成概算复核，认为事由成立；③ 同类项目近两年调整幅度6.1%—9.4%；④ 调整后仍未超出全市卫生领域年度投资盘子</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：投资处、评审中心、委办公室（党组会材料）</span></div>
-   <div class="sig" style="margin-top:8px">投资处 · 8月13日</div>
+   <div class="pd-bg-b">① 调整事由：医疗设备价格市场更新（调增6,800万元）+感染楼抗震标准提升（调增3,800万元）；② 专业支撑单位A已完成概算复核，认为事由成立；③ 同类项目近两年调整幅度6.1%—9.4%；④ 调整后仍未超出全市卫生领域年度投资盘子</div></div>
+   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：业务处室D、专业支撑单位A、综合处室G（党组会材料）</span></div>
+   <div class="sig" style="margin-top:8px">业务处室D · 8月13日</div>
   </div>
-  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>同类项目（市三医院二期、市四医院二期）近两年调整幅度6.1%、9.4%，本次处于正常区间。调增后总投资仍在卫生领域年度盘子内。</div></div>
+  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>同类项目（市属医院A二期、市属医院B二期）近两年调整幅度6.1%、9.4%，本次处于正常区间。调增后总投资仍在卫生领域年度盘子内。</div></div>
   <div class="blk"><div class="blk-t">正文与附件</div>
    <div class="file-row" onclick="event.stopPropagation();openReader(3,'body')">
     <div class="file-ico doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"></path></svg></div>
-    <div class="file-nm"><b>关于深圳市第二人民医院改扩建工程（一期）项目概算调整的请示</b><span>深发改呈〔2026〕38号 · 支持要点与数字定位</span></div>
+    <div class="file-nm"><b>关于深圳市第X人民医院改扩建工程（一期）项目概算调整的请示</b><span>深发改呈〔2026〕38号 · 支持要点与数字定位</span></div>
     <div class="file-open">查看</div>
    </div>
    <div class="file-row" onclick="event.stopPropagation();openReader(3,'att','概算调整请示（全文）.pdf')">
     <div class="file-ico atta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg></div>
-    <div class="file-nm"><b>概算调整请示（全文）.pdf</b><span>1.2 MB</span></div><div class="file-open">打开</div></div><div class="file-row" onclick="event.stopPropagation();openReader(3,'att','评审中心复核意见.pdf')">
+    <div class="file-nm"><b>概算调整请示（全文）.pdf</b><span>1.2 MB</span></div><div class="file-open">打开</div></div><div class="file-row" onclick="event.stopPropagation();openReader(3,'att','专业支撑单位A复核意见.pdf')">
     <div class="file-ico atta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg></div>
-    <div class="file-nm"><b>评审中心复核意见.pdf</b><span>640 KB</span></div><div class="file-open">打开</div></div>
+    <div class="file-nm"><b>专业支撑单位A复核意见.pdf</b><span>640 KB</span></div><div class="file-open">打开</div></div>
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（3 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>处室呈报</b><span>投资处 · 8月13日</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>分管领导审阅</b><span>已同意 · 8月13日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>处室呈报</b><span>业务处室D · 8月13日</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>分管领导审阅</b><span>已同意 · 8月13日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
   <div class="decide">
     <button class="dbtn no" onclick="event.stopPropagation();decide(3,'no')">不同意</button>
     <button class="dbtn hold" onclick="event.stopPropagation();decide(3,'hold')">稍后处理</button>
@@ -661,27 +666,27 @@ body.bigfont .workflow-action-bar button{font-size:15px}
   <div class="card-top" onclick="toggleCard(4)">
    
    <div class="tags"><span class="tag type">公文</span><span class="tag sup">督办</span></div>
-   <div class="ctitle">市领导批示件：加快推进220千伏深大城际坪山牵引站接入线路工程核准</div>
+   <div class="ctitle">市领导批示件：加快推进某城际线路牵引站接入工程核准</div>
    <div class="csum"><span class="s-mark">摘</span>核准公示已结束，无异议反馈，拟于本周内出具核准文件。</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>督办室</i><i>督办〔2026〕112号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 1</i><i class="stay hot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 3 天</i></div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>综合处室B</i><i>督办〔2026〕112号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 1</i><i class="stay hot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 3 天</i></div>
   </div>
   
  <div class="expand">
-  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path></svg>市领导批示</div><div class="leader-cmt"><div class="q">“请发改委加快办理。”</div><div class="who">—— 市政府领导 · 8月11日</div></div></div>
+  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path></svg>市领导批示</div><div class="leader-cmt"><div class="q">“请XXXXX委员会加快办理。”</div><div class="who">—— 市政府领导 · 8月11日</div></div></div>
   <div class="blk"><div class="blk-t">拟办意见 · 五段结构</div>
    <div class="pd-qualify"><b>来文定性</b><span>市领导批示督办件，属电网基础设施项目核准事项</span></div>
-   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意核准并本周内印发核准文件，同步函告坪山区政府做好属地配合</div></div>
-   <div class="pd-risk"><span class="ric">!</span><span class="rtx">项目为深大城际铁路配套供电工程，若核准延迟将直接影响城际铁路坪山段送电节点，存在工程衔接风险</span></div><div class="pd-bg" onclick="event.stopPropagation()">
+   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意核准并本周内印发核准文件，同步函告深圳市XX区政府做好属地配合</div></div>
+   <div class="pd-risk"><span class="ric">!</span><span class="rtx">项目为某城际线路铁路配套供电工程，若核准延迟将直接影响城际铁路坪山段送电节点，存在工程衔接风险</span></div><div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
-   <div class="pd-bg-b">① 项目总投资16,825万元，由深圳供电局建设；② 核准公示期8月10日结束，未收到异议；③ 用地预审与选址意见书已取得；④ 市领导8月11日批示要求加快</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：能源处、督办室</span></div>
-   <div class="sig" style="margin-top:8px">能源处 · 8月13日</div>
+   <div class="pd-bg-b">① 项目总投资16,825万元，由深圳市XXXXX单位建设；② 核准公示期8月10日结束，未收到异议；③ 用地预审与选址意见书已取得；④ 市领导8月11日批示要求加快</div></div>
+   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：业务处室E、综合处室B</span></div>
+   <div class="sig" style="margin-top:8px">业务处室E · 8月13日</div>
   </div>
   <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>公示期满无异议，核准条件已全部具备。该件为市领导督办件且已停留3天，建议优先办理。</div></div>
   <div class="blk"><div class="blk-t">正文与附件</div>
    <div class="file-row" onclick="event.stopPropagation();openReader(4,'body')">
     <div class="file-ico doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"></path></svg></div>
-    <div class="file-nm"><b>市领导批示件：加快推进220千伏深大城际坪山牵引站接入线路工程核准</b><span>督办〔2026〕112号 · </span></div>
+    <div class="file-nm"><b>市领导批示件：加快推进某城际线路牵引站接入工程核准</b><span>督办〔2026〕112号 · </span></div>
     <div class="file-open">查看</div>
    </div>
    <div class="file-row" onclick="event.stopPropagation();openReader(4,'att','核准申请材料目录.pdf')">
@@ -689,7 +694,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
     <div class="file-nm"><b>核准申请材料目录.pdf</b><span>480 KB</span></div><div class="file-open">打开</div></div>
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（3 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>督办登记</b><span>督办室 · 8月11日</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>办理</b><span>能源处 · 8月12日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>督办登记</b><span>综合处室B · 8月11日</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>办理</b><span>业务处室E · 8月12日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
   <div class="decide">
     <button class="dbtn no" onclick="event.stopPropagation();decide(4,'no')">不同意</button>
     <button class="dbtn hold" onclick="event.stopPropagation();decide(4,'hold')">稍后处理</button>
@@ -702,27 +707,27 @@ body.bigfont .workflow-action-bar button{font-size:15px}
   <div class="card-top" onclick="toggleCard(2)">
    
    <div class="tags"><span class="tag type">公文</span><span class="tag urgent">特急</span></div>
-   <div class="ctitle">市政府办公厅关于报送2026年上半年重大项目推进情况的通知</div>
-   <div class="csum"><span class="s-mark">摘</span>拟请重大项目协调处牵头汇总，投资处、评审中心配合，明日上午前报送。</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>市政府办公厅</i><i>府办函〔2026〕573号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 3</i><i class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>今天 12:00 前</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
+   <div class="ctitle">市XXXXX办公厅关于报送2026年上半年重大项目推进情况的通知</div>
+   <div class="csum"><span class="s-mark">摘</span>拟请业务处室B牵头汇总，业务处室D、专业支撑单位A配合，明日上午前报送。</div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>市XXXXX办公厅</i><i>府办函〔2026〕573号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 3</i><i class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>今天 12:00 前</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
   </div>
   
  <div class="expand">
   
   <div class="blk"><div class="blk-t">拟办意见 · 五段结构</div>
    <div class="pd-qualify"><b>来文定性</b><span>上级催报类通知，属半年度重大项目推进情况例行报送，时限要求刚性</span></div>
-   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意由重大项目协调处牵头汇总，投资处补充资金到位情况，评审中心提供入库评审口径说明，今日12:00前完成报送</div></div>
-   <div class="pd-risk"><span class="ric">!</span><span class="rtx">报送数据须经投资处、协调处、评审中心三方核对一致，避免口径差异引发后续督查问询</span></div><div class="pd-bg" onclick="event.stopPropagation()">
+   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意由业务处室B牵头汇总，业务处室D补充资金到位情况，专业支撑单位A提供入库评审口径说明，今日12:00前完成报送</div></div>
+   <div class="pd-risk"><span class="ric">!</span><span class="rtx">报送数据须经业务处室D、协调处、专业支撑单位A三方核对一致，避免口径差异引发后续督查问询</span></div><div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
-   <div class="pd-bg-b">① 1—6月我市832个重大项目完成投资1684.9亿元、年度进度54.5%；② 其中21个项目进度低于30%，2个涉及用地问题；③ 市政府督查室将于下周通报各区各部门报送情况</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：重大项目协调处、投资处、评审中心</span></div>
-   <div class="sig" style="margin-top:8px">重大项目协调处 · 8月13日</div>
+   <div class="pd-bg-b">① 1—6月我市832个重大项目完成投资1684.9亿元、年度进度54.5%；② 其中21个项目进度低于30%，2个涉及用地问题；③ 市XXXXX督查单位将于下周通报各区各部门报送情况</div></div>
+   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：业务处室B、业务处室D、专业支撑单位A</span></div>
+   <div class="sig" style="margin-top:8px">业务处室B · 8月13日</div>
   </div>
-  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>数据已完成三方核对。建议在报送材料中主动说明坪山牵引站接入线路、大鹏活力带示范段两个用地受限项目进展。</div></div>
+  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>数据已完成三方核对。建议在报送材料中主动说明某牵引站接入线路、某重点片区示范段两个用地受限项目进展。</div></div>
   <div class="blk"><div class="blk-t">正文与附件</div>
    <div class="file-row" onclick="event.stopPropagation();openReader(2,'body')">
     <div class="file-ico doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"></path></svg></div>
-    <div class="file-nm"><b>市政府办公厅关于报送2026年上半年重大项目推进情况的通知</b><span>府办函〔2026〕573号 · </span></div>
+    <div class="file-nm"><b>市XXXXX办公厅关于报送2026年上半年重大项目推进情况的通知</b><span>府办函〔2026〕573号 · </span></div>
     <div class="file-open">查看</div>
    </div>
    <div class="file-row" onclick="event.stopPropagation();openReader(2,'att','关于报送2026年上半年重大项目推进')">
@@ -734,7 +739,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
     <div class="file-nm"><b>进度滞后项目清单.docx</b><span>320 KB</span></div><div class="file-open">打开</div></div>
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（3 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>收文登记</b><span>机要室 · 8月13日</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>分办</b><span>重大项目协调处 · 8月13日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>收文登记</b><span>综合处室F · 8月13日</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>分办</b><span>业务处室B · 8月13日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
   <div class="decide">
     <button class="dbtn no" onclick="event.stopPropagation();decide(2,'no')">不同意</button>
     <button class="dbtn hold" onclick="event.stopPropagation();decide(2,'hold')">稍后处理</button>
@@ -747,27 +752,27 @@ body.bigfont .workflow-action-bar button{font-size:15px}
   <div class="card-top" onclick="toggleCard(5)">
    
    <div class="tags"><span class="tag type">公文</span></div>
-   <div class="ctitle">广东省发展改革委关于开展2026年固定资产投资形势调研的通知</div>
-   <div class="csum"><span class="s-mark">摘</span>拟请投资处牵头形成我市情况报告，8月22日前报送。</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>省发展改革委</i><i>粤发改投资〔2026〕521号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 1</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
+   <div class="ctitle">广东省XXXXX委员会关于开展2026年固定资产投资形势调研的通知</div>
+   <div class="csum"><span class="s-mark">摘</span>拟请业务处室D牵头形成我市情况报告，8月22日前报送。</div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>省XXXXX委员会</i><i>粤发改投资〔2026〕521号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 1</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
   </div>
   
  <div class="expand">
   
   <div class="blk"><div class="blk-t">拟办意见 · 五段结构</div>
    <div class="pd-qualify"><b>来文定性</b><span>省级调研配合类通知，属常规报送事项</span></div>
-   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意由投资处牵头，围绕上半年投资运行、民间投资、重大项目建设三方面形成报告，8月22日前报送</div></div>
+   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意由业务处室D牵头，围绕上半年投资运行、民间投资、重大项目建设三方面形成报告，8月22日前报送</div></div>
    <div class="pd-risk"><span class="ric">!</span><span class="rtx">无重大风险，需注意民间投资等数据口径与统计部门一致</span></div><div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
-   <div class="pd-bg-b">① 省发改委定于9月上旬开展调研座谈；② 上半年我市民间投资占比41.2%、同比提升2.1个百分点；③ 报送材料将作为省调研报告基础素材</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；送：投资处</span></div>
-   <div class="sig" style="margin-top:8px">投资处 · 8月14日</div>
+   <div class="pd-bg-b">① 省XXXXX委员会定于9月上旬开展调研座谈；② 上半年我市民间投资占比41.2%、同比提升2.1个百分点；③ 报送材料将作为省调研报告基础素材</div></div>
+   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；送：业务处室D</span></div>
+   <div class="sig" style="margin-top:8px">业务处室D · 8月14日</div>
   </div>
   <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>民间投资占比提升可作报告亮点，建议附苍宇卫星、大航跃迁两个民间推介案例。</div></div>
   <div class="blk"><div class="blk-t">正文与附件</div>
    <div class="file-row" onclick="event.stopPropagation();openReader(5,'body')">
     <div class="file-ico doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"></path></svg></div>
-    <div class="file-nm"><b>广东省发展改革委关于开展2026年固定资产投资形势调研的通知</b><span>粤发改投资〔2026〕521号 · </span></div>
+    <div class="file-nm"><b>广东省XXXXX委员会关于开展2026年固定资产投资形势调研的通知</b><span>粤发改投资〔2026〕521号 · </span></div>
     <div class="file-open">查看</div>
    </div>
    <div class="file-row" onclick="event.stopPropagation();openReader(5,'att','粤发改投资〔2026〕521号.pd')">
@@ -775,7 +780,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
     <div class="file-nm"><b>粤发改投资〔2026〕521号.pdf</b><span>520 KB</span></div><div class="file-open">打开</div></div>
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（3 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>收文登记</b><span>机要室 · 8月14日</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>拟办</b><span>投资处 · 8月14日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>收文登记</b><span>综合处室F · 8月14日</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>拟办</b><span>业务处室D · 8月14日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
   <div class="decide">
     <button class="dbtn no" onclick="event.stopPropagation();decide(5,'no')">不同意</button>
     <button class="dbtn hold" onclick="event.stopPropagation();decide(5,'hold')">稍后处理</button>
@@ -790,7 +795,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
    <div class="tags"><span class="tag type">公文</span></div>
    <div class="ctitle">关于2026年市本级政府投资项目计划（第三批）调整的请示</div>
    <div class="csum"><span class="s-mark">摘</span>新增3个项目均已完成概算批复，年度盘子不变，建议按程序下达。</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>投资处</i><i>深发改呈〔2026〕41号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 1</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>业务处室D</i><i>深发改呈〔2026〕41号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 1</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
   </div>
   
  <div class="expand">
@@ -801,8 +806,8 @@ body.bigfont .workflow-action-bar button{font-size:15px}
    <div class="pd-risk"><span class="ric">!</span><span class="rtx">调减项目须与原单位确认无在建合同纠纷，避免资金回收障碍</span></div><div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
    <div class="pd-bg-b">① 新增3个项目：2个教育配套、1个市政管网，均已完成可研批复与概算核定；② 调减结余系某信息化项目终验后核减；③ 全年已执行两批调整，程序均合规</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：投资处、委办公室（人大备案材料）</span></div>
-   <div class="sig" style="margin-top:8px">投资处 · 8月14日</div>
+   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：业务处室D、综合处室G（人大备案材料）</span></div>
+   <div class="sig" style="margin-top:8px">业务处室D · 8月14日</div>
   </div>
   <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>调增调减相抵后年度盘子不变，符合计划管理规定。新增项目均无用地障碍。</div></div>
   <div class="blk"><div class="blk-t">正文与附件</div>
@@ -816,7 +821,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
     <div class="file-nm"><b>第三批调整方案（全文）.pdf</b><span>980 KB</span></div><div class="file-open">打开</div></div>
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（2 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>处室呈报</b><span>投资处 · 8月14日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>处室呈报</b><span>业务处室D · 8月14日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
   <div class="decide">
     <button class="dbtn no" onclick="event.stopPropagation();decide(6,'no')">不同意</button>
     <button class="dbtn hold" onclick="event.stopPropagation();decide(6,'hold')">稍后处理</button>
@@ -829,37 +834,37 @@ body.bigfont .workflow-action-bar button{font-size:15px}
   <div class="card-top" onclick="toggleCard(7)">
    
    <div class="tags"><span class="tag type">公文</span></div>
-   <div class="ctitle">关于苍宇02、03高轨GEO卫星项目核准的请示</div>
+   <div class="ctitle">关于某商业航天卫星项目核准的请示</div>
    <div class="csum"><span class="s-mark">摘</span>总投资15亿元，民企申报，评审已完成，建议同意核准并报国家备案。</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>创新和高技术发展处</i><i>深发改呈〔2026〕43号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 2</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>业务处室C</i><i>深发改呈〔2026〕43号</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 2</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
   </div>
   
  <div class="expand">
   
   <div class="blk"><div class="blk-t">拟办意见 · 五段结构</div>
    <div class="pd-qualify"><b>来文定性</b><span>企业投资项目核准申请，属商业航天领域重大产业项目</span></div>
-   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意核准苍宇02、03高轨GEO卫星项目（总投资150,000万元），报国家发展改革委备案</div></div>
+   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意核准某商业航天卫星项目（总投资150,000万元），报国家XXXXX部门备案</div></div>
    <div class="pd-risk"><span class="ric">!</span><span class="rtx">企业近三年资产负债率62%，须在批复文件中提示投资风险自担；卫星频率资源协调周期存在不确定性</span></div><div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
-   <div class="pd-bg-b">① 项目全部为企业自有及社会资本，无政府投资；② 评审中心已完成评估，认为符合国家和省产业政策；③ 频率资源已通过工信部预协调；④ 该项目为我市民营商业航天迄今最大投资</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：创新和高技术发展处、评审中心</span></div>
-   <div class="sig" style="margin-top:8px">创新和高技术发展处 · 8月14日</div>
+   <div class="pd-bg-b">① 项目全部为企业自有及社会资本，无政府投资；② 专业支撑单位A已完成评估，认为符合国家和省产业政策；③ 频率资源已通过工信部预协调；④ 该项目为我市民营商业航天迄今最大投资</div></div>
+   <div class="pd-cc"><b>管理链条</b><span>呈：主任审定；报：分管副主任；送：业务处室C、专业支撑单位A</span></div>
+   <div class="sig" style="margin-top:8px">业务处室C · 8月14日</div>
   </div>
   <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>我市商业航天领域迄今最大民营投资项目，社会关注度高。企业负债率62%已在评审报告中提示。</div></div>
   <div class="blk"><div class="blk-t">正文与附件</div>
    <div class="file-row" onclick="event.stopPropagation();openReader(7,'body')">
     <div class="file-ico doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"></path></svg></div>
-    <div class="file-nm"><b>关于苍宇02、03高轨GEO卫星项目核准的请示</b><span>深发改呈〔2026〕43号 · </span></div>
+    <div class="file-nm"><b>关于某商业航天卫星项目核准的请示</b><span>深发改呈〔2026〕43号 · </span></div>
     <div class="file-open">查看</div>
    </div>
    <div class="file-row" onclick="event.stopPropagation();openReader(7,'att','项目申请报告.pdf')">
     <div class="file-ico atta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg></div>
-    <div class="file-nm"><b>项目申请报告.pdf</b><span>3.8 MB</span></div><div class="file-open">打开</div></div><div class="file-row" onclick="event.stopPropagation();openReader(7,'att','评审中心评估意见.pdf')">
+    <div class="file-nm"><b>项目申请报告.pdf</b><span>3.8 MB</span></div><div class="file-open">打开</div></div><div class="file-row" onclick="event.stopPropagation();openReader(7,'att','专业支撑单位A评估意见.pdf')">
     <div class="file-ico atta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg></div>
-    <div class="file-nm"><b>评审中心评估意见.pdf</b><span>760 KB</span></div><div class="file-open">打开</div></div>
+    <div class="file-nm"><b>专业支撑单位A评估意见.pdf</b><span>760 KB</span></div><div class="file-open">打开</div></div>
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（3 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>受理</b><span>审批处 · 8月8日</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>评估</b><span>评审中心 · 8月12日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>受理</b><span>业务处室F · 8月8日</span></div></div><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>评估</b><span>专业支撑单位A · 8月12日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任批示 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
   <div class="decide">
     <button class="dbtn no" onclick="event.stopPropagation();decide(7,'no')">不同意</button>
     <button class="dbtn hold" onclick="event.stopPropagation();decide(7,'hold')">稍后处理</button>
@@ -872,27 +877,27 @@ body.bigfont .workflow-action-bar button{font-size:15px}
   <div class="card-top" onclick="toggleCard(8)">
    
    <div class="tags"><span class="tag type">事务</span></div>
-   <div class="ctitle">因公出差申请：杨XX赴京参加全国发改系统业务培训</div>
+   <div class="ctitle">因公出差申请：测试用户赴京参加全国相关业务系统业务培训</div>
    <div class="csum"><span class="s-mark">摘</span>符合年度培训计划，经费已列支，建议同意。</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>创新发展处</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 1</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>业务处室A</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 1</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
   </div>
   
  <div class="expand">
   
   <div class="blk"><div class="blk-t">拟办意见 · 五段结构</div>
    <div class="pd-qualify"><b>来文定性</b><span>处室因公出差申请，属常规人事审批</span></div>
-   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意杨XX于8月25—27日赴京参加培训</div></div>
+   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意测试用户于8月25—27日赴京参加培训</div></div>
    <div class="pd-risk"><span class="ric">!</span><span class="rtx">无风险，经费在处室培训费额度内</span></div><div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
-   <div class="pd-bg-b">① 培训由国家和省发改系统组织，名额已确认；② 往返高铁，经费按差旅标准列支</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>送：创新发展处、人事处</span></div>
-   <div class="sig" style="margin-top:8px">创新发展处 · 8月14日</div>
+   <div class="pd-bg-b">① 培训由国家和省有关业务部门组织，名额已确认；② 往返高铁，经费按差旅标准列支</div></div>
+   <div class="pd-cc"><b>管理链条</b><span>送：业务处室A、综合处室C</span></div>
+   <div class="sig" style="margin-top:8px">业务处室A · 8月14日</div>
   </div>
   
   <div class="blk"><div class="blk-t">正文与附件</div>
    <div class="file-row" onclick="event.stopPropagation();openReader(8,'body')">
     <div class="file-ico doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"></path></svg></div>
-    <div class="file-nm"><b>因公出差申请：杨XX赴京参加全国发改系统业务培训</b><span>内部呈报 · </span></div>
+    <div class="file-nm"><b>因公出差申请：测试用户赴京参加全国相关业务系统业务培训</b><span>内部呈报 · </span></div>
     <div class="file-open">查看</div>
    </div>
    <div class="file-row" onclick="event.stopPropagation();openReader(8,'att','培训通知.pdf')">
@@ -900,7 +905,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
     <div class="file-nm"><b>培训通知.pdf</b><span>210 KB</span></div><div class="file-open">打开</div></div>
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（2 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>处室申请</b><span>创新发展处 · 8月14日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任审批 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>处室申请</b><span>业务处室A · 8月14日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任审批 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
   <div class="decide">
     <button class="dbtn no" onclick="event.stopPropagation();decide(8,'no')">不同意</button>
     <button class="dbtn hold" onclick="event.stopPropagation();decide(8,'hold')">稍后处理</button>
@@ -913,33 +918,33 @@ body.bigfont .workflow-action-bar button{font-size:15px}
   <div class="card-top" onclick="toggleCard(9)">
    
    <div class="tags"><span class="tag type">事务</span></div>
-   <div class="ctitle">请休假申请：杨XX 年假3天</div>
+   <div class="ctitle">请休假申请：测试用户 年假3天</div>
    <div class="csum"><span class="s-mark">摘</span>处内工作已交接，建议同意。</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>秘书处</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>综合处室A</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
   </div>
   
  <div class="expand">
   
   <div class="blk"><div class="blk-t">拟办意见 · 五段结构</div>
    <div class="pd-qualify"><b>来文定性</b><span>处室人员年休假申请，属常规人事审批</span></div>
-   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意杨XX于8月20—22日休年假3天</div></div>
+   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意测试用户于8月20—22日休年假3天</div></div>
    <div class="pd-risk"><span class="ric">!</span><span class="rtx">无风险，休假期间公文流转工作已安排交接</span></div><div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
-   <div class="pd-bg-b">① 剩余年假7天，符合休假规定；② 手头工作已与周敏同志交接完毕</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>送：秘书处、人事处</span></div>
-   <div class="sig" style="margin-top:8px">秘书处 · 8月14日</div>
+   <div class="pd-bg-b">① 剩余年假7天，符合休假规定；② 手头工作已与测试同事交接完毕</div></div>
+   <div class="pd-cc"><b>管理链条</b><span>送：综合处室A、综合处室C</span></div>
+   <div class="sig" style="margin-top:8px">综合处室A · 8月14日</div>
   </div>
   
   <div class="blk"><div class="blk-t">正文与附件</div>
    <div class="file-row" onclick="event.stopPropagation();openReader(9,'body')">
     <div class="file-ico doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"></path></svg></div>
-    <div class="file-nm"><b>请休假申请：杨XX 年假3天</b><span>内部呈报 · </span></div>
+    <div class="file-nm"><b>请休假申请：测试用户 年假3天</b><span>内部呈报 · </span></div>
     <div class="file-open">查看</div>
    </div>
    
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（2 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>处室申请</b><span>秘书处 · 8月14日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任审批 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>处室申请</b><span>综合处室A · 8月14日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任审批 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
   <div class="decide">
     <button class="dbtn no" onclick="event.stopPropagation();decide(9,'no')">不同意</button>
     <button class="dbtn hold" onclick="event.stopPropagation();decide(9,'hold')">稍后处理</button>
@@ -954,21 +959,21 @@ body.bigfont .workflow-action-bar button{font-size:15px}
    <div class="tags"><span class="tag type">事务</span></div>
    <div class="ctitle">咨询合同申请：2026年重大项目谋划预研咨询服务</div>
    <div class="csum"><span class="s-mark">摘</span>采购程序合规，供应商已在库，金额48.6万元，建议同意。</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>重大项目协调处</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 2</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>业务处室B</i><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 014-4h3a4 4 0 010 8h-3M13 12H7"></path></svg>附件 2</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
   </div>
   
  <div class="expand">
   
   <div class="blk"><div class="blk-t">拟办意见 · 五段结构</div>
    <div class="pd-qualify"><b>来文定性</b><span>课题咨询服务采购申请，属合同审批事项</span></div>
-   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意与深圳市城市发展研究咨询院签订咨询服务合同（金额48.6万元），转财务核付</div></div>
+   <div class="pd-advice"><span class="lbl">拟办建议</span><div class="txt">拟同意与深圳市XXXXX研究院签订咨询服务合同（金额48.6万元），转财务核付</div></div>
    <div class="pd-risk"><span class="ric">!</span><span class="rtx">合同金额接近50万元自主采购上限，须确认拆分采购情形不存在</span></div><div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
-   <div class="pd-bg-b">① 供应商已在委咨询机构库；② 资金在2026年度课题经费中列支；③ 该机构近三年承接我委课题5项，验收评价良好以上</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>呈：主任审批；送：重大项目协调处、财务处</span></div>
-   <div class="sig" style="margin-top:8px">重大项目协调处 · 8月14日</div>
+   <div class="pd-bg-b">① 供应商已在委咨询机构库；② 资金在2026年度课题经费中列支；③ 该机构近三年承接本单位课题5项，验收评价良好以上</div></div>
+   <div class="pd-cc"><b>管理链条</b><span>呈：主任审批；送：业务处室B、综合处室D</span></div>
+   <div class="sig" style="margin-top:8px">业务处室B · 8月14日</div>
   </div>
-  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>该机构近三年承接我委课题5项，验收评价均为良好以上。</div></div>
+  <div class="blk"><div class="blk-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>要点提示</div><div class="aikey"><span class="s-mark">摘</span>该机构近三年承接本单位课题5项，验收评价均为良好以上。</div></div>
   <div class="blk"><div class="blk-t">正文与附件</div>
    <div class="file-row" onclick="event.stopPropagation();openReader(10,'body')">
     <div class="file-ico doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"></path></svg></div>
@@ -982,7 +987,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
     <div class="file-nm"><b>经费测算表.xlsx</b><span>180 KB</span></div><div class="file-open">打开</div></div>
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（2 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>处室申请</b><span>重大项目协调处 · 8月14日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任审批 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>处室申请</b><span>业务处室B · 8月14日</span></div></div><div class="f-step cur"><div class="f-dot"></div><div class="f-info"><b>主任审批 · 当前</b><span>待办 · 当前环节</span></div></div></div></div>
   <div class="decide">
     <button class="dbtn no" onclick="event.stopPropagation();decide(10,'no')">不同意</button>
     <button class="dbtn hold" onclick="event.stopPropagation();decide(10,'hold')">稍后处理</button>
@@ -997,7 +1002,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
    <div class="tags"><span class="tag type">阅知</span></div>
    <div class="ctitle">深圳市2026年重大项目计划（已公开发布）</div>
    <div class="csum"><span class="s-mark">摘</span>经市人大审议通过，共安排重大项目832个、总投资3.2万亿元。</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>投资处</i><i>深发改〔2026〕96号</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 2 天</i></div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>业务处室D</i><i>深发改〔2026〕96号</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 2 天</i></div>
   </div>
   
  <div class="expand">
@@ -1008,8 +1013,8 @@ body.bigfont .workflow-action-bar button{font-size:15px}
    <div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
    <div class="pd-bg-b">① 经市七届人大第七次会议审议通过并公开发布；② 安排重大项目832个、总投资3.2万亿元，其中建设项目719个、年度计划投资3,091亿元</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>送：投资处</span></div>
-   <div class="sig" style="margin-top:8px">投资处 · 8月12日</div>
+   <div class="pd-cc"><b>管理链条</b><span>送：业务处室D</span></div>
+   <div class="sig" style="margin-top:8px">业务处室D · 8月12日</div>
   </div>
   
   <div class="blk"><div class="blk-t">正文与附件</div>
@@ -1021,7 +1026,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
    
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（1 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>呈报阅知</b><span>投资处 · 8月12日</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>呈报阅知</b><span>业务处室D · 8月12日</span></div></div></div></div>
   <button class="readbtn" onclick="event.stopPropagation();markRead(11)">已阅</button>
  </div>
  </div><div class="card read-card dl1" id="card-12">
@@ -1032,7 +1037,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
    <div class="tags"><span class="tag type">阅知</span></div>
    <div class="ctitle">2026年7月深圳市粮油市场价格监测月报</div>
    <div class="csum"><span class="s-mark">摘</span>7月粮油市场供应充足，价格环比持平，请阅知。</div>
-   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>粮食和物资储备处</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
+   <div class="cmeta"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4zM4 7l8 6 8-6"></path></svg>业务处室G</i><i class="stay "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v5l3 2"></path><circle cx="12" cy="12" r="9"></circle></svg>已等你 1 天</i></div>
   </div>
   
  <div class="expand">
@@ -1043,8 +1048,8 @@ body.bigfont .workflow-action-bar button{font-size:15px}
    <div class="pd-bg" onclick="event.stopPropagation()">
    <div class="pd-bg-h" onclick="this.parentElement.classList.toggle('open')"><span>有关情况说明</span><span class="arr">▾</span></div>
    <div class="pd-bg-b">① 7月大米、面粉、食用油批发价格环比持平；② 成品粮储备库存处于合理区间</div></div>
-   <div class="pd-cc"><b>管理链条</b><span>送：粮食和物资储备处</span></div>
-   <div class="sig" style="margin-top:8px">粮食和物资储备处 · 8月13日</div>
+   <div class="pd-cc"><b>管理链条</b><span>送：业务处室G</span></div>
+   <div class="sig" style="margin-top:8px">业务处室G · 8月13日</div>
   </div>
   
   <div class="blk"><div class="blk-t">正文与附件</div>
@@ -1056,7 +1061,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
    
   </div>
   <div class="blk"><div class="flow-fold" onclick="this.classList.toggle('open')"><b>流转记录（1 步）</b><span class="arr">展开 ▾</span></div>
-   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>呈报阅知</b><span>粮食和物资储备处 · 8月13日</span></div></div></div></div>
+   <div class="flow-list"><div class="f-step "><div class="f-dot"></div><div class="f-info"><b>呈报阅知</b><span>业务处室G · 8月13日</span></div></div></div></div>
   <button class="readbtn" onclick="event.stopPropagation();markRead(12)">已阅</button>
  </div>
  </div></div>
@@ -1070,11 +1075,11 @@ body.bigfont .workflow-action-bar button{font-size:15px}
   <div class="dt"><span class="done-mark ">✓ 已批示</span><span>8月13日 16:44</span></div>
   <b>上半年服务业运行分析报告</b><div class="done-cmt">同意，数据口径再核一遍</div></div><div class="done-item" onclick="toast('批示详情')">
   <div class="dt"><span class="done-mark ">✓ 已批示</span><span>昨天 11:20</span></div>
-  <b>关于调整大鹏新区粮食储备规模的请示</b><div class="done-cmt">同意</div></div><div class="done-item" onclick="toast('批示详情')">
+  <b>关于调整XX新区粮食储备规模的请示</b><div class="done-cmt">同意</div></div><div class="done-item" onclick="toast('批示详情')">
   <div class="dt"><span class="done-mark ">✓ 已批示</span><span>昨天 15:02</span></div>
   <b>2026年战略性新兴产业集群培育工作要点</b><div class="done-cmt">同意。注意与“20+8”政策衔接</div></div><div class="done-item" onclick="toast('批示详情')">
   <div class="dt"><span class="done-mark ">✓ 已批示</span><span>昨天 17:30</span></div>
-  <b>市二医院改扩建（一期）初步设计概算复核意见</b><div class="done-cmt">原则同意，按程序办理</div></div><div class="done-item" onclick="toast('批示详情')">
+  <b>市第X医院改扩建（一期）初步设计概算复核意见</b><div class="done-cmt">原则同意，按程序办理</div></div><div class="done-item" onclick="toast('批示详情')">
   <div class="dt"><span class="done-mark ">✓ 已批示</span><span>今天 08:15</span></div>
   <b>深圳市住房公积金管理办法（会签意见）</b><div class="done-cmt">同意</div></div><div class="done-item" onclick="toast('批示详情')">
   <div class="dt"><span class="done-mark ">✓ 已批示</span><span>今天 09:42</span></div>
@@ -1086,7 +1091,7 @@ body.bigfont .workflow-action-bar button{font-size:15px}
   <div class="page hidden-l" id="page-wb">
     <div class="wb-head">
       <div class="wb-t">工作台</div>
-      <div class="wb-sub">深圳市发展和改革委员会</div>
+      <div class="wb-sub">深圳市XXXXX委员会</div>
       <div class="wb-search" onclick="toast('语义搜索：试试「上个月批的医院项目」')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
         搜索功能、公文、项目…
@@ -1133,10 +1138,10 @@ body.bigfont .workflow-action-bar button{font-size:15px}
   <!-- ===== 我的 ===== -->
   <div class="page" id="page-mine">
     <div class="mine-head">
-      <div class="avatar">杨</div>
+      <div class="avatar">测</div>
       <div class="mine-info">
-        <b>杨XX</b>
-        <span>深圳市发展和改革委员会</span>
+        <b>测试用户</b>
+        <span>深圳市XXXXX委员会</span>
       </div>
     </div>
     <div class="mine-body">
@@ -1285,19 +1290,19 @@ body.bigfont .workflow-action-bar button{font-size:15px}
 /* ================= 数据 ================= */
 /* 2026-08-17 数据层 v2：五段论拟办意见 + 停留时长 + 时限 + 正文长文本 */
 const DATA=[
- {id:1,type:'doc',p:'leader',title:'深圳市人民政府办公厅关于印发深圳市加力支持工业企业设备更新和技术改造若干措施的通知',
-  docNo:'深府办规〔2026〕1号',from:'市政府办公厅',ddl:'明天 12:00 前',att:1,stay:1,ddlLv:2,
-  sum:'市领导已圈阅。建议创新发展处牵头制定实施细则，8月20日前呈报。',
-  leaderCmt:'请发改委牵头提出实施细则，一周内报我。',leaderWho:'市政府领导 · 8月12日',
-  pQualify:'市政府规范性文件，属工业领域设备更新财政支持政策，明确由我委牵头组织实施',
-  pAdvice:'拟同意由创新发展处牵头，会同工业和资讯化局制定实施细则：8月18日前形成初稿，8月20日呈报市领导审定',
+ {id:1,type:'doc',p:'leader',title:'深圳市XXXXX办公厅关于印发深圳市加力支持工业企业设备更新和技术改造若干措施的通知',
+  docNo:'深府办规〔2026〕1号',from:'市XXXXX办公厅',ddl:'明天 12:00 前',att:1,stay:1,ddlLv:2,
+  sum:'市领导已圈阅。建议业务处室A牵头制定实施细则，8月20日前呈报。',
+  leaderCmt:'请XXXXX委员会牵头提出实施细则，一周内报我。',leaderWho:'市政府领导 · 8月12日',
+  pQualify:'市政府规范性文件，属工业领域设备更新财政支持政策，明确由本单位牵头组织实施',
+  pAdvice:'拟同意由业务处室A牵头，会同市XXXXX局制定实施细则：8月18日前形成初稿，8月20日呈报市领导审定',
   pRisk:'文内第七条资金安排口径与《深圳市产业发展专项资金管理办法》（深府办规〔2021〕4号）存在差异，实施细则须先行明确衔接口径，防范资金审计风险',
-  pBg:'① 依据国务院《推动大规模设备更新和消费品以旧换新行动方案》及我省实施方案；② 市领导8月12日圈阅批示，要求我委牵头、一周内报送；③ 市政府常务会议已审议通过该若干措施',
-  pCc:'呈：主任审定；报：分管副主任；送：创新发展处、工业和资讯化局',
-  sig:'秘书处 · 8月14日',
-  aikey:'该文要求8月底前出台实施细则，创新发展处已完成政策库比对稿，时间可行。建议重点关注第七条资金口径差异。',
+  pBg:'① 依据国务院《推动大规模设备更新和消费品以旧换新行动方案》及我省实施方案；② 市领导8月12日圈阅批示，要求本单位牵头、一周内报送；③ 市政府常务会议已审议通过该若干措施',
+  pCc:'呈：主任审定；报：分管副主任；送：业务处室A、市XXXXX局',
+  sig:'综合处室A · 8月14日',
+  aikey:'该文要求8月底前出台实施细则，业务处室A已完成政策库比对稿，时间可行。建议重点关注第七条资金口径差异。',
   files:[{n:'深圳市加力支持工业企业设备更新和技术改造的若干措施.docx',s:'2.1 MB'}],
-  flow:[{s:'收文登记',p:'机要室',t:'8月12日 09:20'},{s:'拟办',p:'秘书处',t:'8月14日 10:35'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}],
+  flow:[{s:'收文登记',p:'综合处室F',t:'8月12日 09:20'},{s:'拟办',p:'综合处室A',t:'8月14日 10:35'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}],
   body:{title:'深圳市加力支持工业企业设备更新和技术改造的若干措施',
    paras:[
     {id:'p1',t:'第一条 总体要求',x:'以习近平新时代中国特色社会主义思想为指导，深入贯彻党的二十大和二十届二中、三中全会精神，落实国家大规模设备更新决策部署，坚持市场为主、政府引导，坚持鼓励先进、淘汰落后，推动我市工业企业整体设备更新和技术升级，为发展新质生产力提供坚实支撑。'},
@@ -1305,9 +1310,9 @@ const DATA=[
     {id:'p3',t:'第三条 资助标准',x:'按不超过项目设备投资额的20%给予资助，单个项目最高资助3000万元。对认定为国家首台（套）重大技术装备的项目，资助比例提高至不超过30%。同一企业同一年度累计资助不超过8000万元。'},
     {id:'p4',t:'第四条 申报条件',x:'申报企业应同时满足以下条件：（一）在深圳市行政区域内注册、具有独立法人资格；（二）上年度营业收入不低于2000万元；（三）近三年无重大违法违规行为，未被列入严重失信主体名单；（四）项目于2026年1月1日后竣工投产。'},
     {id:'p5',t:'第五条 审核程序',x:'市发展改革部门会同市工业主管部门组织申报、形式审查和专家评审，评审通过项目经市发展改革部门集体审议后公示5个工作日，公示无异议的报市政府审定。审核全流程不超过45个工作日。'},
-    {id:'p6',t:'第六条 资金安排',x:'本措施所需资金由市财政统筹安排，纳入市发展改革委年度部门预算。2026年度安排专项资金15亿元，其中设备更新资助12亿元、技术改造奖励2亿元、公共服务平台建设1亿元。'},
+    {id:'p6',t:'第六条 资金安排',x:'本措施所需资金由市财政统筹安排，纳入市XXXXX委员会年度部门预算。2026年度安排专项资金15亿元，其中设备更新资助12亿元、技术改造奖励2亿元、公共服务平台建设1亿元。'},
     {id:'p7',t:'第七条 与现行政策衔接',x:'本措施规定的资助标准，与《深圳市产业发展专项资金管理办法》第十条关于"单个项目资助额不超过2000万元"的规定存在差异。经市政府同意，涉及设备更新和技术改造的项目按本措施执行，其他产业项目仍按现行办法执行。'},
-    {id:'p8',t:'第八条 附则',x:'本措施自2026年9月1日起施行，有效期3年。由市发展改革委负责解释。执行期间如国家和省出台新规定，从其规定。'}
+    {id:'p8',t:'第八条 附则',x:'本措施自2026年9月1日起施行，有效期3年。由市XXXXX委员会负责解释。执行期间如国家和省出台新规定，从其规定。'}
    ],
    points:[
     {t:'资助标准',ref:'p3',text:'设备投资额20%、最高3000万元/项目；首台套提高至30%；年度累计上限8000万元'},
@@ -1323,38 +1328,38 @@ const DATA=[
     {v:'8000万元',note:'同企业年度累计资助上限',ref:'p3'},
     {v:'45个工作日',note:'审核全流程时限',ref:'p5'}
    ]}},
- {id:2,type:'doc',p:'urgent',title:'市政府办公厅关于报送2026年上半年重大项目推进情况的通知',
-  docNo:'府办函〔2026〕573号',from:'市政府办公厅',ddl:'今天 12:00 前',att:3,stay:1,ddlLv:3,
-  sum:'拟请重大项目协调处牵头汇总，投资处、评审中心配合，明日上午前报送。',
+ {id:2,type:'doc',p:'urgent',title:'市XXXXX办公厅关于报送2026年上半年重大项目推进情况的通知',
+  docNo:'府办函〔2026〕573号',from:'市XXXXX办公厅',ddl:'今天 12:00 前',att:3,stay:1,ddlLv:3,
+  sum:'拟请业务处室B牵头汇总，业务处室D、专业支撑单位A配合，明日上午前报送。',
   pQualify:'上级催报类通知，属半年度重大项目推进情况例行报送，时限要求刚性',
-  pAdvice:'拟同意由重大项目协调处牵头汇总，投资处补充资金到位情况，评审中心提供入库评审口径说明，今日12:00前完成报送',
-  pRisk:'报送数据须经投资处、协调处、评审中心三方核对一致，避免口径差异引发后续督查问询',
-  pBg:'① 1—6月我市832个重大项目完成投资1684.9亿元、年度进度54.5%；② 其中21个项目进度低于30%，2个涉及用地问题；③ 市政府督查室将于下周通报各区各部门报送情况',
-  pCc:'呈：主任审定；报：分管副主任；送：重大项目协调处、投资处、评审中心',
-  sig:'重大项目协调处 · 8月13日',
-  aikey:'数据已完成三方核对。建议在报送材料中主动说明坪山牵引站接入线路、大鹏活力带示范段两个用地受限项目进展。',
+  pAdvice:'拟同意由业务处室B牵头汇总，业务处室D补充资金到位情况，专业支撑单位A提供入库评审口径说明，今日12:00前完成报送',
+  pRisk:'报送数据须经业务处室D、协调处、专业支撑单位A三方核对一致，避免口径差异引发后续督查问询',
+  pBg:'① 1—6月我市832个重大项目完成投资1684.9亿元、年度进度54.5%；② 其中21个项目进度低于30%，2个涉及用地问题；③ 市XXXXX督查单位将于下周通报各区各部门报送情况',
+  pCc:'呈：主任审定；报：分管副主任；送：业务处室B、业务处室D、专业支撑单位A',
+  sig:'业务处室B · 8月13日',
+  aikey:'数据已完成三方核对。建议在报送材料中主动说明某牵引站接入线路、某重点片区示范段两个用地受限项目进展。',
   files:[{n:'关于报送2026年上半年重大项目推进情况的通知.pdf',s:'860 KB'},{n:'1-6月投资完成情况表.xlsx',s:'1.4 MB'},{n:'进度滞后项目清单.docx',s:'320 KB'}],
-  flow:[{s:'收文登记',p:'机要室',t:'8月13日'},{s:'分办',p:'重大项目协调处',t:'8月13日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}]},
- {id:3,type:'doc',p:'sup',title:'关于深圳市第二人民医院改扩建工程（一期）项目概算调整的请示',
-  docNo:'深发改呈〔2026〕38号',from:'投资处',att:2,stay:2,ddlLv:1,
+  flow:[{s:'收文登记',p:'综合处室F',t:'8月13日'},{s:'分办',p:'业务处室B',t:'8月13日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}]},
+ {id:3,type:'doc',p:'sup',title:'关于深圳市第X人民医院改扩建工程（一期）项目概算调整的请示',
+  docNo:'深发改呈〔2026〕38号',from:'业务处室D',att:2,stay:2,ddlLv:1,
   sum:'调整幅度+8.3%，事由充分，复核已完成，建议同意并提请党组会审议。',
   risk:'概算调整幅度 8.3%，超过 5% 预警线',
   pQualify:'市本级政府投资项目概算调整请示，属重大项目投资变更审批事项',
-  pAdvice:'拟同意概算由127,400万元调整至138,000万元（调增10,600万元、幅度8.3%），提请委党组会审议',
+  pAdvice:'拟同意概算由127,400万元调整至138,000万元（调增10,600万元、幅度8.3%），提请单位党组会审议',
   pRisk:'调整幅度超过《深圳市政府投资项目管理办法》规定的5%预警线，须党组会集体决策；调增资金涉及医疗设备采购，须同步明确招标方式',
-  pBg:'① 调整事由：医疗设备价格市场更新（调增6,800万元）+感染楼抗震标准提升（调增3,800万元）；② 评审中心已完成概算复核，认为事由成立；③ 同类项目近两年调整幅度6.1%—9.4%；④ 调整后仍未超出全市卫生领域年度投资盘子',
-  pCc:'呈：主任审定；报：分管副主任；送：投资处、评审中心、委办公室（党组会材料）',
-  sig:'投资处 · 8月13日',
-  aikey:'同类项目（市三医院二期、市四医院二期）近两年调整幅度6.1%、9.4%，本次处于正常区间。调增后总投资仍在卫生领域年度盘子内。',
-  files:[{n:'概算调整请示（全文）.pdf',s:'1.2 MB'},{n:'评审中心复核意见.pdf',s:'640 KB'}],
-  flow:[{s:'处室呈报',p:'投资处',t:'8月13日'},{s:'分管领导审阅',p:'已同意',t:'8月13日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}],
-  body:{title:'关于深圳市第二人民医院改扩建工程（一期）项目概算调整的请示',
+  pBg:'① 调整事由：医疗设备价格市场更新（调增6,800万元）+感染楼抗震标准提升（调增3,800万元）；② 专业支撑单位A已完成概算复核，认为事由成立；③ 同类项目近两年调整幅度6.1%—9.4%；④ 调整后仍未超出全市卫生领域年度投资盘子',
+  pCc:'呈：主任审定；报：分管副主任；送：业务处室D、专业支撑单位A、综合处室G（党组会材料）',
+  sig:'业务处室D · 8月13日',
+  aikey:'同类项目（市属医院A二期、市属医院B二期）近两年调整幅度6.1%、9.4%，本次处于正常区间。调增后总投资仍在卫生领域年度盘子内。',
+  files:[{n:'概算调整请示（全文）.pdf',s:'1.2 MB'},{n:'专业支撑单位A复核意见.pdf',s:'640 KB'}],
+  flow:[{s:'处室呈报',p:'业务处室D',t:'8月13日'},{s:'分管领导审阅',p:'已同意',t:'8月13日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}],
+  body:{title:'关于深圳市第X人民医院改扩建工程（一期）项目概算调整的请示',
    paras:[
-    {id:'p1',t:'一、项目基本情况',x:'深圳市第二人民医院改扩建工程（一期）项目经我委深发改审〔2023〕456号批复立项，核定概算127,400万元，其中建安工程102,300万元、医疗设备19,800万元、其他费用5,300万元。项目于2024年3月开工，目前主体结构已封顶，医疗设备采购进入招标阶段。'},
+    {id:'p1',t:'一、项目基本情况',x:'深圳市第X人民医院改扩建工程（一期）项目经本单位深发改审〔2023〕456号批复立项，核定概算127,400万元，其中建安工程102,300万元、医疗设备19,800万元、其他费用5,300万元。项目于2024年3月开工，目前主体结构已封顶，医疗设备采购进入招标阶段。'},
     {id:'p2',t:'二、调整事由',x:'（一）医疗设备价格更新。2024年以来医疗影像、手术机器人等核心设备市场价格平均上涨约22%，按原概算无法完成既定设备清单采购，需调增6,800万元。（二）感染楼抗震标准提升。根据《建筑抗震设计规范》GB55002-2021新规要求，感染楼须按重点设防类建筑设防，结构加固需调增3,800万元。'},
     {id:'p3',t:'三、调整方案',x:'项目概算由127,400万元调整为138,000万元，调增10,600万元，调整幅度8.3%。资金来源为市财政年度投资计划安排，不新增市级财政负担总盘子。调整后项目单方造价6,840元/平方米，仍低于同期同类医院项目平均水平。'},
-    {id:'p4',t:'四、评审意见',x:'市发改评审中心组织专家复核认为：两项调增事由客观真实、依据充分；调整后概算各组成部分比例合理；同意本次概算调整。同时提示：调整幅度超过5%预警线，按《深圳市政府投资项目管理办法》第四十二条规定，须报委党组会审议决定。'},
-    {id:'p5',t:'五、下一步安排',x:'经批准后，我处将于5个工作日内印发概算调整批复，同步商财政局落实年度投资计划调整；医疗设备招标工作拟于9月上旬重新挂网。'}
+    {id:'p4',t:'四、评审意见',x:'市XXXXX评审中心组织专家复核认为：两项调增事由客观真实、依据充分；调整后概算各组成部分比例合理；同意本次概算调整。同时提示：调整幅度超过5%预警线，按《深圳市政府投资项目管理办法》第四十二条规定，须报单位党组会审议决定。'},
+    {id:'p5',t:'五、下一步安排',x:'经批准后，我处将于5个工作日内印发概算调整批复，同步商市XXXXX局落实年度投资计划调整；医疗设备招标工作拟于9月上旬重新挂网。'}
    ],
    points:[
     {t:'调整方案',ref:'p3',text:'127,400万→138,000万，调增10,600万（8.3%），不新增总盘子'},
@@ -1370,115 +1375,115 @@ const DATA=[
     {v:'6,840元/㎡',note:'调整后单方造价',ref:'p3'},
     {v:'5个工作日',note:'批后印发批复时限',ref:'p5'}
    ]}},
- {id:4,type:'doc',p:'sup',title:'市领导批示件：加快推进220千伏深大城际坪山牵引站接入线路工程核准',
-  docNo:'督办〔2026〕112号',from:'督办室',att:1,stay:3,ddlLv:2,
+ {id:4,type:'doc',p:'sup',title:'市领导批示件：加快推进某城际线路牵引站接入工程核准',
+  docNo:'督办〔2026〕112号',from:'综合处室B',att:1,stay:3,ddlLv:2,
   sum:'核准公示已结束，无异议反馈，拟于本周内出具核准文件。',
-  leaderCmt:'请发改委加快办理。',leaderWho:'市政府领导 · 8月11日',
+  leaderCmt:'请XXXXX委员会加快办理。',leaderWho:'市政府领导 · 8月11日',
   pQualify:'市领导批示督办件，属电网基础设施项目核准事项',
-  pAdvice:'拟同意核准并本周内印发核准文件，同步函告坪山区政府做好属地配合',
-  pRisk:'项目为深大城际铁路配套供电工程，若核准延迟将直接影响城际铁路坪山段送电节点，存在工程衔接风险',
-  pBg:'① 项目总投资16,825万元，由深圳供电局建设；② 核准公示期8月10日结束，未收到异议；③ 用地预审与选址意见书已取得；④ 市领导8月11日批示要求加快',
-  pCc:'呈：主任审定；报：分管副主任；送：能源处、督办室',
-  sig:'能源处 · 8月13日',
+  pAdvice:'拟同意核准并本周内印发核准文件，同步函告深圳市XX区政府做好属地配合',
+  pRisk:'项目为某城际线路铁路配套供电工程，若核准延迟将直接影响城际铁路坪山段送电节点，存在工程衔接风险',
+  pBg:'① 项目总投资16,825万元，由深圳市XXXXX单位建设；② 核准公示期8月10日结束，未收到异议；③ 用地预审与选址意见书已取得；④ 市领导8月11日批示要求加快',
+  pCc:'呈：主任审定；报：分管副主任；送：业务处室E、综合处室B',
+  sig:'业务处室E · 8月13日',
   aikey:'公示期满无异议，核准条件已全部具备。该件为市领导督办件且已停留3天，建议优先办理。',
   files:[{n:'核准申请材料目录.pdf',s:'480 KB'}],
-  flow:[{s:'督办登记',p:'督办室',t:'8月11日'},{s:'办理',p:'能源处',t:'8月12日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}]},
- {id:5,type:'doc',p:'normal',title:'广东省发展改革委关于开展2026年固定资产投资形势调研的通知',
-  docNo:'粤发改投资〔2026〕521号',from:'省发展改革委',att:1,stay:1,ddlLv:1,
-  sum:'拟请投资处牵头形成我市情况报告，8月22日前报送。',
+  flow:[{s:'督办登记',p:'综合处室B',t:'8月11日'},{s:'办理',p:'业务处室E',t:'8月12日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}]},
+ {id:5,type:'doc',p:'normal',title:'广东省XXXXX委员会关于开展2026年固定资产投资形势调研的通知',
+  docNo:'粤发改投资〔2026〕521号',from:'省XXXXX委员会',att:1,stay:1,ddlLv:1,
+  sum:'拟请业务处室D牵头形成我市情况报告，8月22日前报送。',
   pQualify:'省级调研配合类通知，属常规报送事项',
-  pAdvice:'拟同意由投资处牵头，围绕上半年投资运行、民间投资、重大项目建设三方面形成报告，8月22日前报送',
+  pAdvice:'拟同意由业务处室D牵头，围绕上半年投资运行、民间投资、重大项目建设三方面形成报告，8月22日前报送',
   pRisk:'无重大风险，需注意民间投资等数据口径与统计部门一致',
-  pBg:'① 省发改委定于9月上旬开展调研座谈；② 上半年我市民间投资占比41.2%、同比提升2.1个百分点；③ 报送材料将作为省调研报告基础素材',
-  pCc:'呈：主任审定；送：投资处',
-  sig:'投资处 · 8月14日',
+  pBg:'① 省XXXXX委员会定于9月上旬开展调研座谈；② 上半年我市民间投资占比41.2%、同比提升2.1个百分点；③ 报送材料将作为省调研报告基础素材',
+  pCc:'呈：主任审定；送：业务处室D',
+  sig:'业务处室D · 8月14日',
   aikey:'民间投资占比提升可作报告亮点，建议附苍宇卫星、大航跃迁两个民间推介案例。',
   files:[{n:'粤发改投资〔2026〕521号.pdf',s:'520 KB'}],
-  flow:[{s:'收文登记',p:'机要室',t:'8月14日'},{s:'拟办',p:'投资处',t:'8月14日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}]},
+  flow:[{s:'收文登记',p:'综合处室F',t:'8月14日'},{s:'拟办',p:'业务处室D',t:'8月14日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}]},
  {id:6,type:'doc',p:'normal',title:'关于2026年市本级政府投资项目计划（第三批）调整的请示',
-  docNo:'深发改呈〔2026〕41号',from:'投资处',att:1,stay:1,ddlLv:1,
+  docNo:'深发改呈〔2026〕41号',from:'业务处室D',att:1,stay:1,ddlLv:1,
   sum:'新增3个项目均已完成概算批复，年度盘子不变，建议按程序下达。',
   pQualify:'市本级政府投资年度计划调整请示，属计划管理常规事项',
   pAdvice:'拟同意本批新增项目3个（总投资4.2亿元）并同步调减结余资金3,100万元，年度计划总规模维持500亿元不变，按程序下达并向市人大备案',
   pRisk:'调减项目须与原单位确认无在建合同纠纷，避免资金回收障碍',
   pBg:'① 新增3个项目：2个教育配套、1个市政管网，均已完成可研批复与概算核定；② 调减结余系某信息化项目终验后核减；③ 全年已执行两批调整，程序均合规',
-  pCc:'呈：主任审定；报：分管副主任；送：投资处、委办公室（人大备案材料）',
-  sig:'投资处 · 8月14日',
+  pCc:'呈：主任审定；报：分管副主任；送：业务处室D、综合处室G（人大备案材料）',
+  sig:'业务处室D · 8月14日',
   aikey:'调增调减相抵后年度盘子不变，符合计划管理规定。新增项目均无用地障碍。',
   files:[{n:'第三批调整方案（全文）.pdf',s:'980 KB'}],
-  flow:[{s:'处室呈报',p:'投资处',t:'8月14日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}]},
- {id:7,type:'doc',p:'normal',title:'关于苍宇02、03高轨GEO卫星项目核准的请示',
-  docNo:'深发改呈〔2026〕43号',from:'创新和高技术发展处',att:2,stay:1,ddlLv:1,
+  flow:[{s:'处室呈报',p:'业务处室D',t:'8月14日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}]},
+ {id:7,type:'doc',p:'normal',title:'关于某商业航天卫星项目核准的请示',
+  docNo:'深发改呈〔2026〕43号',from:'业务处室C',att:2,stay:1,ddlLv:1,
   sum:'总投资15亿元，民企申报，评审已完成，建议同意核准并报国家备案。',
   pQualify:'企业投资项目核准申请，属商业航天领域重大产业项目',
-  pAdvice:'拟同意核准苍宇02、03高轨GEO卫星项目（总投资150,000万元），报国家发展改革委备案',
+  pAdvice:'拟同意核准某商业航天卫星项目（总投资150,000万元），报国家XXXXX部门备案',
   pRisk:'企业近三年资产负债率62%，须在批复文件中提示投资风险自担；卫星频率资源协调周期存在不确定性',
-  pBg:'① 项目全部为企业自有及社会资本，无政府投资；② 评审中心已完成评估，认为符合国家和省产业政策；③ 频率资源已通过工信部预协调；④ 该项目为我市民营商业航天迄今最大投资',
-  pCc:'呈：主任审定；报：分管副主任；送：创新和高技术发展处、评审中心',
-  sig:'创新和高技术发展处 · 8月14日',
+  pBg:'① 项目全部为企业自有及社会资本，无政府投资；② 专业支撑单位A已完成评估，认为符合国家和省产业政策；③ 频率资源已通过工信部预协调；④ 该项目为我市民营商业航天迄今最大投资',
+  pCc:'呈：主任审定；报：分管副主任；送：业务处室C、专业支撑单位A',
+  sig:'业务处室C · 8月14日',
   aikey:'我市商业航天领域迄今最大民营投资项目，社会关注度高。企业负债率62%已在评审报告中提示。',
-  files:[{n:'项目申请报告.pdf',s:'3.8 MB'},{n:'评审中心评估意见.pdf',s:'760 KB'}],
-  flow:[{s:'受理',p:'审批处',t:'8月8日'},{s:'评估',p:'评审中心',t:'8月12日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}]},
- {id:8,type:'affair',p:'normal',title:'因公出差申请：杨XX赴京参加全国发改系统业务培训',
-  from:'创新发展处',att:1,stay:1,ddlLv:1,
+  files:[{n:'项目申请报告.pdf',s:'3.8 MB'},{n:'专业支撑单位A评估意见.pdf',s:'760 KB'}],
+  flow:[{s:'受理',p:'业务处室F',t:'8月8日'},{s:'评估',p:'专业支撑单位A',t:'8月12日'},{s:'主任批示',p:'待办',t:'当前环节',cur:1}]},
+ {id:8,type:'affair',p:'normal',title:'因公出差申请：测试用户赴京参加全国相关业务系统业务培训',
+  from:'业务处室A',att:1,stay:1,ddlLv:1,
   sum:'符合年度培训计划，经费已列支，建议同意。',
   pQualify:'处室因公出差申请，属常规人事审批',
-  pAdvice:'拟同意杨XX于8月25—27日赴京参加培训',
+  pAdvice:'拟同意测试用户于8月25—27日赴京参加培训',
   pRisk:'无风险，经费在处室培训费额度内',
-  pBg:'① 培训由国家和省发改系统组织，名额已确认；② 往返高铁，经费按差旅标准列支',
-  pCc:'送：创新发展处、人事处',
-  sig:'创新发展处 · 8月14日',
+  pBg:'① 培训由国家和省有关业务部门组织，名额已确认；② 往返高铁，经费按差旅标准列支',
+  pCc:'送：业务处室A、综合处室C',
+  sig:'业务处室A · 8月14日',
   files:[{n:'培训通知.pdf',s:'210 KB'}],
-  flow:[{s:'处室申请',p:'创新发展处',t:'8月14日'},{s:'主任审批',p:'待办',t:'当前环节',cur:1}]},
- {id:9,type:'affair',p:'normal',title:'请休假申请：杨XX 年假3天',
-  from:'秘书处',stay:1,ddlLv:1,
+  flow:[{s:'处室申请',p:'业务处室A',t:'8月14日'},{s:'主任审批',p:'待办',t:'当前环节',cur:1}]},
+ {id:9,type:'affair',p:'normal',title:'请休假申请：测试用户 年假3天',
+  from:'综合处室A',stay:1,ddlLv:1,
   sum:'处内工作已交接，建议同意。',
   pQualify:'处室人员年休假申请，属常规人事审批',
-  pAdvice:'拟同意杨XX于8月20—22日休年假3天',
+  pAdvice:'拟同意测试用户于8月20—22日休年假3天',
   pRisk:'无风险，休假期间公文流转工作已安排交接',
-  pBg:'① 剩余年假7天，符合休假规定；② 手头工作已与周敏同志交接完毕',
-  pCc:'送：秘书处、人事处',
-  sig:'秘书处 · 8月14日',
-  flow:[{s:'处室申请',p:'秘书处',t:'8月14日'},{s:'主任审批',p:'待办',t:'当前环节',cur:1}]},
+  pBg:'① 剩余年假7天，符合休假规定；② 手头工作已与测试同事交接完毕',
+  pCc:'送：综合处室A、综合处室C',
+  sig:'综合处室A · 8月14日',
+  flow:[{s:'处室申请',p:'综合处室A',t:'8月14日'},{s:'主任审批',p:'待办',t:'当前环节',cur:1}]},
  {id:10,type:'affair',p:'normal',title:'咨询合同申请：2026年重大项目谋划预研咨询服务',
-  from:'重大项目协调处',att:2,stay:1,ddlLv:1,
+  from:'业务处室B',att:2,stay:1,ddlLv:1,
   sum:'采购程序合规，供应商已在库，金额48.6万元，建议同意。',
   pQualify:'课题咨询服务采购申请，属合同审批事项',
-  pAdvice:'拟同意与深圳市城市发展研究咨询院签订咨询服务合同（金额48.6万元），转财务核付',
+  pAdvice:'拟同意与深圳市XXXXX研究院签订咨询服务合同（金额48.6万元），转财务核付',
   pRisk:'合同金额接近50万元自主采购上限，须确认拆分采购情形不存在',
-  pBg:'① 供应商已在委咨询机构库；② 资金在2026年度课题经费中列支；③ 该机构近三年承接我委课题5项，验收评价良好以上',
-  pCc:'呈：主任审批；送：重大项目协调处、财务处',
-  sig:'重大项目协调处 · 8月14日',
-  aikey:'该机构近三年承接我委课题5项，验收评价均为良好以上。',
+  pBg:'① 供应商已在委咨询机构库；② 资金在2026年度课题经费中列支；③ 该机构近三年承接本单位课题5项，验收评价良好以上',
+  pCc:'呈：主任审批；送：业务处室B、综合处室D',
+  sig:'业务处室B · 8月14日',
+  aikey:'该机构近三年承接本单位课题5项，验收评价均为良好以上。',
   files:[{n:'服务采购申请表.pdf',s:'340 KB'},{n:'经费测算表.xlsx',s:'180 KB'}],
-  flow:[{s:'处室申请',p:'重大项目协调处',t:'8月14日'},{s:'主任审批',p:'待办',t:'当前环节',cur:1}]},
+  flow:[{s:'处室申请',p:'业务处室B',t:'8月14日'},{s:'主任审批',p:'待办',t:'当前环节',cur:1}]},
  {id:11,type:'read',p:'normal',title:'深圳市2026年重大项目计划（已公开发布）',
-  docNo:'深发改〔2026〕96号',from:'投资处',stay:2,ddlLv:1,
+  docNo:'深发改〔2026〕96号',from:'业务处室D',stay:2,ddlLv:1,
   sum:'经市人大审议通过，共安排重大项目832个、总投资3.2万亿元。',
   pQualify:'年度重大项目计划发布件，属阅知范围',
   pAdvice:'呈领导阅知',
   pBg:'① 经市七届人大第七次会议审议通过并公开发布；② 安排重大项目832个、总投资3.2万亿元，其中建设项目719个、年度计划投资3,091亿元',
-  pCc:'送：投资处',
-  sig:'投资处 · 8月12日',
-  flow:[{s:'呈报阅知',p:'投资处',t:'8月12日'}]},
+  pCc:'送：业务处室D',
+  sig:'业务处室D · 8月12日',
+  flow:[{s:'呈报阅知',p:'业务处室D',t:'8月12日'}]},
  {id:12,type:'read',p:'normal',title:'2026年7月深圳市粮油市场价格监测月报',
-  from:'粮食和物资储备处',stay:1,ddlLv:1,
+  from:'业务处室G',stay:1,ddlLv:1,
   sum:'7月粮油市场供应充足，价格环比持平，请阅知。',
   pQualify:'粮油市场监测月报，属例行阅知件',
   pAdvice:'呈领导阅知',
   pBg:'① 7月大米、面粉、食用油批发价格环比持平；② 成品粮储备库存处于合理区间',
-  pCc:'送：粮食和物资储备处',
-  sig:'粮食和物资储备处 · 8月13日',
-  flow:[{s:'呈报阅知',p:'粮食和物资储备处',t:'8月13日'}]}
+  pCc:'送：业务处室G',
+  sig:'业务处室G · 8月13日',
+  flow:[{s:'呈报阅知',p:'业务处室G',t:'8月13日'}]}
 ];
 
 const QUICK = ['同意','同意，请按程序办理','原则同意，抓紧推进','同意。请×处牵头，重大情况随时报告'];
 const DONE_INIT = [
  {t:'关于报送稳增长政策落实情况的报告',when:'今天 09:42',cmt:'同意，按要求报送'},
  {t:'深圳市住房公积金管理办法（会签意见）',when:'今天 08:15',cmt:'同意'},
- {t:'市二医院改扩建（一期）初步设计概算复核意见',when:'昨天 17:30',cmt:'原则同意，按程序办理'},
+ {t:'市第X医院改扩建（一期）初步设计概算复核意见',when:'昨天 17:30',cmt:'原则同意，按程序办理'},
  {t:'2026年战略性新兴产业集群培育工作要点',when:'昨天 15:02',cmt:'同意。注意与“20+8”政策衔接'},
- {t:'关于调整大鹏新区粮食储备规模的请示',when:'昨天 11:20',cmt:'同意'},
+ {t:'关于调整XX新区粮食储备规模的请示',when:'昨天 11:20',cmt:'同意'},
  {t:'上半年服务业运行分析报告',when:'8月13日 16:44',cmt:'同意，数据口径再核一遍'},
  {t:'粤港澳大湾区建设项目用地保障协调会纪要',when:'8月13日 09:10',cmt:'同意，督办落实'},
  {t:'数字孪生城市试点方案（送审稿）',when:'8月12日 14:25',cmt:'挂起，待全省方案明确后再议',hold:1}
@@ -1928,7 +1933,7 @@ function toggleBigfont(){
 renderTodo();renderDone();renderWb();
 </script>
 <script id="fusion-script">
-/* ================= 深圳发改委移动办公 App 融合版 v3 ================= */
+/* ================= 深圳市XXXXX委员会移动办公 App 融合版 v3 ================= */
 const FUSION_STORE={mode:'fgw-fusion-mode',favorites:'fgw-fusion-favorites',prefs:'fgw-fusion-smart-prefs',bigfont:'fgw-fusion-bigfont'};
 function fusionLoad(key,fallback){try{const v=localStorage.getItem(key);return v===null?fallback:JSON.parse(v)}catch(e){return fallback}}
 function fusionSave(key,value){try{localStorage.setItem(key,JSON.stringify(value))}catch(e){}}
@@ -2020,17 +2025,17 @@ let fusionFavorites=fusionLoad(FUSION_STORE.favorites,['doc-pending','business-t
 let officePrefs=fusionLoad(FUSION_STORE.prefs,{home:['今日待办','重点项目'],doc:[],style:'简洁直接',batch:true});
 state.aiPref=[...(officePrefs.doc||[])];
 const TRACKS=[
- {id:'track-project',type:'项目',risk:'需关注',title:'深圳市人工智能产业创新中心项目',status:'可研评审 · 专家意见汇总',owner:'市政府投资项目评审中心',deadline:'剩余3天',progress:62,summary:'已形成11项核查建议，其中2项概算口径需人工复核。'},
- {id:'track-supervise',type:'督办',risk:'即将到期',title:'第二批重点项目开工建设工作',status:'3个协办单位反馈中',owner:'重大项目协调处',deadline:'今天18:00',progress:72,summary:'发展规划处已补充2项前期手续说明，仍有1家单位未反馈。'},
- {id:'track-report',type:'公文',risk:'即将到期',title:'2026年上半年政府投资计划执行情况报告',status:'处室数据复核',owner:'投资处',deadline:'今天17:30',progress:81,summary:'仍有2项投资完成数据待经办人复核。'},
- {id:'track-env',type:'专题',risk:'正常',title:'2026年优化营商环境重点任务',status:'三季度进展填报',owner:'营商环境建设处',deadline:'9月05日',progress:68,summary:'28项重点任务中，19项按计划推进。'}
+ {id:'track-project',type:'项目',risk:'需关注',title:'深圳市XXXXX中心项目',status:'可研评审 · 专家意见汇总',owner:'市XXXXX评审中心',deadline:'剩余3天',progress:62,summary:'已形成11项核查建议，其中2项概算口径需人工复核。'},
+ {id:'track-supervise',type:'督办',risk:'即将到期',title:'第二批重点项目开工建设工作',status:'3个协办单位反馈中',owner:'业务处室B',deadline:'今天18:00',progress:72,summary:'业务处室J已补充2项前期手续说明，仍有1家单位未反馈。'},
+ {id:'track-report',type:'公文',risk:'即将到期',title:'2026年上半年政府投资计划执行情况报告',status:'处室数据复核',owner:'业务处室D',deadline:'今天17:30',progress:81,summary:'仍有2项投资完成数据待经办人复核。'},
+ {id:'track-env',type:'专题',risk:'正常',title:'2026年优化营商环境重点任务',status:'三季度进展填报',owner:'业务处室I',deadline:'9月05日',progress:68,summary:'28项重点任务中，19项按计划推进。'}
 ];
 
 /* 扩充三件同规则低风险请休假事项，形成可解释的智能批量示例 */
 const leaveBase=DATA.find(x=>x.id===9);
 const FUSION_EXTRA=[
- {...leaveBase,id:13,title:'请休假申请（年假2天）',from:'投资处',sum:'年度假期余额充足，工作已交接，建议同意。',pAdvice:'拟同意休年假2天，期间工作已完成交接',pRisk:'无风险，假期余额及交接情况已核验',sig:'投资处 · 8月17日',stay:0},
- {...leaveBase,id:14,title:'请休假申请（年假1天）',from:'经济运行综合处',sum:'年度假期余额充足，值班安排已确认，建议同意。',pAdvice:'拟同意休年假1天，值班安排已确认',pRisk:'无风险，假期余额及值班安排已核验',sig:'经济运行综合处 · 8月17日',stay:0}
+ {...leaveBase,id:13,title:'请休假申请（年假2天）',from:'业务处室D',sum:'年度假期余额充足，工作已交接，建议同意。',pAdvice:'拟同意休年假2天，期间工作已完成交接',pRisk:'无风险，假期余额及交接情况已核验',sig:'业务处室D · 8月17日',stay:0},
+ {...leaveBase,id:14,title:'请休假申请（年假1天）',from:'业务处室H',sum:'年度假期余额充足，值班安排已确认，建议同意。',pAdvice:'拟同意休年假1天，值班安排已确认',pRisk:'无风险，假期余额及值班安排已核验',sig:'业务处室H · 8月17日',stay:0}
 ];
 FUSION_EXTRA.forEach(x=>{DATA.push(x);state.items.push({...x,status:'todo'})});
 state.items.forEach(x=>{x.batchEligible=[9,13,14].includes(x.id);x.batchGroup=x.batchEligible?'请休假申请 · 建议同意':'';x.riskFlags=x.batchEligible?[]:['不符合本组规则'];x.recommendation=x.pAdvice||x.sum});
@@ -2053,11 +2058,11 @@ function renderHome(){
  const todos=state.items.filter(x=>x.status==='todo'),urgent=todos.filter(x=>['leader','sup','urgent'].includes(x.p)).length,reads=todos.filter(x=>x.type==='read').length;
  const d=new Date(),w='日一二三四五六';
  document.getElementById('page-home').innerHTML=`
-  <div class="fusion-head"><div class="fusion-greet"><div><small>${d.getMonth()+1}月${d.getDate()}日 · 星期${w[d.getDay()]}</small><h1>早上好，杨XX</h1><p>深圳市发展和改革委员会</p></div><div class="fusion-avatar">杨</div></div>
+  <div class="fusion-head"><div class="fusion-greet"><div><small>${d.getMonth()+1}月${d.getDate()}日 · 星期${w[d.getDay()]}</small><h1>早上好，测试用户</h1><p>深圳市XXXXX委员会</p></div><div class="fusion-avatar">测</div></div>
    <div class="assistant-entry" onclick="openAssistant('welcome')"><div class="ae-top"><b>${ficon('spark')}发改助手</b><span>权限内智能协同</span></div><div class="ae-input"><span>问事项、查公文、看项目、写材料</span>${ficon('send')}</div><div class="ae-context"><span>我的工作</span><span>公文</span><span>调研报告</span><span>项目预研</span></div></div></div>
   <div class="fusion-body"><section class="fusion-block"><div class="fusion-sec-head"><h2>今日工作</h2><button onclick="openAiTodo()">进入待办 ›</button></div><div class="work-metrics"><button onclick="openAiTodo()"><b>${todos.length}</b><span>待处理</span></button><button onclick="openAiTodo()"><b class="hot">${urgent}</b><span>重点督办</span></button><button onclick="openAiTodo()"><b class="hot">1</b><span>即将超期</span></button><button onclick="openAiTodo()"><b>${reads}</b><span>待阅知</span></button></div><div class="priority-one" onclick="openAiTodo(1)"><div class="pico">${ficon('doc')}</div><div class="ptxt"><div><span class="tag urgent">紧急</span><span class="tag type">上级来文</span></div><strong>深圳市加力支持工业企业设备更新和技术改造若干措施</strong><small>市领导已圈阅 · 明天12:00前</small></div></div></section>
   <section class="fusion-block"><div class="fusion-sec-head"><h2>常用直达</h2><button onclick="go('apps');setAppCategory('常用')">管理 ›</button></div><div class="quick-home"><button onclick="openAppV3('doc-pending')"><i>${ficon('doc')}</i><span>待办公文</span></button><button onclick="openAppV3('business-trip')"><i>${ficon('plane')}</i><span>因公出差</span></button><button onclick="openAppV3('investment-dashboard')"><i>${ficon('project')}</i><span>智慧投资</span></button><button onclick="openAppV3('ai-review')"><i>${ficon('spark')}</i><span>AI+评审</span></button></div></section>
-  <section class="fusion-block"><div class="fusion-sec-head"><h2>重点关注</h2><button onclick="openTrackList()">查看全部 ›</button></div><button class="focus-card-v3" onclick="openTrackDetail('track-project')"><div class="f3top"><span>项目风险提示</span><span>需关注</span></div><strong>人工智能产业创新中心项目</strong><p>专家意见汇总节点剩余3天，2项概算口径需人工复核。</p><div class="focus-progress"><i></i></div><div class="focus-foot"><span>总体进度 62%</span><span>市政府投资项目评审中心</span></div></button></section></div>`;
+  <section class="fusion-block"><div class="fusion-sec-head"><h2>重点关注</h2><button onclick="openTrackList()">查看全部 ›</button></div><button class="focus-card-v3" onclick="openTrackDetail('track-project')"><div class="f3top"><span>项目风险提示</span><span>需关注</span></div><strong>XXXXX中心项目</strong><p>专家意见汇总节点剩余3天，2项概算口径需人工复核。</p><div class="focus-progress"><i></i></div><div class="focus-foot"><span>总体进度 62%</span><span>市XXXXX评审中心</span></div></button></section></div>`;
 }
 
 function updateNav(){
@@ -2128,9 +2133,9 @@ function openAssistant(mode='welcome'){
 function sendAssistant(mode){
  const input=document.getElementById('assistantInput'),typed=input?.value.trim();let q='',answer='',sources=['调研报告','我的工作'];
  if(mode==='input'){q=typed||'今天我最需要优先处理什么？';if(/出差|请假|申请/.test(q))mode='apps';else if(/项目|进展/.test(q))mode='project';else if(/公文|文件|政策/.test(q))mode='document';else if(/材料|提纲|汇报/.test(q))mode='material';else mode='today'}
- if(mode==='today'){q=q||'今天我最需要优先处理什么？';answer=`今天建议先处理 4 件优先事项：<br>1. 设备更新若干措施，明天12:00前，市领导已圈阅；<br>2. 二院改扩建概算调整，超过5%预警线；<br>3. 市政府重大项目推进情况催报，今天12:00前；<br>4. 坪山牵引站接入线路核准督办件。`;sources=['待办事项','公文','督办记录']}
- if(mode==='document'){q=q||'检索近期关于重大项目推进的公文';answer=`检索到 12 份权限内材料。最相关的是《市政府办公厅关于报送2026年上半年重大项目推进情况的通知》，要求汇总832个重大项目进展及需市级协调问题。`;sources=['公文','调研报告']}
- if(mode==='project'){q=q||'人工智能产业创新中心项目现在到哪个节点？';answer=`项目当前处于可研评审的“专家意见汇总”节点，总体进度62%。距离计划节点还有3天，2项概算口径需人工复核，建议优先核对建设规模与单方造价。`;sources=['项目全过程系统','评审工作记录']}
+ if(mode==='today'){q=q||'今天我最需要优先处理什么？';answer=`今天建议先处理 4 件优先事项：<br>1. 设备更新若干措施，明天12:00前，市领导已圈阅；<br>2. 二院改扩建概算调整，超过5%预警线；<br>3. 市政府重大项目推进情况催报，今天12:00前；<br>4. 某牵引站接入线路核准督办件。`;sources=['待办事项','公文','督办记录']}
+ if(mode==='document'){q=q||'检索近期关于重大项目推进的公文';answer=`检索到 12 份权限内材料。最相关的是《市XXXXX办公厅关于报送2026年上半年重大项目推进情况的通知》，要求汇总832个重大项目进展及需市级协调问题。`;sources=['公文','调研报告']}
+ if(mode==='project'){q=q||'XXXXX中心项目现在到哪个节点？';answer=`项目当前处于可研评审的“专家意见汇总”节点，总体进度62%。距离计划节点还有3天，2项概算口径需人工复核，建议优先核对建设规模与单方造价。`;sources=['项目全过程系统','评审工作记录']}
  if(mode==='material'){q=q||'起草重大项目推进情况汇报提纲';answer=`已形成四段式提纲：一是总体进展与投资完成；二是新开工和续建节点；三是用地、规划、概算等突出问题；四是需市级协调事项及下一步安排。生成正式材料前请选择引用范围并人工核对数据。`;sources=['调研报告','公文','项目预研']}
  if(mode==='apps'){q=q||'我要申请因公出差';answer=`已找到“因公出差”原生应用，可发起出差或培训申请。助手可以协助预填，但不会代替你提交。`;sources=['应用目录','当前账号权限']}
  const action=mode==='today'?`<button class="chat-action" onclick="closeFusionLayer();openAiTodo()">查看优先待办</button>`:mode==='project'?`<button class="chat-action" onclick="openTrackDetail('track-project')">查看项目跟踪</button>`:mode==='apps'?`<button class="chat-action" onclick="openAppV3('business-trip')">打开因公出差</button>`:'';
@@ -2202,7 +2207,7 @@ function normalizeAssistantContexts(ids){const valid=(Array.isArray(ids)?ids:[])
 function assistantSeed(id,title,scene,time,q,a,sources,model='deepseek',contexts=['work','docs','orgkb']){
  return {id:`seed-${id}`,title,scene,updatedAt:`2026-08-${time}`,timeLabel:`8月${time.slice(0,2)}日 ${time.slice(3)}`,model,contexts,messages:[{role:'user',text:q},{role:'bot',html:a,sources,updated:'2026-08-17 09:30'}]};
 }
-const ASSISTANT_ARCHIVE_ANSWER=`<div class="assistant-result-note">已按当前六类知识范围返回 <b>7 份直接相关材料</b>。以下保留原文定位，不作二次加工或结论性改写。</div><div class="assistant-doc-list"><button class="assistant-doc-link" onclick="openAiTaskDetail(1,'urgent',0)"><span>我的工作 · 待核事项</span><b>设备更新实施细则拟办事项</b><em>打开待办详情 ›</em></button><button class="assistant-doc-link" onclick="openReader(1,'body')"><span>公文 · 权限内材料</span><b>深圳市加力支持工业企业设备更新和技术改造若干措施</b><em>打开正文与附件 ›</em></button><a class="assistant-doc-link" href="https://zfxxgk.ndrc.gov.cn/web/iteminfo.jsp?id=20220" target="_blank" rel="noopener"><span>公文 · 公开依据</span><b>投资项目可行性研究报告编写大纲及说明</b><em>打开国家发展改革委原文 ›</em></a><a class="assistant-doc-link" href="https://fgw.sz.gov.cn/gkmlpt/content/12/12846/post_12846529.html?jump=true" target="_blank" rel="noopener"><span>调研报告 · 经济与投资研判</span><b>深圳市2025年国民经济和社会发展计划执行情况与2026年计划草案的报告</b><em>打开深圳市发展改革委原文 ›</em></a><a class="assistant-doc-link" href="https://fgw.sz.gov.cn/gkmlpt/content/12/12666/post_12666579.html" target="_blank" rel="noopener"><span>项目预研 · 储备与前期工作</span><b>深圳市2026年政府投资项目计划</b><em>打开深圳市发展改革委原文 ›</em></a><button class="assistant-doc-link"><span>课题成果 · 验收成果</span><b>重大项目全生命周期管理机制研究</b><em>打开课题成果 ›</em></button><button class="assistant-doc-link"><span>规划文件 · 现行规划</span><b>深圳市国民经济和社会发展第十五个五年规划纲要</b><em>打开规划原文 ›</em></button></div><div class="assistant-original"><b>关键原文 · 我的工作</b><p>“请发改委牵头提出实施细则，一周内报我。”</p></div><div class="assistant-original"><b>关键原文 · 课题成果</b><p>“完善重大项目跨部门协同和全生命周期跟踪机制。”</p></div><div class="assistant-original"><b>关键原文 · 规划文件</b><p>“强化重大项目对规划目标和重点任务的支撑。”</p></div>`;
+const ASSISTANT_ARCHIVE_ANSWER=`<div class="assistant-result-note">已按当前六类知识范围返回 <b>7 份直接相关材料</b>。以下保留原文定位，不作二次加工或结论性改写。</div><div class="assistant-doc-list"><button class="assistant-doc-link" onclick="openAiTaskDetail(1,'urgent',0)"><span>我的工作 · 待核事项</span><b>设备更新实施细则拟办事项</b><em>打开待办详情 ›</em></button><button class="assistant-doc-link" onclick="openReader(1,'body')"><span>公文 · 权限内材料</span><b>深圳市加力支持工业企业设备更新和技术改造若干措施</b><em>打开正文与附件 ›</em></button><a class="assistant-doc-link" href="javascript:void(0)" target="_blank" rel="noopener"><span>公文 · 公开依据</span><b>投资项目可行性研究报告编写大纲及说明</b><em>打开国家XXXXX部门原文 ›</em></a><a class="assistant-doc-link" href="javascript:void(0)" target="_blank" rel="noopener"><span>调研报告 · 经济与投资研判</span><b>深圳市2025年国民经济和社会发展计划执行情况与2026年计划草案的报告</b><em>打开深圳市XXXXX委员会原文 ›</em></a><a class="assistant-doc-link" href="javascript:void(0)" target="_blank" rel="noopener"><span>项目预研 · 储备与前期工作</span><b>深圳市2026年政府投资项目计划</b><em>打开深圳市XXXXX委员会原文 ›</em></a><button class="assistant-doc-link"><span>课题成果 · 验收成果</span><b>重大项目全生命周期管理机制研究</b><em>打开课题成果 ›</em></button><button class="assistant-doc-link"><span>规划文件 · 现行规划</span><b>深圳市国民经济和社会发展第十五个五年规划纲要</b><em>打开规划原文 ›</em></button></div><div class="assistant-original"><b>关键原文 · 我的工作</b><p>“请XXXXX委员会牵头提出实施细则，一周内报我。”</p></div><div class="assistant-original"><b>关键原文 · 课题成果</b><p>“完善重大项目跨部门协同和全生命周期跟踪机制。”</p></div><div class="assistant-original"><b>关键原文 · 规划文件</b><p>“强化重大项目对规划目标和重点任务的支撑。”</p></div>`;
 const ASSISTANT_SEEDS=[assistantSeed(1,'设备更新与重大项目专题会材料检索','comprehensive','17 09:36','请为下周设备更新和重大项目投资专题会，汇总我需要确认的事项、政策公文、经济研判、项目预研、课题成果与规划依据。',ASSISTANT_ARCHIVE_ANSWER,['我的工作','公文','调研报告','项目预研','课题成果','规划文件'],'deepseek',ASSISTANT_CONTEXTS.map(c=>c.id))];
 const ASSISTANT_HISTORY_VERSION='r12-six-contexts-no-local-upload';
 const savedAssistantPrefs=fusionLoad(FUSION_STORE.assistantPrefs,{model:'deepseek',contexts:ASSISTANT_CONTEXTS.map(c=>c.id)});
@@ -2226,15 +2231,15 @@ function contextNames(ids=assistantState.contexts){return ids.map(id=>ASSISTANT_
 function makeBatchDoc(id,title,from,docNo,scenario,groupId,groupName,sum,sig){
  const base=DATA.find(x=>x.id===5);
  const advice=scenario==='meeting'?'拟同意按会议安排参会并由相关处室做好材料准备':scenario==='periodic'?'拟同意按既定口径完成例行报送':'拟同意按既定范围阅办并转相关处室知悉';
- return {...base,id,type:'doc',p:'normal',title,from,docNo,ddl:'3日内',att:1,stay:0,ddlLv:1,sum,pQualify:'非关键常规公文，办理规则稳定且无需实质决策',pAdvice:advice,pRisk:'未发现领导批示、加急、审计或材料缺失风险',pBg:'系统已核验事项类型、办理环节、材料完整性和拟办结论，同组事项规则一致。',pCc:'送：相关业务处室',sig,aikey:'该件属于可标准化办理的非关键事项，仍需本人逐项核对后确认。',files:[{n:`${title.slice(0,18)}.pdf`,s:'360 KB'}],flow:[{s:'收文登记',p:'机要室',t:'8月17日'},{s:'拟办',p:from,t:'8月17日'},{s:'领导阅办',p:'待办',t:'当前环节',cur:1}],batchEligible:true,batchKind:'document',batchScenario:scenario,batchGroupId:groupId,batchGroup:groupName,batchAction:'同意拟办意见',riskFlags:[],candidateReason:'同类型、同环节、拟办意见一致，材料完整且无风险'};
+ return {...base,id,type:'doc',p:'normal',title,from,docNo,ddl:'3日内',att:1,stay:0,ddlLv:1,sum,pQualify:'非关键常规公文，办理规则稳定且无需实质决策',pAdvice:advice,pRisk:'未发现领导批示、加急、审计或材料缺失风险',pBg:'系统已核验事项类型、办理环节、材料完整性和拟办结论，同组事项规则一致。',pCc:'送：相关业务处室',sig,aikey:'该件属于可标准化办理的非关键事项，仍需本人逐项核对后确认。',files:[{n:`${title.slice(0,18)}.pdf`,s:'360 KB'}],flow:[{s:'收文登记',p:'综合处室F',t:'8月17日'},{s:'拟办',p:from,t:'8月17日'},{s:'领导阅办',p:'待办',t:'当前环节',cur:1}],batchEligible:true,batchKind:'document',batchScenario:scenario,batchGroupId:groupId,batchGroup:groupName,batchAction:'同意拟办意见',riskFlags:[],candidateReason:'同类型、同环节、拟办意见一致，材料完整且无风险'};
 }
 const R4_EXTRA=[
- makeBatchDoc(15,'广东省发展改革委政策信息专报（第18期）阅办','综合处','阅办〔2026〕118号','read','doc-read','普通阅办件','政策信息专报，建议阅办并转相关处室知悉。','综合处 · 8月17日'),
- makeBatchDoc(16,'国家发展改革委改革动态简报（第32期）阅办','体制改革处','阅办〔2026〕119号','read','doc-read','普通阅办件','改革动态简报，建议阅办并转相关处室知悉。','体制改革处 · 8月17日'),
- makeBatchDoc(17,'2026年7月固定资产投资月度报送事项','投资处','深发改报〔2026〕77号','periodic','doc-periodic','周期性例行报送','月度例行报送，数据口径和审核规则已核验一致。','投资处 · 8月17日'),
- makeBatchDoc(18,'2026年7月重大项目进展月度报送事项','重大项目协调处','深发改报〔2026〕78号','periodic','doc-periodic','周期性例行报送','月度例行报送，材料齐全并已完成处室复核。','重大项目协调处 · 8月17日'),
- makeBatchDoc(19,'关于参加全市优化营商环境工作例会的邀请','营商环境建设处','会邀〔2026〕205号','meeting','doc-meeting','会议邀请与通知','会议时间无冲突，参会范围明确，建议同意安排。','营商环境建设处 · 8月17日'),
- makeBatchDoc(20,'关于参加第三季度重大项目调度会的邀请','重大项目协调处','会邀〔2026〕206号','meeting','doc-meeting','会议邀请与通知','会议时间无冲突，汇报材料责任处室已明确。','重大项目协调处 · 8月17日')
+ makeBatchDoc(15,'广东省XXXXX委员会政策信息专报（第18期）阅办','综合处室E','阅办〔2026〕118号','read','doc-read','普通阅办件','政策信息专报，建议阅办并转相关处室知悉。','综合处室E · 8月17日'),
+ makeBatchDoc(16,'国家XXXXX部门改革动态简报（第32期）阅办','业务处室K','阅办〔2026〕119号','read','doc-read','普通阅办件','改革动态简报，建议阅办并转相关处室知悉。','业务处室K · 8月17日'),
+ makeBatchDoc(17,'2026年7月固定资产投资月度报送事项','业务处室D','深发改报〔2026〕77号','periodic','doc-periodic','周期性例行报送','月度例行报送，数据口径和审核规则已核验一致。','业务处室D · 8月17日'),
+ makeBatchDoc(18,'2026年7月重大项目进展月度报送事项','业务处室B','深发改报〔2026〕78号','periodic','doc-periodic','周期性例行报送','月度例行报送，材料齐全并已完成处室复核。','业务处室B · 8月17日'),
+ makeBatchDoc(19,'关于参加全市优化营商环境工作例会的邀请','业务处室I','会邀〔2026〕205号','meeting','doc-meeting','会议邀请与通知','会议时间无冲突，参会范围明确，建议同意安排。','业务处室I · 8月17日'),
+ makeBatchDoc(20,'关于参加第三季度重大项目调度会的邀请','业务处室B','会邀〔2026〕206号','meeting','doc-meeting','会议邀请与通知','会议时间无冲突，汇报材料责任处室已明确。','业务处室B · 8月17日')
 ];
 R4_EXTRA.forEach(x=>{DATA.push(x);state.items.push({...x,status:'todo'})});
 state.items.forEach(x=>{
@@ -2308,9 +2313,9 @@ function assistantScenario(q,mode){
 }
 function assistantAnswer(scene){
  const map={
-  today:{q:'今天我最需要优先处理什么？',html:'今天建议先处理 <b>4 件优先事项</b>：<br>1. 设备更新若干措施，明天12:00前，市领导已圈阅；<br>2. 二院改扩建概算调整，超过5%预警线；<br>3. 重大项目推进情况催报，今天12:00前；<br>4. 坪山牵引站接入线路核准督办件。',sources:['待办事项','公文','督办记录'],action:['查看优先待办',"closeFusionLayer();openAiTodo()"]},
-  document:{q:'检索近期关于重大项目推进的公文',html:'检索到 <b>12 份</b>权限内材料。最相关的是《市政府办公厅关于报送2026年上半年重大项目推进情况的通知》，涉及832个重大项目进展及需市级协调问题。',sources:['公文','调研报告']},
-  project:{q:'人工智能产业创新中心项目现在到哪个节点？',html:'项目处于可研评审的“专家意见汇总”节点，总体进度 <b>62%</b>。距离计划节点还有3天，2项概算口径需人工复核。',sources:['项目预研','评审工作记录','概算附件'],action:['查看项目跟踪',"openTrackDetail('track-project')"]},
+  today:{q:'今天我最需要优先处理什么？',html:'今天建议先处理 <b>4 件优先事项</b>：<br>1. 设备更新若干措施，明天12:00前，市领导已圈阅；<br>2. 二院改扩建概算调整，超过5%预警线；<br>3. 重大项目推进情况催报，今天12:00前；<br>4. 某牵引站接入线路核准督办件。',sources:['待办事项','公文','督办记录'],action:['查看优先待办',"closeFusionLayer();openAiTodo()"]},
+  document:{q:'检索近期关于重大项目推进的公文',html:'检索到 <b>12 份</b>权限内材料。最相关的是《市XXXXX办公厅关于报送2026年上半年重大项目推进情况的通知》，涉及832个重大项目进展及需市级协调问题。',sources:['公文','调研报告']},
+  project:{q:'XXXXX中心项目现在到哪个节点？',html:'项目处于可研评审的“专家意见汇总”节点，总体进度 <b>62%</b>。距离计划节点还有3天，2项概算口径需人工复核。',sources:['项目预研','评审工作记录','概算附件'],action:['查看项目跟踪',"openTrackDetail('track-project')"]},
   material:{q:'起草重大项目推进情况汇报提纲',html:'已形成四段式提纲：总体进展与投资完成、新开工和续建节点、突出问题、需市级协调事项。生成正式材料前需选择引用范围并人工核对数据。',sources:['调研报告','公文','项目预研']},
   policy:{q:'解读设备更新措施中的资金口径',html:'政策比对发现：新措施的单项目资助上限与现行产业资金办法存在差异。建议在实施细则中明确适用范围、授权依据和衔接条款。',sources:['深府办规〔2026〕1号','产业发展专项资金管理办法','公文']},
   economy:{q:'解释上半年投资运行主要变化',html:'上半年投资结构继续优化，工业技改和民间投资贡献上升；需关注部分重大项目开工转化偏慢。建议结合行业和区域拆分后再形成正式研判。',sources:['投资运行系统','经济运行月报','调研报告']},
@@ -2340,7 +2345,7 @@ function renderAssistantConversation(){
 renderHome=function(){
  const todos=state.items.filter(x=>x.status==='todo'),urgent=todos.filter(x=>['leader','sup','urgent'].includes(x.p)).length,reads=todos.filter(x=>x.type==='read').length;
  const d=new Date(),w='日一二三四五六';
- document.getElementById('page-home').innerHTML=`<div class="fusion-head"><div class="fusion-greet"><div><small>${d.getMonth()+1}月${d.getDate()}日 · 星期${w[d.getDay()]}</small><h1>早上好，杨XX</h1><p>深圳市发展和改革委员会</p></div><div class="fusion-avatar">杨</div></div><div class="assistant-entry" onclick="openAssistant('welcome')"><div class="ae-top"><b>${ficon('spark')}发改助手</b><span>权限内智能协同</span></div><div class="ae-input"><span>问事项、查公文、看项目、写材料</span>${ficon('send')}</div><div class="ae-context"><span>单位知识库</span><span>公文库</span><span>项目库</span><span>我的工作</span></div></div></div><div class="fusion-body"><section class="fusion-block"><div class="fusion-sec-head"><h2>今日工作</h2><button onclick="openAiTodo()">进入待办 ›</button></div><div class="work-metrics"><button onclick="openAiTodo()"><b>${todos.length}</b><span>待处理</span></button><button onclick="openAiTodo()"><b class="hot">${urgent}</b><span>重点督办</span></button><button onclick="openAiTodo()"><b class="hot">1</b><span>即将超期</span></button><button onclick="openAiTodo()"><b>${reads}</b><span>待阅知</span></button></div><div class="priority-one" onclick="openAiTodo(1)"><div class="pico">${ficon('doc')}</div><div class="ptxt"><div><span class="tag urgent">紧急</span><span class="tag type">上级来文</span></div><strong>深圳市加力支持工业企业设备更新和技术改造若干措施</strong><small>市领导已圈阅 · 明天12:00前</small></div></div></section><section class="fusion-block"><div class="fusion-sec-head"><h2>常用直达</h2><button onclick="go('apps');setAppCategory('常用')">管理 ›</button></div><div class="quick-home"><button onclick="openAppV3('doc-pending')"><i>${ficon('doc')}</i><span>待办公文</span></button><button onclick="openAppV3('business-trip')"><i>${ficon('plane')}</i><span>因公出差</span></button><button onclick="openAppV3('investment-dashboard')"><i>${ficon('project')}</i><span>智慧投资</span></button><button onclick="openAppV3('ai-review')"><i>${ficon('spark')}</i><span>AI+评审</span></button></div></section></div>`;
+ document.getElementById('page-home').innerHTML=`<div class="fusion-head"><div class="fusion-greet"><div><small>${d.getMonth()+1}月${d.getDate()}日 · 星期${w[d.getDay()]}</small><h1>早上好，测试用户</h1><p>深圳市XXXXX委员会</p></div><div class="fusion-avatar">测</div></div><div class="assistant-entry" onclick="openAssistant('welcome')"><div class="ae-top"><b>${ficon('spark')}发改助手</b><span>权限内智能协同</span></div><div class="ae-input"><span>问事项、查公文、看项目、写材料</span>${ficon('send')}</div><div class="ae-context"><span>单位知识库</span><span>公文库</span><span>项目库</span><span>我的工作</span></div></div></div><div class="fusion-body"><section class="fusion-block"><div class="fusion-sec-head"><h2>今日工作</h2><button onclick="openAiTodo()">进入待办 ›</button></div><div class="work-metrics"><button onclick="openAiTodo()"><b>${todos.length}</b><span>待处理</span></button><button onclick="openAiTodo()"><b class="hot">${urgent}</b><span>重点督办</span></button><button onclick="openAiTodo()"><b class="hot">1</b><span>即将超期</span></button><button onclick="openAiTodo()"><b>${reads}</b><span>待阅知</span></button></div><div class="priority-one" onclick="openAiTodo(1)"><div class="pico">${ficon('doc')}</div><div class="ptxt"><div><span class="tag urgent">紧急</span><span class="tag type">上级来文</span></div><strong>深圳市加力支持工业企业设备更新和技术改造若干措施</strong><small>市领导已圈阅 · 明天12:00前</small></div></div></section><section class="fusion-block"><div class="fusion-sec-head"><h2>常用直达</h2><button onclick="go('apps');setAppCategory('常用')">管理 ›</button></div><div class="quick-home"><button onclick="openAppV3('doc-pending')"><i>${ficon('doc')}</i><span>待办公文</span></button><button onclick="openAppV3('business-trip')"><i>${ficon('plane')}</i><span>因公出差</span></button><button onclick="openAppV3('investment-dashboard')"><i>${ficon('project')}</i><span>智慧投资</span></button><button onclick="openAppV3('ai-review')"><i>${ficon('spark')}</i><span>AI+评审</span></button></div></section></div>`;
 };
 openTrackList=function(){
  const risky=TRACKS.filter(x=>x.risk!=='正常').length;
@@ -2491,10 +2496,10 @@ function officeOpinionHtml(it){
 }
 function docFlowEntries(it){
  const entries=(it.flow||[]).map(f=>({s:f.s,p:f.p,t:f.t,cur:!!f.cur,note:f.note||''}));
- if(!entries.length)entries.push({s:'收文登记',p:'机要室',t:'已登记'},{s:'拟办',p:it.sig||'承办处室',t:'已提出拟办意见'},{s:'领导审阅',p:'待办',t:'当前环节',cur:true});
+ if(!entries.length)entries.push({s:'收文登记',p:'综合处室F',t:'已登记'},{s:'拟办',p:it.sig||'承办处室',t:'已提出拟办意见'},{s:'领导审阅',p:'待办',t:'当前环节',cur:true});
  if(!entries.some(f=>/协办|会办|意见/.test(`${f.s}${f.p}`))){
   const isProject=/项目|投资|概算|评审/.test(it.title||'');
-  const offices=isProject?'投资处、评审中心':'政策法规处、财务处';
+  const offices=isProject?'业务处室D、专业支撑单位A':'业务处室L、综合处室D';
   const note=it.pRisk?`意见：请结合“${String(it.pRisk).slice(0,42)}${String(it.pRisk).length>42?'…':''}”进一步核实。`:'意见：已阅，原则同意拟办意见，请按程序办理。';
   const at=Math.max(1,entries.findIndex(f=>f.cur));entries.splice(at<1?entries.length-1:at,0,{s:'协办处室意见',p:offices,t:'已反馈',note,cooperate:true});
  }
@@ -2552,9 +2557,9 @@ renderHome=function(){
 };
 
 const LEADER_BRIEFINGS=[
- {id:'brief-economy',kind:'schedule',time:'09:30',label:'重要日程',title:'全市经济运行分析专题会',status:'参阅要点已就绪',summary:'发改助手已汇总上半年投资结构变化、工业技改贡献和重大项目开工转化情况。',location:'市政府会议室',audience:'市领导、相关部门主要负责同志',outputs:[{title:'3页领导参阅要点',detail:'12项核心指标与同比变化已压缩成一屏摘要'},{title:'指标口径对照表',detail:'投资运行系统与经济运行月报已交叉核验'},{title:'建议回应提纲',detail:'围绕工业技改、民间投资和项目转化形成3组答问'}],risks:['2项投资完成数据仍需经办处室确认，正式引用前不得对外发送。'],sources:['投资运行系统','经济运行月报','重大项目库'],relatedTarget:{type:'assistant',id:'economy'},updatedAt:'2026-08-17 08:45'},
- {id:'brief-project',kind:'outcome',time:'14:30',label:'关键成果',title:'重大项目调度风险清单已形成',status:'4项风险已归因',summary:'已将项目节点、责任单位和跨系统更新归并，人工智能产业创新中心项目最需关注。',location:'委机关第一会议室',audience:'重大项目协调处、投资处、评审中心',outputs:[{title:'重点项目风险清单',detail:'4项风险按影响、时限和协调层级排序'},{title:'人工智能产业创新中心摘要',detail:'总体进度62%，2项概算口径需人工复核'},{title:'下一节点建议',detail:'专家意见汇总后优先核对建设规模和单方造价'}],risks:['催办和责任调整属于正式动作，仅展示建议，不由助手自动执行。'],sources:['项目全过程系统','评审工作记录','督办与跟踪'],relatedTarget:{type:'project',id:'track-project'},updatedAt:'2026-08-17 09:05'},
- {id:'brief-policy',kind:'confirm',time:'今日',label:'待确认',title:'设备更新政策比对稿有2处待核口径',status:'材料初稿已完成',summary:'实施细则框架和政策差异表已准备，需确认资金上限与现行专项资金办法的衔接表述。',location:'线上审阅',audience:'创新发展处、财务处',outputs:[{title:'实施细则结构稿',detail:'已按适用范围、申报条件、资金安排和监管要求展开'},{title:'政策差异定位',detail:'关联深府办规〔2026〕1号及现行资金管理办法'},{title:'领导审阅提示',detail:'关键数字、授权依据和审计风险已单独标注'}],risks:['资金口径涉及审计风险，必须人工确认后才能形成正式批示或报送材料。'],sources:['深府办规〔2026〕1号','产业发展专项资金管理办法','公文库'],relatedTarget:{type:'task',id:1},updatedAt:'2026-08-17 09:12'}
+ {id:'brief-economy',kind:'schedule',time:'09:30',label:'重要日程',title:'全市经济运行分析专题会',status:'参阅要点已就绪',summary:'发改助手已汇总上半年投资结构变化、工业技改贡献和重大项目开工转化情况。',location:'市级会议室',audience:'市领导、相关部门主要负责同志',outputs:[{title:'3页领导参阅要点',detail:'12项核心指标与同比变化已压缩成一屏摘要'},{title:'指标口径对照表',detail:'投资运行系统与经济运行月报已交叉核验'},{title:'建议回应提纲',detail:'围绕工业技改、民间投资和项目转化形成3组答问'}],risks:['2项投资完成数据仍需经办处室确认，正式引用前不得对外发送。'],sources:['投资运行系统','经济运行月报','重大项目库'],relatedTarget:{type:'assistant',id:'economy'},updatedAt:'2026-08-17 08:45'},
+ {id:'brief-project',kind:'outcome',time:'14:30',label:'关键成果',title:'重大项目调度风险清单已形成',status:'4项风险已归因',summary:'已将项目节点、责任单位和跨系统更新归并，XXXXX中心项目最需关注。',location:'单位第一会议室',audience:'业务处室B、业务处室D、专业支撑单位A',outputs:[{title:'重点项目风险清单',detail:'4项风险按影响、时限和协调层级排序'},{title:'XXXXX中心摘要',detail:'总体进度62%，2项概算口径需人工复核'},{title:'下一节点建议',detail:'专家意见汇总后优先核对建设规模和单方造价'}],risks:['催办和责任调整属于正式动作，仅展示建议，不由助手自动执行。'],sources:['项目全过程系统','评审工作记录','督办与跟踪'],relatedTarget:{type:'project',id:'track-project'},updatedAt:'2026-08-17 09:05'},
+ {id:'brief-policy',kind:'confirm',time:'今日',label:'待确认',title:'设备更新政策比对稿有2处待核口径',status:'材料初稿已完成',summary:'实施细则框架和政策差异表已准备，需确认资金上限与现行专项资金办法的衔接表述。',location:'线上审阅',audience:'业务处室A、综合处室D',outputs:[{title:'实施细则结构稿',detail:'已按适用范围、申报条件、资金安排和监管要求展开'},{title:'政策差异定位',detail:'关联深府办规〔2026〕1号及现行资金管理办法'},{title:'领导审阅提示',detail:'关键数字、授权依据和审计风险已单独标注'}],risks:['资金口径涉及审计风险，必须人工确认后才能形成正式批示或报送材料。'],sources:['深府办规〔2026〕1号','产业发展专项资金管理办法','公文库'],relatedTarget:{type:'task',id:1},updatedAt:'2026-08-17 09:12'}
 ];
 function renderLeaderBriefings(){
  return `<div class="fusion-sec-head"><h2>重要日程与成果</h2><span class="briefing-head-note">${ficon('spark')}发改助手已整理</span></div><div class="leader-briefings">${LEADER_BRIEFINGS.map(b=>`<button class="leader-briefing ${b.kind}" onclick="openLeaderBriefing('${b.id}')"><span class="briefing-time"><b>${esc(b.time)}</b><span>${b.kind==='schedule'?'日程':b.kind==='outcome'?'成果':'确认'}</span></span><span class="briefing-main"><span class="briefing-kicker"><span>${esc(b.label)}</span><span class="ready">${esc(b.status)}</span></span><strong>${esc(b.title)}</strong><p>${esc(b.summary)}</p><small>${esc(b.outputs[0].title)} · ${esc(b.updatedAt.slice(11))}更新</small></span><span class="briefing-chevron">›</span></button>`).join('')}</div>`;
@@ -2645,8 +2650,8 @@ openAppV3=function(id){if(id==='personal-knowledge'){openPersonalKnowledge();ret
 
 /* ================= 第二十二轮：公文 / 项目 / 内部事项分层 ================= */
 const R22_INTERNAL_EXTRA=[
- {id:21,type:'affair',p:'normal',domain:'internal',internalKind:'差旅报销',title:'差旅费报销申请：赴京参加全国发改系统业务培训',from:'创新发展处',applicant:'杨XX',coreMeta:'报销金额 3,860 元 · 预算余额充足',ddl:'3日内',stay:0,ddlLv:1,att:3,sum:'行程与出差审批一致，票据已验真，费用未超标准，建议按程序报销。',pQualify:'因公培训差旅费用报销，属单位内部财务审批事项',pAdvice:'拟同意按差旅费管理规定报销3,860元',pRisk:'无超标准、重复报销或票据异常风险',pBg:'① 已关联8月25—27日因公出差审批；② 车票、住宿发票和培训通知齐全；③ 费用在处室培训预算内',pCc:'送：创新发展处、财务处',sig:'创新发展处 · 8月18日',files:[{n:'差旅费报销单.pdf',s:'260 KB'},{n:'电子票据汇总.pdf',s:'480 KB'},{n:'因公出差审批单.pdf',s:'180 KB'}],flow:[{s:'个人提交',p:'杨XX',t:'8月18日'},{s:'处室复核',p:'创新发展处',t:'已通过'},{s:'分管领导审批',p:'待办',t:'当前环节',cur:1}],batchEligible:false,batchGroupId:'',riskFlags:['财务事项须单件办理']},
- {id:22,type:'affair',p:'normal',domain:'internal',internalKind:'公务用车',title:'公务用车申请：赴坪山开展重大项目现场调研',from:'重大项目协调处',applicant:'调研组（4人）',coreMeta:'8月20日 09:00—17:30 · 市民中心往返坪山',ddl:'明天 17:00 前',stay:0,ddlLv:2,att:1,sum:'调研任务已列入日程，用车事由、人员、时间和路线完整，待确认调度。',pQualify:'重大项目现场调研公务用车申请，属单位内部行政保障事项',pAdvice:'拟同意按申请时间和路线安排公务用车',pRisk:'需由车管人员确认车辆与驾驶员，申请人不得自行指定车辆',pBg:'① 调研对象为坪山牵引站接入线路项目；② 共4人，无大型设备运输需求；③ 行程与现有会议日程无冲突',pCc:'送：重大项目协调处、办公室车管人员',sig:'重大项目协调处 · 8月18日',files:[{n:'公务用车申请单.pdf',s:'190 KB'}],flow:[{s:'处室申请',p:'重大项目协调处',t:'8月18日'},{s:'办公室审核',p:'车辆可用',t:'已核验'},{s:'分管领导审批',p:'待办',t:'当前环节',cur:1}],batchEligible:false,batchGroupId:'',riskFlags:['需完成车辆调度确认']}
+ {id:21,type:'affair',p:'normal',domain:'internal',internalKind:'差旅报销',title:'差旅费报销申请：赴京参加全国相关业务系统业务培训',from:'业务处室A',applicant:'测试用户',coreMeta:'报销金额 3,860 元 · 预算余额充足',ddl:'3日内',stay:0,ddlLv:1,att:3,sum:'行程与出差审批一致，票据已验真，费用未超标准，建议按程序报销。',pQualify:'因公培训差旅费用报销，属单位内部财务审批事项',pAdvice:'拟同意按差旅费管理规定报销3,860元',pRisk:'无超标准、重复报销或票据异常风险',pBg:'① 已关联8月25—27日因公出差审批；② 车票、住宿发票和培训通知齐全；③ 费用在处室培训预算内',pCc:'送：业务处室A、综合处室D',sig:'业务处室A · 8月18日',files:[{n:'差旅费报销单.pdf',s:'260 KB'},{n:'电子票据汇总.pdf',s:'480 KB'},{n:'因公出差审批单.pdf',s:'180 KB'}],flow:[{s:'个人提交',p:'测试用户',t:'8月18日'},{s:'处室复核',p:'业务处室A',t:'已通过'},{s:'分管领导审批',p:'待办',t:'当前环节',cur:1}],batchEligible:false,batchGroupId:'',riskFlags:['财务事项须单件办理']},
+ {id:22,type:'affair',p:'normal',domain:'internal',internalKind:'公务用车',title:'公务用车申请：赴XX区开展重大项目现场调研',from:'业务处室B',applicant:'调研组（4人）',coreMeta:'8月20日 09:00—17:30 · 某政务服务中心往返XX区',ddl:'明天 17:00 前',stay:0,ddlLv:2,att:1,sum:'调研任务已列入日程，用车事由、人员、时间和路线完整，待确认调度。',pQualify:'重大项目现场调研公务用车申请，属单位内部行政保障事项',pAdvice:'拟同意按申请时间和路线安排公务用车',pRisk:'需由车管人员确认车辆与驾驶员，申请人不得自行指定车辆',pBg:'① 调研对象为某牵引站接入线路项目；② 共4人，无大型设备运输需求；③ 行程与现有会议日程无冲突',pCc:'送：业务处室B、综合处室G车管人员',sig:'业务处室B · 8月18日',files:[{n:'公务用车申请单.pdf',s:'190 KB'}],flow:[{s:'处室申请',p:'业务处室B',t:'8月18日'},{s:'综合处室G审核',p:'车辆可用',t:'已核验'},{s:'分管领导审批',p:'待办',t:'当前环节',cur:1}],batchEligible:false,batchGroupId:'',riskFlags:['需完成车辆调度确认']}
 ];
 R22_INTERNAL_EXTRA.forEach(x=>{DATA.push(x);state.items.push({...x,status:'todo',batchKind:'affair',batchScenario:'excluded',batchAction:'',candidateReason:'内部财务或行政保障事项须单件核对'})});
 
@@ -2725,7 +2730,7 @@ function r23WorkflowProfile(item){
  else if(item.domain==='internal'){
   const kind=item.internalKind||'内部流程';
   if(kind==='差旅报销')profile={kind,current:r23FlowStage(item)||'领导审批',next:'财务复核',primary:'提交',actions:['退回补充票据','转财务预审','转交经办人'],note:'报销按现有财务流程流转。'};
-  else if(kind==='公务用车')profile={kind,current:r23FlowStage(item)||'领导审批',next:'车辆调度',primary:'提交',actions:['退回调整行程','转办公室核验','转交车管人员'],note:'用车申请按现有审批与调度流程流转。'};
+  else if(kind==='公务用车')profile={kind,current:r23FlowStage(item)||'领导审批',next:'车辆调度',primary:'提交',actions:['退回调整行程','转综合处室G核验','转交车管人员'],note:'用车申请按现有审批与调度流程流转。'};
   else if(kind==='请休假')profile={kind,current:r23FlowStage(item)||'领导审批',next:'人事备案',primary:'提交',actions:['退回申请人','转人事复核','转交经办人'],note:'请休假按现有人事流程流转。'};
   else if(kind==='出差培训')profile={kind,current:r23FlowStage(item)||'领导审批',next:'人事及财务备案',primary:'提交',actions:['退回补充行程','转人事复核','转财务预审'],note:'出差培训按现有人事与财务流程流转。'};
   else profile={kind,current:r23FlowStage(item)||'领导审批',next:kind==='合同采购'?'采购与财务复核':'经办处室落实',primary:'提交',actions:['退回补充材料','转专业处室复核','发起财务会签'],note:'内部事项按现有业务流程流转。'};
@@ -2737,7 +2742,7 @@ function r23WorkflowProfile(item){
   else if(/批示|审签/.test(current)){next='承办处室落实';actions=['退回拟办处室','转办其他处室','加签征求意见']}
   else if(/复核/.test(current)){next='核发';actions=['退回文稿修改','转原签批人复审','补充核发信息']}
   else if(/核发/.test(current)){next='归档';actions=['退回复核环节','调整发送范围','补充印发信息']}
-  else if(meeting){next='办公室安排';actions=['退回补充会议信息','转会议承办处室','加签相关处室']}
+  else if(meeting){next='综合处室G安排';actions=['退回补充会议信息','转会议承办处室','加签相关处室']}
   profile={kind:read?'阅办件':'公文',current,next,primary:read?'提交阅办':'提交',actions,note:'公文操作随收文、拟办、批示、承办、传阅、复核、核发或归档环节变化；系统只提示当前节点可用操作。'};
  }
  if(item.workflowHoldAction)profile={...profile,current:`等待“${item.workflowHoldAction}”反馈`,note:`已发起“${item.workflowHoldAction}”，收到反馈后再决定是否${profile.primary}。`};
@@ -2874,7 +2879,7 @@ body.v4-dark{--bg:#101923;--card:#182431;--ink:#EEF4F9;--ink-2:#B7C4D1;--ink-3:#
 const V4_STORE={favorites:'fgw-mobile-v4-favorites',assistantPrefs:'fgw-mobile-v4-assistant-prefs',assistantHistory:'fgw-mobile-v4-assistant-history',assistantVersion:'fgw-mobile-v4-assistant-version',minePrefs:'fgw-mobile-v4-mine-prefs',demo:'fgw-mobile-v4-demo'};
 const V4_DEFAULT_FAVORITES=['doc-pending','business-trip','investment-dashboard','ai-review','org','supplies'];
 const v4Load=(key,fallback)=>fusionLoad(key,fallback),v4Save=(key,value)=>fusionSave(key,value);
-document.title='深圳市发改委移动办公';
+document.title='深圳市XXXXX委员会移动办公';
 state.uMode='ai';document.body.classList.remove('trad');
 fusionFavorites=v4Load(V4_STORE.favorites,V4_DEFAULT_FAVORITES);
 const v4MinePrefs=v4Load(V4_STORE.minePrefs,{docFocus:'要点与办理要求',answerStyle:'依据优先',batchNotice:true,importantNotice:true,aiNotice:true,displayMode:'跟随系统',autoUpgrade:true});
@@ -2883,7 +2888,7 @@ FUSION_APPS.forEach(a=>{if(a.id!=='personal-knowledge')a.external=true});
 
 renderHome=function(){
  const d=new Date(),w='日一二三四五六';
- document.getElementById('page-home').innerHTML=`<div class="fusion-head"><div class="fusion-greet"><div><small>${d.getMonth()+1}月${d.getDate()}日 · 星期${w[d.getDay()]}</small><h1>上午好，杨XX</h1><p>深圳市发展和改革委员会</p></div><div class="fusion-avatar">杨</div></div><div class="assistant-entry" onclick="openAssistant('welcome')"><div class="ae-top"><b>${ficon('spark')}发改助手</b><span>权限内智能协同</span></div><div class="ae-input"><span>有什么可以帮你？</span>${ficon('send')}</div></div></div><div class="v4-home-body"><section class="v4-section"><div class="v4-sec-head"><h2>待办事项</h2><span>共22项</span></div><div class="v4-todo-stats"><button class="v4-todo-stat" onclick="openHomeTodoH5('docs')" aria-label="查看12项公文待办"><b>12</b><span>公文</span></button><button class="v4-todo-stat" onclick="openHomeTodoH5('projects')" aria-label="查看4项项目待办"><b>4</b><span>项目</span></button><button class="v4-todo-stat" onclick="openHomeTodoH5('internal')" aria-label="查看4项内部事项待办"><b>4</b><span>内部事项</span></button><button class="v4-todo-stat" onclick="openHomeTodoH5('notices')" aria-label="查看2项通知"><b>2</b><span>通知</span></button></div></section><section class="v4-section"><div class="v4-sec-head"><h2>AI能力</h2></div><div class="v4-ai-grid"><button class="v4-ai-card" onclick="openSpeedRead()"><i>${ficon('book')}</i><b>AI材料速读</b><p>快速提炼个人材料要点，并定位原文核验</p></button><button class="v4-ai-card record" onclick="openRecordingHome()"><i>${ficon('mic')}</i><b>AI会议助手</b><p>录制会议内容，自动生成报告和图片简报</p></button></div></section><section class="v4-section">${pkHomeEntryButtonHtml()}</section></div>`;
+ document.getElementById('page-home').innerHTML=`<div class="fusion-head"><div class="fusion-greet"><div><small>${d.getMonth()+1}月${d.getDate()}日 · 星期${w[d.getDay()]}</small><h1>上午好，测试用户</h1><p>深圳市XXXXX委员会</p></div><div class="fusion-avatar">测</div></div><div class="assistant-entry" onclick="openAssistant('welcome')"><div class="ae-top"><b>${ficon('spark')}发改助手</b><span>权限内智能协同</span></div><div class="ae-input"><span>有什么可以帮你？</span>${ficon('send')}</div></div></div><div class="v4-home-body"><section class="v4-section"><div class="v4-sec-head"><h2>待办事项</h2><span>共22项</span></div><div class="v4-todo-stats"><button class="v4-todo-stat" onclick="openHomeTodoH5('docs')" aria-label="查看12项公文待办"><b>12</b><span>公文</span></button><button class="v4-todo-stat" onclick="openHomeTodoH5('projects')" aria-label="查看4项项目待办"><b>4</b><span>项目</span></button><button class="v4-todo-stat" onclick="openHomeTodoH5('internal')" aria-label="查看4项内部事项待办"><b>4</b><span>内部事项</span></button><button class="v4-todo-stat" onclick="openHomeTodoH5('notices')" aria-label="查看2项通知"><b>2</b><span>通知</span></button></div></section><section class="v4-section"><div class="v4-sec-head"><h2>AI能力</h2></div><div class="v4-ai-grid"><button class="v4-ai-card" onclick="openSpeedRead()"><i>${ficon('book')}</i><b>AI材料速读</b><p>快速提炼个人材料要点，并定位原文核验</p></button><button class="v4-ai-card record" onclick="openRecordingHome()"><i>${ficon('mic')}</i><b>AI会议助手</b><p>录制会议内容，自动生成报告和图片简报</p></button></div></section><section class="v4-section">${pkHomeEntryButtonHtml()}</section></div>`;
 };
 
 toggleFavoriteV3=function(e,id){e.stopPropagation();fusionFavorites.includes(id)?fusionFavorites=fusionFavorites.filter(x=>x!==id):fusionFavorites.push(id);v4Save(V4_STORE.favorites,fusionFavorites);renderApps();toast(fusionFavorites.includes(id)?'已加入常用':'已取消常用')};
@@ -2893,12 +2898,12 @@ pkSafety=function(){return v4PkSafetyBase()};
 openPersonalKnowledge=function(){v4OpenPersonalKnowledgeBase();const meta=document.getElementById('fusionLayerMeta');if(meta)meta.textContent='仅本人可见'};
 
 renderMine=function(){
- const page=document.getElementById('page-mine');page.innerHTML=`<div class="mine-v4-head"><div class="mine-v4-user"><div class="mine-v4-avatar">杨</div><div class="mine-v4-profile"><h1>杨XX</h1><p>深圳市发展和改革委员会</p><span class="mine-v4-login">已登录</span></div><div class="mine-v4-safe" aria-hidden="true">${ficon('shield')}</div></div><div class="mine-v4-auth"><span>身份已认证</span><span>设备可信</span><span>政务外网</span></div></div><div class="mine-v4-body"><section class="mine-v4-section"><h2>账号与身份</h2><div class="mine-v4-group"><button onclick="openMineV4('identity')"><i class="mine-v4-ico">${ficon('people')}</i><b>身份与组织信息</b><span>已同步 ›</span></button><button onclick="openMineV4('login')"><i class="mine-v4-ico">${ficon('shield')}</i><b>登录方式与设备安全</b><span>本机可信 ›</span></button><button onclick="openMineV4('account')"><i class="mine-v4-ico">${ficon('people')}</i><b>账号切换</b><span>1个账号 ›</span></button><button onclick="openMineV4('permission')"><i class="mine-v4-ico">${ficon('lock')}</i><b>权限与数据范围</b><span>查看 ›</span></button></div></section><section class="mine-v4-section"><h2>个性化设置</h2><div class="mine-v4-group"><button onclick="openMineV4('preferences')"><i class="mine-v4-ico">${ficon('spark')}</i><b>智能办公偏好</b><span>${v4MinePrefs.answerStyle} ›</span></button><button onclick="openMineV4('notice')"><i class="mine-v4-ico">${ficon('send')}</i><b>消息与批量提醒</b><span>重要提醒 ›</span></button><button onclick="openMineV4('display')"><i class="mine-v4-ico">${ficon('apps')}</i><b>显示与主题</b><span>${v4MinePrefs.displayMode} ›</span></button><button onclick="toggleBigfont();renderMine()"><i class="mine-v4-ico">${ficon('pen')}</i><b>大字模式</b><span>${document.body.classList.contains('bigfont')?'已开启':'未开启'} ›</span></button></div></section><section class="mine-v4-section"><h2>应用设置</h2><div class="mine-v4-group"><button onclick="openMineV4('update')"><i class="mine-v4-ico">${ficon('download')}</i><b>版本与更新</b><span>4.0.0 ›</span></button><button onclick="openMineV4('about')"><i class="mine-v4-ico">${ficon('apps')}</i><b>关于移动办公</b><span>›</span></button><button class="danger" onclick="openMineV4('logout')"><i class="mine-v4-ico" style="background:#FFF0ED;color:#B64B38">${ficon('back')}</i><b>退出登录</b><span>›</span></button></div></section></div>`;
+ const page=document.getElementById('page-mine');page.innerHTML=`<div class="mine-v4-head"><div class="mine-v4-user"><div class="mine-v4-avatar">测</div><div class="mine-v4-profile"><h1>测试用户</h1><p>深圳市XXXXX委员会</p><span class="mine-v4-login">已登录</span></div><div class="mine-v4-safe" aria-hidden="true">${ficon('shield')}</div></div><div class="mine-v4-auth"><span>身份已认证</span><span>设备可信</span><span>测试演示环境</span></div></div><div class="mine-v4-body"><section class="mine-v4-section"><h2>账号与身份</h2><div class="mine-v4-group"><button onclick="openMineV4('identity')"><i class="mine-v4-ico">${ficon('people')}</i><b>身份与组织信息</b><span>已同步 ›</span></button><button onclick="openMineV4('login')"><i class="mine-v4-ico">${ficon('shield')}</i><b>登录方式与设备安全</b><span>本机可信 ›</span></button><button onclick="openMineV4('account')"><i class="mine-v4-ico">${ficon('people')}</i><b>账号切换</b><span>1个账号 ›</span></button><button onclick="openMineV4('permission')"><i class="mine-v4-ico">${ficon('lock')}</i><b>权限与数据范围</b><span>查看 ›</span></button></div></section><section class="mine-v4-section"><h2>个性化设置</h2><div class="mine-v4-group"><button onclick="openMineV4('preferences')"><i class="mine-v4-ico">${ficon('spark')}</i><b>智能办公偏好</b><span>${v4MinePrefs.answerStyle} ›</span></button><button onclick="openMineV4('notice')"><i class="mine-v4-ico">${ficon('send')}</i><b>消息与批量提醒</b><span>重要提醒 ›</span></button><button onclick="openMineV4('display')"><i class="mine-v4-ico">${ficon('apps')}</i><b>显示与主题</b><span>${v4MinePrefs.displayMode} ›</span></button><button onclick="toggleBigfont();renderMine()"><i class="mine-v4-ico">${ficon('pen')}</i><b>大字模式</b><span>${document.body.classList.contains('bigfont')?'已开启':'未开启'} ›</span></button></div></section><section class="mine-v4-section"><h2>应用设置</h2><div class="mine-v4-group"><button onclick="openMineV4('update')"><i class="mine-v4-ico">${ficon('download')}</i><b>版本与更新</b><span>4.0.0 ›</span></button><button onclick="openMineV4('about')"><i class="mine-v4-ico">${ficon('apps')}</i><b>关于移动办公</b><span>›</span></button><button class="danger" onclick="openMineV4('logout')"><i class="mine-v4-ico" style="background:#FFF0ED;color:#B64B38">${ficon('back')}</i><b>退出登录</b><span>›</span></button></div></section></div>`;
 };
 function openMineV4(kind){
  if(kind==='preferences'){renderMinePreferences();return}if(kind==='notice'){renderMineNotices();return}if(kind==='display'){renderMineDisplay();return}if(kind==='login'){renderMineLogin();return}if(kind==='account'){renderMineAccount();return}if(kind==='update'){renderMineUpdate();return}if(kind==='logout'){renderMineLogout();return}
- const data={identity:['身份与组织信息',[['姓名','杨XX'],['单位','深圳市发展和改革委员会'],['所属处室','发展规划处'],['账号状态','正常'],['同步时间','今天 08:42']]],permission:['权限与数据范围',[['工作资料','按当前账号权限查看'],['AI资料','按查询时权限查看'],['业务应用','按当前账号权限访问'],['组织数据','按所属分组授权'],['无权内容','不缓存、不展示']]],cache:['缓存与存储',[['当前缓存','53 MB'],['页面缓存','32 MB'],['材料预览缓存','21 MB'],['个人知识空间','已同步'],['自动清理','已开启']]],help:['帮助与反馈',[['使用指南','查看移动办公使用帮助'],['业务应用问题','联系应用运维人员'],['AI结果问题','提交问题反馈'],['服务热线','内部分机 8800']]],about:['关于移动办公',[['产品名称','深圳市发改委移动办公'],['版本','4.0.0'],['运行环境','政务外网'],['服务状态','正常']]]};
- const summary={identity:['people','身份信息已同步','姓名、单位和所属组织来自统一身份信息。'],permission:['lock','当前权限范围','资料和业务应用按当前账号权限展示。'],cache:['box','存储状态良好','本地缓存和个人知识数据分开管理。'],help:['info','服务与支持','可查看使用帮助或联系内部运维。'],about:['apps','深圳市发改委移动办公','统一入口，安全访问，便捷协同。']}[kind]||['apps','移动办公','当前服务运行正常。'];
+ const data={identity:['身份与组织信息',[['姓名','测试用户'],['单位','深圳市XXXXX委员会'],['所属处室','业务处室J'],['账号状态','正常'],['同步时间','今天 08:42']]],permission:['权限与数据范围',[['工作资料','按当前账号权限查看'],['AI资料','按查询时权限查看'],['业务应用','按当前账号权限访问'],['组织数据','按所属分组授权'],['无权内容','不缓存、不展示']]],cache:['缓存与存储',[['当前缓存','53 MB'],['页面缓存','32 MB'],['材料预览缓存','21 MB'],['个人知识空间','已同步'],['自动清理','已开启']]],help:['帮助与反馈',[['使用指南','查看移动办公使用帮助'],['业务应用问题','联系应用运维人员'],['AI结果问题','提交问题反馈'],['服务热线','内部分机 8800']]],about:['关于移动办公',[['产品名称','深圳市XXXXX委员会移动办公'],['版本','4.0.0'],['运行环境','测试演示环境'],['服务状态','演示可用']]]};
+ const summary={identity:['people','身份信息已同步','姓名、单位和所属组织来自统一身份信息。'],permission:['lock','当前权限范围','资料和业务应用按当前账号权限展示。'],cache:['box','存储状态良好','本地缓存和个人知识数据分开管理。'],help:['info','服务与支持','可查看使用帮助或联系内部运维。'],about:['apps','深圳市XXXXX委员会移动办公','统一入口，安全访问，便捷协同。']}[kind]||['apps','移动办公','当前服务运行正常。'];
  const item=data[kind]||data.about;openFusionLayer(item[0],`<div class="mine-v4-summary"><i>${ficon(summary[0])}</i><div><b>${summary[1]}</b><p>${summary[2]}</p></div></div><div class="v4-card">${item[1].map(r=>`<div class="mine-detail-row"><b>${r[0]}</b><span>${r[1]}</span></div>`).join('')}</div><div class="assistant-boundary">访问和设置变更均会记录。</div>`,'账号设置');
 }
 function cycleV4MinePref(key,values,view){const current=values.indexOf(v4MinePrefs[key]);v4MinePrefs[key]=values[(current+1)%values.length];saveV4MinePrefs();openMineV4(view);renderMine();toast(`已设为${v4MinePrefs[key]}`)}
@@ -2908,24 +2913,24 @@ function renderMineNotices(){openFusionLayer('消息与批量提醒',`<div class
 function applyV4DisplayMode(){document.body.classList.toggle('v4-dark',v4MinePrefs.displayMode==='深色模式')}
 function setV4DisplayMode(mode){v4MinePrefs.displayMode=mode;saveV4MinePrefs();applyV4DisplayMode();renderMine();renderMineDisplay();toast(`已切换为${mode}`)}
 function renderMineDisplay(){openFusionLayer('显示与主题',`<div class="mine-v4-summary"><i>${ficon('apps')}</i><div><b>选择界面显示方式</b><p>显示设置会应用到当前设备。</p></div></div><div class="v4-card">${['跟随系统','标准浅色','深色模式'].map(x=>`<button class="mine-setting-row" onclick="setV4DisplayMode('${x}')"><span><b>${x}</b><p>${x==='跟随系统'?'根据系统设置自动切换':x==='标准浅色'?'适合日间和明亮环境':'适合夜间和低照度环境'}</p></span><span>${v4MinePrefs.displayMode===x?'✓ 当前':''}</span></button>`).join('')}<button class="mine-setting-row" onclick="toggleBigfont();renderMine();renderMineDisplay()"><span><b>大字模式</b><p>全局放大主要文字和触控区域</p></span><span>${document.body.classList.contains('bigfont')?'已开启':'未开启'} ›</span></button></div>`,'显示设置')}
-function renderMineLogin(){openFusionLayer('登录方式与设备安全',`<div class="mine-v4-summary"><i>${ficon('shield')}</i><div><b>本机处于可信状态</b><p>登录保护和设备安全策略均已生效。</p></div></div><div class="v4-card"><div class="mine-detail-row"><b>政务账号登录</b><span>当前方式</span></div><div class="mine-detail-row"><b>指纹或面容验证</b><span>已开启</span></div><div class="mine-detail-row"><b>登录设备</b><span>国产政务终端</span></div><div class="mine-detail-row"><b>自动锁定</b><span>离开应用5分钟</span></div><div class="mine-detail-row"><b>最近登录</b><span>今天08:42 · 政务外网</span></div></div><button class="v4-secondary" onclick="toast('登录保护设置已打开')">管理登录保护</button>`,'账号安全')}
-function renderMineAccount(){openFusionLayer('账号切换',`<div class="mine-v4-summary"><i>${ficon('people')}</i><div><b>当前使用杨XX</b><p>仅显示已授权、状态正常的政务账号。</p></div></div><div class="v4-card"><div class="mine-detail-row"><b>当前账号</b><span>杨XX · 发展规划处</span></div><div class="mine-detail-row"><b>已授权账号</b><span>1个</span></div><div class="mine-detail-row"><b>组织与权限</b><span>今天08:42已同步</span></div></div><button class="v4-secondary" onclick="toast('暂无其他已授权账号')">查看其他账号</button>`,'账号管理')}
-function renderMineUpdate(){openFusionLayer('版本与更新',`<div class="mine-v4-summary"><i>${ficon('download')}</i><div><b>当前已是最新版本</b><p>应用更新将在安全校验通过后安装。</p></div></div><div class="v4-card"><div class="mine-detail-row"><b>当前版本</b><span>4.0.0</span></div><div class="mine-detail-row"><b>最近检查</b><span>今天08:10</span></div><button class="mine-setting-row" onclick="toggleV4MinePref('autoUpgrade','update')"><span><b>自动检查更新</b><p>在政务外网环境检查可用版本</p></span><i class="mine-switch ${v4MinePrefs.autoUpgrade?'on':''}"></i></button></div><button class="v4-secondary" onclick="toast('当前已是最新版本')">检查更新</button>`,'应用管理')}
-function renderMineLogout(){openFusionLayer('退出登录',`<div class="mine-v4-summary"><i style="background:#FFF0ED;color:#B64B38">${ficon('back')}</i><div><b>确认退出当前账号？</b><p>退出后需要重新验证身份才能继续使用。</p></div></div><div class="v4-card"><div class="mine-detail-row"><b>当前账号</b><span>杨XX</span></div><div class="mine-detail-row"><b>进行中的AI任务</b><span>0项</span></div></div><div class="pk-actions"><button onclick="closeFusionLayer()">取消</button><button class="primary" style="background:#B64B38" onclick="toast('已安全退出');closeFusionLayer()">确认退出</button></div>`,'账号安全')}
+function renderMineLogin(){openFusionLayer('登录方式与设备安全',`<div class="mine-v4-summary"><i>${ficon('shield')}</i><div><b>本机处于可信状态</b><p>登录保护和设备安全策略均已生效。</p></div></div><div class="v4-card"><div class="mine-detail-row"><b>政务账号登录</b><span>当前方式</span></div><div class="mine-detail-row"><b>指纹或面容验证</b><span>已开启</span></div><div class="mine-detail-row"><b>登录设备</b><span>国产政务终端</span></div><div class="mine-detail-row"><b>自动锁定</b><span>离开应用5分钟</span></div><div class="mine-detail-row"><b>最近登录</b><span>今天08:42 · 测试演示环境</span></div></div><button class="v4-secondary" onclick="toast('登录保护设置已打开')">管理登录保护</button>`,'账号安全')}
+function renderMineAccount(){openFusionLayer('账号切换',`<div class="mine-v4-summary"><i>${ficon('people')}</i><div><b>当前使用测试用户</b><p>仅显示已授权、状态正常的政务账号。</p></div></div><div class="v4-card"><div class="mine-detail-row"><b>当前账号</b><span>测试用户 · 业务处室J</span></div><div class="mine-detail-row"><b>已授权账号</b><span>1个</span></div><div class="mine-detail-row"><b>组织与权限</b><span>今天08:42已同步</span></div></div><button class="v4-secondary" onclick="toast('暂无其他已授权账号')">查看其他账号</button>`,'账号管理')}
+function renderMineUpdate(){openFusionLayer('版本与更新',`<div class="mine-v4-summary"><i>${ficon('download')}</i><div><b>当前已是最新版本</b><p>应用更新将在安全校验通过后安装。</p></div></div><div class="v4-card"><div class="mine-detail-row"><b>当前版本</b><span>4.0.0</span></div><div class="mine-detail-row"><b>最近检查</b><span>今天08:10</span></div><button class="mine-setting-row" onclick="toggleV4MinePref('autoUpgrade','update')"><span><b>自动检查更新</b><p>在测试演示环境检查可用版本</p></span><i class="mine-switch ${v4MinePrefs.autoUpgrade?'on':''}"></i></button></div><button class="v4-secondary" onclick="toast('当前已是最新版本')">检查更新</button>`,'应用管理')}
+function renderMineLogout(){openFusionLayer('退出登录',`<div class="mine-v4-summary"><i style="background:#FFF0ED;color:#B64B38">${ficon('back')}</i><div><b>确认退出当前账号？</b><p>退出后需要重新验证身份才能继续使用。</p></div></div><div class="v4-card"><div class="mine-detail-row"><b>当前账号</b><span>测试用户</span></div><div class="mine-detail-row"><b>进行中的AI任务</b><span>0项</span></div></div><div class="pk-actions"><button onclick="closeFusionLayer()">取消</button><button class="primary" style="background:#B64B38" onclick="toast('已安全退出');closeFusionLayer()">确认退出</button></div>`,'账号安全')}
 function resetV4Demo(){if(!confirm('确认恢复初始状态？'))return;Object.values(V4_STORE).forEach(k=>localStorage.removeItem(k));fusionFavorites=[...V4_DEFAULT_FAVORITES];v4SeedAssistant(true);renderHome();renderApps();renderMine();toast('已恢复初始状态')}
 
 /* ================= 发改助手：六类知识范围 ================= */
 const V4_ASSISTANT_VERSION='v4-find-all-six-contexts-no-local-upload';
 const V4_SOURCE_DOCS={
- work1:{type:'我的工作',title:'设备更新实施细则拟办事项及办理留痕',source:'本人待办 · 发展规划处',date:'2026-08-21',version:'当前有效',why:'与设备更新政策落地、专题会待确认事项直接相关',quote:'请结合现行资金管理办法核对支持范围、资助比例和审核程序，形成专题会材料。',page:'办理留痕 · 第3条'},
- doc1:{type:'公文',title:'深圳市加力支持工业企业设备更新和技术改造若干措施',source:'市政府办公厅',date:'2026-08-18',version:'现行版本',why:'明确设备更新支持范围、资助口径和牵头分工',quote:'聚焦电子信息、高端装备、新能源汽车等重点行业，推动工业企业设备更新和技术升级。',page:'第2页 · 第3段'},
- research1:{type:'调研报告',title:'2026年上半年深圳工业投资与设备更新专题分析',source:'投资处 · 调研报告库',date:'2026-07-28',version:'第2版',why:'提供工业技改、民间投资和项目转化的最新研判',quote:'工业技改投资保持较快增长，但部分项目仍受设备到货和资金拨付节奏影响。',page:'第6页 · 第2段'},
- project1:{type:'项目预研',title:'2026年重大项目谋划储备及要素保障清单',source:'重大项目协调处',date:'2026-08-12',version:'8月更新版',why:'包含专题会涉及项目的用地、资金和前期手续问题',quote:'对已纳入年度计划但要素保障尚未闭环的项目，逐项明确责任单位和计划完成时间。',page:'第12页 · 表格区域'},
- researchResult1:{type:'课题成果',title:'重大项目全生命周期管理机制研究',source:'发展规划处 · 课题成果库',date:'2026-06-30',version:'验收通过版',why:'提出项目跨部门协同、动态评估和问题闭环机制',quote:'建立规划目标、项目储备、年度计划和建设实施相衔接的全生命周期管理机制。',page:'第28页 · 第2节'},
- plan1:{type:'规划文件',title:'深圳市国民经济和社会发展第十五个五年规划纲要',source:'发展规划处 · 规划文件库',date:'2026-03-18',version:'现行版本',why:'明确重大项目对规划目标和重点任务的支撑要求',quote:'强化重大项目对规划实施的支撑，健全规划任务与年度计划衔接机制。',page:'第45页 · 第3段'},
- policy1:{type:'公文',title:'深圳市新能源汽车充换电设施管理办法',source:'市发展改革委',date:'2025-11-06',version:'现行有效',why:'与充电基础设施规划建设、运营管理直接相关',quote:'充换电设施建设应当与城市规划、电网建设和停车设施改造统筹衔接。',page:'第4页 · 第8条'},
- policy2:{type:'公文',title:'关于加快推进超充之城建设的实施意见',source:'市政府办公厅',date:'2024-06-18',version:'现行有效',why:'明确超充网络建设目标、年度任务与部门分工',quote:'构建布局合理、便捷高效、适度超前的新能源汽车超充服务网络。',page:'第3页 · 第2段'},
- project2:{type:'项目预研',title:'重大项目资金与用地要素保障专题台账',source:'项目预研库 · 投资处',date:'2026-08-20',version:'最新版本',why:'与当前问题涉及的重点项目存在项目编号关联',quote:'对资金计划尚未落实的续建项目，优先核对年度投资计划和专项资金安排。',page:'第7页 · 表2'}
+ work1:{type:'我的工作',title:'设备更新实施细则拟办事项及办理留痕',source:'本人待办 · 业务处室J',date:'2026-08-21',version:'当前有效',why:'与设备更新政策落地、专题会待确认事项直接相关',quote:'请结合现行资金管理办法核对支持范围、资助比例和审核程序，形成专题会材料。',page:'办理留痕 · 第3条'},
+ doc1:{type:'公文',title:'深圳市加力支持工业企业设备更新和技术改造若干措施',source:'市XXXXX办公厅',date:'2026-08-18',version:'现行版本',why:'明确设备更新支持范围、资助口径和牵头分工',quote:'聚焦电子信息、高端装备、新能源汽车等重点行业，推动工业企业设备更新和技术升级。',page:'第2页 · 第3段'},
+ research1:{type:'调研报告',title:'2026年上半年深圳工业投资与设备更新专题分析',source:'业务处室D · 调研报告库',date:'2026-07-28',version:'第2版',why:'提供工业技改、民间投资和项目转化的最新研判',quote:'工业技改投资保持较快增长，但部分项目仍受设备到货和资金拨付节奏影响。',page:'第6页 · 第2段'},
+ project1:{type:'项目预研',title:'2026年重大项目谋划储备及要素保障清单',source:'业务处室B',date:'2026-08-12',version:'8月更新版',why:'包含专题会涉及项目的用地、资金和前期手续问题',quote:'对已纳入年度计划但要素保障尚未闭环的项目，逐项明确责任单位和计划完成时间。',page:'第12页 · 表格区域'},
+ researchResult1:{type:'课题成果',title:'重大项目全生命周期管理机制研究',source:'业务处室J · 课题成果库',date:'2026-06-30',version:'验收通过版',why:'提出项目跨部门协同、动态评估和问题闭环机制',quote:'建立规划目标、项目储备、年度计划和建设实施相衔接的全生命周期管理机制。',page:'第28页 · 第2节'},
+ plan1:{type:'规划文件',title:'深圳市国民经济和社会发展第十五个五年规划纲要',source:'业务处室J · 规划文件库',date:'2026-03-18',version:'现行版本',why:'明确重大项目对规划目标和重点任务的支撑要求',quote:'强化重大项目对规划实施的支撑，健全规划任务与年度计划衔接机制。',page:'第45页 · 第3段'},
+ policy1:{type:'公文',title:'深圳市新能源汽车充换电设施管理办法',source:'市XXXXX委员会',date:'2025-11-06',version:'现行有效',why:'与充电基础设施规划建设、运营管理直接相关',quote:'充换电设施建设应当与城市规划、电网建设和停车设施改造统筹衔接。',page:'第4页 · 第8条'},
+ policy2:{type:'公文',title:'关于加快推进超充之城建设的实施意见',source:'市XXXXX办公厅',date:'2024-06-18',version:'现行有效',why:'明确超充网络建设目标、年度任务与部门分工',quote:'构建布局合理、便捷高效、适度超前的新能源汽车超充服务网络。',page:'第3页 · 第2段'},
+ project2:{type:'项目预研',title:'重大项目资金与用地要素保障专题台账',source:'项目预研库 · 业务处室D',date:'2026-08-20',version:'最新版本',why:'与当前问题涉及的重点项目存在项目编号关联',quote:'对资金计划尚未落实的续建项目，优先核对年度投资计划和专项资金安排。',page:'第7页 · 表2'}
 };
 function v4SourceButton(id){const d=V4_SOURCE_DOCS[id];return `<button class="assistant-doc-link" onclick="openAssistantSource('${id}')"><span>${d.type} · ${d.source}</span><b>${d.title}</b><p>${d.date} · ${d.version}<br>${d.why}</p><em>${d.page} · 打开原文 ›</em></button>`}
 function v4AssistantAnswer(kind,contexts=assistantState.contexts){
@@ -2967,7 +2972,7 @@ renderAssistantConversation=function(){
 openAssistantHistory=function(){const rows=assistantState.conversations.map(c=>{const q=c.messages.find(m=>m.role==='user');return `<div class="history-card" onclick="resumeAssistantConversation('${c.id}')"><div class="h-top"><strong>${esc(c.title)}</strong><time>${esc(c.timeLabel)}</time></div><p>${esc(q?.text||'')}</p><div class="history-meta"><span>${esc(modelInfo(c.model).name)}</span><span>${contextNames(c.contexts).join('、')}</span><span>${esc(c.scene)}</span></div></div>`}).join('');document.getElementById('assistantRoot').innerHTML=`<div class="assistant-shell">${assistantToolbar()}<div class="history-head"><b>历史对话</b><span>最近 ${assistantState.conversations.length} 条</span></div>${rows}</div>`};
 resumeAssistantConversation=function(id){const c=assistantState.conversations.find(x=>x.id===id);if(!c)return;assistantState.currentId=id;assistantState.model=c.model;assistantState.contexts=normalizeAssistantContexts(c.contexts);persistAssistant();renderAssistantConversation()};
 function assistantSourceOriginalHtml(id,d){
- if(/\.xlsx$/i.test(d.title)){const rows=[['1','综合交通枢纽配套工程','85.0','71.2','83.8%','正常','已办结','按计划推进'],['2','重大产业园区基础设施项目','62.0','39.6','63.9%','待核对','已办结','资金计划需复核'],['3','产业创新中心建设项目','48.0','25.8','53.8%','待拨付','办理中','规划许可办理中'],['4','新能源装备制造基地','33.0','28.4','86.1%','正常','已办结','设备进场'],['5','城市更新配套工程','29.5','20.1','68.1%','正常','办理中','施工许可办理中'],['6','A区创新中心项目','41.0','22.7','55.4%','待确认','已完成预审','规划许可办理中'],['7','先进材料中试基地','18.0','14.9','82.8%','正常','已办结','按计划推进'],['8','数字经济产业园二期','56.0','31.2','55.7%','待核对','办理中','专项资金需衔接'],['9','区域能源保障项目','37.0','29.8','80.5%','正常','已办结','按计划推进'],['10','综合保税区提升工程','24.0','18.6','77.5%','正常','办理中','待完成规划验收'],['11','生物医药研发平台','21.0','13.4','63.8%','正常','已办结','设备采购中'],['12','低空经济基础设施项目','16.5','7.2','43.6%','待明确','预审中','投资规模待研究']];return `<div class="source-sheet"><div class="source-sheet-title"><b>2026年重点项目建设推进情况表</b><span>项目清单 · 共12条记录 · 左右滑动查看全部字段</span></div><div class="source-sheet-scroll"><table><thead><tr><th>序号</th><th>项目名称</th><th>年度计划/亿元</th><th>累计完成/亿元</th><th>完成率</th><th>资金状态</th><th>用地状态</th><th>当前进展</th></tr></thead><tbody>${rows.map((r,i)=>`<tr class="${i===5?'focus source-highlight':''}">${r.map((x,j)=>`<td class="${j===5&&/待/.test(x)?'source-sheet-status warn':j===5?'source-sheet-status':''}">${x}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
+ if(/\.xlsx$/i.test(d.title)){const rows=[['1','综合交通枢纽配套工程','85.0','71.2','83.8%','正常','已办结','按计划推进'],['2','重大产业园区基础设施项目','62.0','39.6','63.9%','待核对','已办结','资金计划需复核'],['3','XXXXX中心建设项目','48.0','25.8','53.8%','待拨付','办理中','规划许可办理中'],['4','新能源装备制造基地','33.0','28.4','86.1%','正常','已办结','设备进场'],['5','城市更新配套工程','29.5','20.1','68.1%','正常','办理中','施工许可办理中'],['6','A区创新中心项目','41.0','22.7','55.4%','待确认','已完成预审','规划许可办理中'],['7','先进材料中试基地','18.0','14.9','82.8%','正常','已办结','按计划推进'],['8','数字经济产业园二期','56.0','31.2','55.7%','待核对','办理中','专项资金需衔接'],['9','区域能源保障项目','37.0','29.8','80.5%','正常','已办结','按计划推进'],['10','综合保税区提升工程','24.0','18.6','77.5%','正常','办理中','待完成规划验收'],['11','生物医药研发平台','21.0','13.4','63.8%','正常','已办结','设备采购中'],['12','低空经济基础设施项目','16.5','7.2','43.6%','待明确','预审中','投资规模待研究']];return `<div class="source-sheet"><div class="source-sheet-title"><b>2026年重点项目建设推进情况表</b><span>项目清单 · 共12条记录 · 左右滑动查看全部字段</span></div><div class="source-sheet-scroll"><table><thead><tr><th>序号</th><th>项目名称</th><th>年度计划/亿元</th><th>累计完成/亿元</th><th>完成率</th><th>资金状态</th><th>用地状态</th><th>当前进展</th></tr></thead><tbody>${rows.map((r,i)=>`<tr class="${i===5?'focus source-highlight':''}">${r.map((x,j)=>`<td class="${j===5&&/待/.test(x)?'source-sheet-status warn':j===5?'source-sheet-status':''}">${x}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
  return `<div class="source-doc-stack"><article class="source-doc-page"><h2>${esc(d.title)}</h2><p>根据有关工作部署，为做好相关政策实施、项目推进和协调服务工作，现将有关事项明确如下。</p><p>各责任单位应结合年度工作安排，逐项核对任务要求、办理依据和当前进展，确保材料版本准确、数据口径一致。</p><h3>一、总体要求</h3><p>坚持目标导向和问题导向，加强部门协同与市区联动，及时研究解决工作推进中的重点问题。</p><div class="source-page-no">— 1 —</div></article><article class="source-doc-page"><h3>二、重点工作</h3><p>围绕年度目标任务，完善工作台账和材料清单，明确责任单位、时间节点和需要协调的事项。</p><p><mark class="source-highlight">${esc(d.quote)}</mark></p><p>涉及资金、用地、审批和政策衔接的事项，应按照现行制度和规定程序核实后办理。</p><div class="source-page-no">— 2 —</div></article><article class="source-doc-page"><h3>三、组织实施</h3><p>各有关单位应定期更新工作进展，对重要情况和需要协调的问题及时报送，不得以历史版本替代当前有效材料。</p><p>本材料由相关责任单位按职责组织实施，后续调整以正式印发文件和业务系统最新记录为准。</p><div class="source-page-no">— 3 —</div></article></div>`
 }
 function openAssistantSource(id,restore=false,focus=false){const d=V4_SOURCE_DOCS[id];if(!d)return;const body=document.getElementById('fusionLayerBody'),sheet=/\.xlsx$/i.test(d.title);assistantState.sourceId=id;if(!restore)assistantState.sourceScrollTop=0;document.getElementById('assistantRoot').innerHTML=`<div class="assistant-shell"><div class="source-reader-tools"><div class="source-reader-top"><button class="source-reader-back" onclick="renderAssistantConversation()">← 资料清单</button><div class="source-reader-file"><b>${esc(d.title)}</b><span>${esc(d.type)} · ${esc(d.source)}</span></div><button class="source-ai-btn" onclick="openAssistantInterpretation('${id}')">AI解读</button></div><div class="source-reader-meta"><b>${sheet?'工作表1 · 12条记录':'全部内容 · 3页'}</b><span class="source-ready">解读已就绪</span></div></div>${assistantSourceOriginalHtml(id,d)}<div class="source-reader-foot">${esc(d.date)} · ${esc(d.version)} · 打开材料时将校验当前账号权限</div></div>`;body.scrollTop=restore?(assistantState.sourceScrollTop||0):0;if(focus)setTimeout(()=>document.querySelector('#assistantRoot .source-highlight')?.scrollIntoView({behavior:'smooth',block:'center'}),30)}
@@ -2992,13 +2997,13 @@ function startReadProcess(fileId){const f=V4_READ_FILES.find(x=>x.id===fileId)||
 function v4ReadFile(id){return V4_READ_FILES.find(x=>x.id===id)}
 function v4ReadIsOfd(id){return id==='seed-ofd'||v4ReadFile(id)?.type==='OFD'}
 function v4ReadTitle(id){if(id==='seed-ofd')return '深圳市重大项目建设管理办法';const file=v4ReadFile(id);return file?file.name.replace(/\.[^.]+$/,''):'关于推动战略性新兴产业集群高质量发展的若干措施'}
-function openReadResult(id='seed-policy'){if(!document.getElementById('fusionLayer').classList.contains('show'))openFusionLayer('材料解读','','结果可核验');v4ReadState.recordId=id;v4ReadState.qaShown=false;const title=v4ReadTitle(id),ofd=v4ReadIsOfd(id),file=v4ReadFile(id),type=file?.type||(ofd?'OFD':'PDF');document.getElementById('fusionLayerTitle').textContent='材料解读';document.getElementById('fusionLayerMeta').textContent=ofd?'OFD · 签章正常':`${type} · 18页`;document.getElementById('fusionLayerBody').innerHTML=`<div class="read-summary"><small>${ofd?'OFD正式公文 · 原件版式保留':'材料概览 · AI生成，请结合原文核验'}</small><h2>${title}</h2><p>材料围绕战略性新兴产业集群培育与重大项目支撑，明确重点领域、支持方式、实施责任和阶段性要求。</p><div class="read-summary-actions"><span>${ofd?'OFD · 24页':`${type} · 18页`}</span><button onclick="openReadOriginal(1)">查看原文 ›</button></div></div><div class="read-section"><h3>关键事实</h3><div class="read-point"><p>提出围绕新一代信息技术、高端装备、新能源、生物医药等重点领域形成梯次产业集群。</p><button class="evidence" onclick="openReadEvidence(0)">第3页 · 第2段 ›</button></div><div class="read-point"><p>对符合条件的重大产业项目，建立市区联动的要素保障和问题协调机制。</p><button class="evidence" onclick="openReadEvidence(1)">第6页 · 第1段 ›</button></div></div><div class="read-section"><h3>涉及对象</h3><div class="read-point"><p>市发展改革委、科技创新部门、工业和信息化部门，各区政府以及重大项目建设单位。</p><button class="evidence" onclick="openReadEvidence(2)">第12页 · 职责分工 ›</button></div></div><div class="read-section"><h3>明确要求</h3><div class="read-point"><p>各牵头单位应建立年度任务台账，按季度更新项目进展和需协调事项。</p><button class="evidence" onclick="openReadEvidence(3)">第14页 · 第3段 ›</button></div></div><div class="read-section"><h3>后续事项</h3><div class="read-point"><p>责任对象：各牵头单位；完成时间：每季度结束后10个工作日内；未明确具体经办人。</p><button class="evidence" onclick="openReadEvidence(4)">第15页 · 第1段 ›</button></div></div><div class="read-section"><h3>条件与风险</h3><div class="read-point"><p>资金支持须符合专项资金管理规定；项目名单、认定条件和申报程序仍需配套细则明确。</p><button class="evidence" onclick="openReadEvidence(5)">第9页 · 第4段 ›</button></div></div><div class="read-disclaimer">AI生成，请结合原文核验。本解读不替代拟办意见、审批意见或正式业务结论。</div><div class="read-section"><h3>围绕当前材料追问</h3><div class="read-qa"><input id="readQuestion" placeholder="例如：材料明确了哪些完成时间？"><button onclick="askReadQuestion()">${ficon('send')}</button></div><div id="readAnswer"></div></div>`;document.getElementById('fusionLayerBody').scrollTop=v4ReadState.scrollTop||0}
+function openReadResult(id='seed-policy'){if(!document.getElementById('fusionLayer').classList.contains('show'))openFusionLayer('材料解读','','结果可核验');v4ReadState.recordId=id;v4ReadState.qaShown=false;const title=v4ReadTitle(id),ofd=v4ReadIsOfd(id),file=v4ReadFile(id),type=file?.type||(ofd?'OFD':'PDF');document.getElementById('fusionLayerTitle').textContent='材料解读';document.getElementById('fusionLayerMeta').textContent=ofd?'OFD · 签章正常':`${type} · 18页`;document.getElementById('fusionLayerBody').innerHTML=`<div class="read-summary"><small>${ofd?'OFD正式公文 · 原件版式保留':'材料概览 · AI生成，请结合原文核验'}</small><h2>${title}</h2><p>材料围绕战略性新兴产业集群培育与重大项目支撑，明确重点领域、支持方式、实施责任和阶段性要求。</p><div class="read-summary-actions"><span>${ofd?'OFD · 24页':`${type} · 18页`}</span><button onclick="openReadOriginal(1)">查看原文 ›</button></div></div><div class="read-section"><h3>关键事实</h3><div class="read-point"><p>提出围绕新一代信息技术、高端装备、新能源、生物医药等重点领域形成梯次产业集群。</p><button class="evidence" onclick="openReadEvidence(0)">第3页 · 第2段 ›</button></div><div class="read-point"><p>对符合条件的重大产业项目，建立市区联动的要素保障和问题协调机制。</p><button class="evidence" onclick="openReadEvidence(1)">第6页 · 第1段 ›</button></div></div><div class="read-section"><h3>涉及对象</h3><div class="read-point"><p>市XXXXX委员会、科技创新部门、工业和信息化部门，各区政府以及重大项目建设单位。</p><button class="evidence" onclick="openReadEvidence(2)">第12页 · 职责分工 ›</button></div></div><div class="read-section"><h3>明确要求</h3><div class="read-point"><p>各牵头单位应建立年度任务台账，按季度更新项目进展和需协调事项。</p><button class="evidence" onclick="openReadEvidence(3)">第14页 · 第3段 ›</button></div></div><div class="read-section"><h3>后续事项</h3><div class="read-point"><p>责任对象：各牵头单位；完成时间：每季度结束后10个工作日内；未明确具体经办人。</p><button class="evidence" onclick="openReadEvidence(4)">第15页 · 第1段 ›</button></div></div><div class="read-section"><h3>条件与风险</h3><div class="read-point"><p>资金支持须符合专项资金管理规定；项目名单、认定条件和申报程序仍需配套细则明确。</p><button class="evidence" onclick="openReadEvidence(5)">第9页 · 第4段 ›</button></div></div><div class="read-disclaimer">AI生成，请结合原文核验。本解读不替代拟办意见、审批意见或正式业务结论。</div><div class="read-section"><h3>围绕当前材料追问</h3><div class="read-qa"><input id="readQuestion" placeholder="例如：材料明确了哪些完成时间？"><button onclick="askReadQuestion()">${ficon('send')}</button></div><div id="readAnswer"></div></div>`;document.getElementById('fusionLayerBody').scrollTop=v4ReadState.scrollTop||0}
 function openReadOriginal(page=1,savePosition=true){const body=document.getElementById('fusionLayerBody'),ofd=v4ReadIsOfd(v4ReadState.recordId),total=ofd?24:18,p=Math.max(1,Math.min(page,total));if(savePosition)v4ReadState.scrollTop=body.scrollTop;const paragraphs=[['第一条 为加快培育发展新动能，推动战略性新兴产业集群高质量发展，结合本市实际，制定本措施。','坚持创新驱动、项目带动和市区联动，统筹推进重点产业集群建设。'],['各有关单位应强化协同配合，完善重点项目协调服务机制，及时研究解决推进中的困难和问题。','对符合条件的项目，按照有关规定做好资金、用地、能耗等要素保障。'],['围绕新一代信息技术、高端装备、新能源、生物医药等重点领域，培育具有国际竞争力的战略性新兴产业集群。','建立年度任务台账，明确责任单位、工作节点和阶段性目标。'],['各牵头单位应定期更新工作进展，重大事项及时报送，形成上下联动、横向协同的工作机制。','有关资金使用、项目申报和认定程序按照现行管理规定执行。']][(p-1)%4];body.innerHTML=`<div class="doc-reader-v4"><div class="doc-reader-toolbar"><button onclick="openReadResult('${v4ReadState.recordId}')">← 返回解读</button><b>第 ${p} / ${total} 页</b><button onclick="toast('可通过双指缩放查看')">100%</button></div><div class="doc-page-v4"><h2>${v4ReadTitle(v4ReadState.recordId)}</h2><p>${paragraphs[0]}</p><p>${paragraphs[1]}</p><p>各项工作应当按照职责分工和规定程序组织实施，加强过程管理、绩效评价和风险防控，确保政策措施落地见效。</p><p>本文件自印发之日起施行，由相关部门按职责负责解释。</p><p class="doc-page-number">— ${p} —</p></div></div><div class="doc-evidence-nav"><button onclick="openReadOriginal(${p-1},false)" ${p===1?'disabled':''}>‹ 上一页</button><span>${p} / ${total}</span><button onclick="openReadOriginal(${p+1},false)" ${p===total?'disabled':''}>下一页 ›</button></div>`;body.scrollTop=0}
 function openReadEvidence(index){v4ReadState.scrollTop=document.getElementById('fusionLayerBody').scrollTop;v4ReadState.evidenceIndex=Math.max(0,Math.min(index,5));v4RenderEvidence()}
-function v4RenderEvidence(){const i=v4ReadState.evidenceIndex,pages=[3,6,12,14,15,9],quotes=['围绕新一代信息技术、高端装备、新能源、生物医药等重点领域，培育具有国际竞争力的战略性新兴产业集群。','对符合条件的重大产业项目，建立市区联动的要素保障机制，及时协调解决项目推进中的重点问题。','市发展改革委负责统筹协调，各有关部门按职责推进，各区政府落实属地保障责任。','各牵头单位应建立年度任务台账，按季度更新项目进展和需协调事项。','每季度结束后十个工作日内报送任务进展，具体经办人员由各单位内部确定。','有关资金支持应符合专项资金管理规定，项目申报条件和程序由配套细则另行明确。'];document.getElementById('fusionLayerBody').innerHTML=`<div class="doc-reader-v4"><div class="doc-reader-toolbar"><button onclick="openReadResult('${v4ReadState.recordId}')">← 返回解读</button><b>第 ${pages[i]} 页</b><button onclick="toast('可通过双指缩放或输入页码跳转')">100%</button></div><div class="doc-page-v4"><h2>${v4ReadTitle(v4ReadState.recordId)}</h2><p>为深入贯彻有关工作部署，加快培育发展新动能，结合本市实际，现提出以下工作措施。</p><p>各有关单位应强化协同配合，完善工作机制，推动重点任务落实。</p><p><mark>${quotes[i]}</mark></p><p>各项任务应当按照职责分工和规定程序组织实施，加强过程管理、绩效评价和风险防控。</p><p>本措施自印发之日起实施，由有关部门负责解释。</p></div></div><div class="doc-evidence-nav"><button onclick="moveReadEvidence(-1)" ${i===0?'disabled':''}>‹ 上一处</button><span>依据 ${i+1} / 6</span><button onclick="moveReadEvidence(1)" ${i===5?'disabled':''}>下一处 ›</button></div>`;document.getElementById('fusionLayerBody').scrollTop=0}
+function v4RenderEvidence(){const i=v4ReadState.evidenceIndex,pages=[3,6,12,14,15,9],quotes=['围绕新一代信息技术、高端装备、新能源、生物医药等重点领域，培育具有国际竞争力的战略性新兴产业集群。','对符合条件的重大产业项目，建立市区联动的要素保障机制，及时协调解决项目推进中的重点问题。','市XXXXX委员会负责统筹协调，各有关部门按职责推进，各区政府落实属地保障责任。','各牵头单位应建立年度任务台账，按季度更新项目进展和需协调事项。','每季度结束后十个工作日内报送任务进展，具体经办人员由各单位内部确定。','有关资金支持应符合专项资金管理规定，项目申报条件和程序由配套细则另行明确。'];document.getElementById('fusionLayerBody').innerHTML=`<div class="doc-reader-v4"><div class="doc-reader-toolbar"><button onclick="openReadResult('${v4ReadState.recordId}')">← 返回解读</button><b>第 ${pages[i]} 页</b><button onclick="toast('可通过双指缩放或输入页码跳转')">100%</button></div><div class="doc-page-v4"><h2>${v4ReadTitle(v4ReadState.recordId)}</h2><p>为深入贯彻有关工作部署，加快培育发展新动能，结合本市实际，现提出以下工作措施。</p><p>各有关单位应强化协同配合，完善工作机制，推动重点任务落实。</p><p><mark>${quotes[i]}</mark></p><p>各项任务应当按照职责分工和规定程序组织实施，加强过程管理、绩效评价和风险防控。</p><p>本措施自印发之日起实施，由有关部门负责解释。</p></div></div><div class="doc-evidence-nav"><button onclick="moveReadEvidence(-1)" ${i===0?'disabled':''}>‹ 上一处</button><span>依据 ${i+1} / 6</span><button onclick="moveReadEvidence(1)" ${i===5?'disabled':''}>下一处 ›</button></div>`;document.getElementById('fusionLayerBody').scrollTop=0}
 function moveReadEvidence(delta){v4ReadState.evidenceIndex=Math.max(0,Math.min(5,v4ReadState.evidenceIndex+delta));v4RenderEvidence()}
 function askReadQuestion(){const q=document.getElementById('readQuestion')?.value.trim();if(!q){toast('请输入围绕当前材料的问题');return}document.getElementById('readAnswer').innerHTML=`<div class="read-answer">当前材料明确两类时间要求：一是各牵头单位按季度更新任务台账；二是每季度结束后10个工作日内报送进展。材料未明确具体经办人。<br><button class="evidence" onclick="openReadEvidence(4)">第15页 · 第1段 ›</button></div>`}
-/* ================= AI会议助手：APP直接录音，音频进入政务外网沙箱 ================= */
+/* ================= AI会议助手：APP直接录音，音频进入测试演示环境沙箱 ================= */
 const v4RecordingState={seconds:5178,paused:false,timer:null,background:false,briefPage:0,taskId:'seed-meeting',processTimers:[]};
 function v4StopRecordingTimers(){if(v4RecordingState.timer){clearInterval(v4RecordingState.timer);v4RecordingState.timer=null}v4RecordingState.processTimers.forEach(clearTimeout);v4RecordingState.processTimers=[]}
 function v4FormatTime(s){const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;return [h,m,sec].map(n=>String(n).padStart(2,'0')).join(':')}
@@ -3017,54 +3022,54 @@ function v4RenderRecordingReady(id){v4RecordingState.taskId=id;document.getEleme
 function triggerRecordingGeneration(id){const labels=['语音识别与文本整理','按主题和事项组织内容','生成DOCX详细内容报告','生成并检查图片纪要长图'];document.getElementById('fusionLayerBody').innerHTML=`<div class="v4-process"><div class="v4-process-file"><i style="background:#EAF6F1;color:#18785D">AI</i><h3>正在生成两份材料</h3><p>可离开当前页面，完成后将在任务列表提醒</p></div><div class="v4-progress"><i id="generateBar"></i></div><div class="v4-steps">${labels.map((x,i)=>`<div class="v4-step ${i===0?'on':''}" id="generateStep${i}"><i>${i+1}</i>${x}</div>`).join('')}</div><div class="read-disclaimer">系统依据主题和上下文整理内容，不猜测说话人身份、责任人、时间或未明确结论。</div></div>`;labels.forEach((_,i)=>v4RecordingState.processTimers.push(setTimeout(()=>{const bar=document.getElementById('generateBar');if(bar)bar.style.width=(i+1)*25+'%';for(let x=0;x<=i;x++){const s=document.getElementById('generateStep'+x);if(s){s.className='v4-step '+(x===i?'on':'done');s.querySelector('i').textContent=x===i?x+1:'✓'}}},i*520+80)));v4RecordingState.processTimers.push(setTimeout(()=>openRecordingTask(id),2350))}
 function openRecordingTask(id='seed-meeting'){if(!document.getElementById('fusionLayer').classList.contains('show'))openFusionLayer('AI会议助手结果','','仅本人可见');v4StopRecordingTimers();v4RecordingState.taskId=id;if(id==='processing-sample'){v4RecordingState.seconds=2772;v4RenderRecordingReady(id);return}v4RecordingState.seconds=id==='seed-meeting'?5906:v4RecordingState.seconds;document.getElementById('fusionLayerTitle').textContent='AI会议助手结果';document.getElementById('fusionLayerMeta').textContent='已完成 · 仅本人可见';document.getElementById('fusionLayerBody').innerHTML=`<div class="task-state-banner" style="background:#EAF6F1;border-color:#CFE6DC"><b style="color:#18785D">两份材料已生成</b><p>重大项目建设调度专题讨论 · ${v4FormatTime(v4RecordingState.seconds)}<br>使用前请核验内容。</p></div><div class="result-two"><button class="result-card" onclick="openRecordingReport()"><i>DOCX</i><b>详细内容报告</b><span>6页<br>内容综述、讨论、结论、要求与后续事项</span></button><button class="result-card image" onclick="openRecordingBrief()"><i>PNG</i><b>图片纪要简报</b><span>1张 · 竖版长图</span></button></div><div class="v4-card" style="margin-top:11px"><div class="mine-detail-row"><b>处理状态</b><span style="color:var(--green)">全部完成</span></div><div class="mine-detail-row"><b>内容结构</b><span>按主题整理</span></div><div class="mine-detail-row"><b>生成时间</b><span>12分36秒</span></div></div><button class="v4-secondary" onclick="triggerRecordingGeneration('${id}')">重新生成</button><div class="assistant-boundary">重新生成会覆盖当前结果。</div>`}
 function openRecordingReport(){document.getElementById('fusionLayerTitle').textContent='详细内容报告';document.getElementById('fusionLayerMeta').textContent='DOCX · 6页';document.getElementById('fusionLayerBody').innerHTML=`<div class="report-doc"><h1>重大项目建设调度专题讨论<br>详细内容报告</h1><div class="report-meta">整理时间：2026年8月22日 · AI生成，请人工核验</div><h2>一、基本信息</h2><p>录音时长：01:38:26；材料来源：会议录音；整理方式：按主题和事项重新组织。</p><h2>二、内容综述</h2><p>本次讨论重点围绕第三季度重大项目建设进度、投资完成、资金计划、用地审批和需市级协调事项展开。各项内容按项目情况、共性问题和后续安排三个层次进行整理。</p><h2>三、主要讨论内容</h2><ol><li><b>项目建设进度。</b>大部分续建项目按计划推进，两个新开工项目需加快施工许可办理。</li><li><b>资金计划。</b>部分项目年度资金拨付节奏与建设进度不完全匹配，需进一步核对资金计划。</li><li><b>用地及前期手续。</b>三个项目已完成用地预审，规划许可和施工许可仍在办理。</li></ol><h2>四、形成的结论</h2><p>会议明确继续按月更新重大项目问题台账。对资金和用地问题实行分类协调；本次讨论未对个别项目投资规模调整形成明确结论。</p><h2>五、明确提出的要求</h2><ul><li>本月底前完成问题台账更新，并标明问题来源和当前处理状态。</li><li>对需跨部门协调的事项，先核实已有材料和办理依据。</li></ul><h2>六、后续事项</h2><ul><li>更新重大项目问题台账；责任对象：相关项目处室；时间：本月底前。</li><li>核对三个项目资金计划；责任对象：未明确；时间：下次调度会前。</li></ul></div><div class="report-actions"><button onclick="openRecordingTask('${v4RecordingState.taskId}')">返回结果</button><button onclick="toast('DOCX已准备下载')">下载 DOCX</button><button class="primary" onclick="toast('已开始重新生成')">重新生成</button></div>`;document.getElementById('fusionLayerBody').scrollTop=0}
-function openRecordingBrief(){document.getElementById('fusionLayerTitle').textContent='图片纪要简报';document.getElementById('fusionLayerMeta').textContent='PNG · 1张长图';document.getElementById('fusionLayerBody').innerHTML=`<div class="brief-page"><div class="brief-hero"><div class="brief-kicker"><span>会议纪要简报</span><b>重大项目建设</b></div><h2>重大项目建设调度<br>专题讨论</h2><p class="brief-subtitle">2026年8月22日 · 录音时长 01:38:26</p><div class="brief-tags"><span>项目进度</span><span>投资完成</span><span>资金计划</span><span>要素保障</span></div><div class="brief-lead"><small>本次会议要点</small><p>总体建设平稳推进，资金拨付与许可办理是当前主要制约，需集中协调3项跨部门事项。</p></div></div><div class="brief-body"><section class="brief-section"><div class="brief-section-title"><b>一图看懂整体情况</b><span>截至本次会议</span></div><div class="brief-stat-grid"><div class="brief-stat"><b>12<em>个</em></b><span>重点项目纳入本次调度</span></div><div class="brief-stat"><b>9<em>个</em></b><span>总体按计划推进</span></div><div class="brief-stat alert"><b>3<em>项</em></b><span>需跨部门协调解决</span></div><div class="brief-stat alert"><b>2<em>项</em></b><span>结论或责任仍待明确</span></div></div></section><section class="brief-section"><div class="brief-section-title"><b>会议重点</b><span>按内容聚合</span></div><div class="brief-focus"><span>年度投资计划</span><span>建设进度</span><span>资金拨付</span><span>用地审批</span><span>施工许可</span><span>市级协调</span></div></section><section class="brief-section"><div class="brief-section-title"><b>重点项目进展</b><span>3个代表项目</span></div><div class="brief-projects"><div class="brief-project"><div class="brief-project-head"><b>综合交通枢纽配套工程</b><span>按计划</span></div><div class="brief-progress"><i style="width:82%"></i></div><p>主体工程有序推进，本月节点完成率82%。</p></div><div class="brief-project"><div class="brief-project-head"><b>重大产业园区基础设施项目</b><span class="warn">需协调</span></div><div class="brief-progress"><i style="width:67%"></i></div><p>资金拨付节奏滞后于建设进度，需核对后续资金计划。</p></div><div class="brief-project"><div class="brief-project-head"><b>产业创新中心建设项目</b><span class="warn">需关注</span></div><div class="brief-progress"><i style="width:54%"></i></div><p>用地预审已完成，规划许可与施工许可仍在办理。</p></div></div></section><section class="brief-section"><div class="brief-section-title"><b>会议形成的结论</b><span>按语义归并</span></div><div class="brief-conclusions"><div class="brief-conclusion"><i>01</i><div><b>续建项目总体保持正常进度</b><p>大部分项目按年度计划推进，当前无需调整总体建设安排。</p></div></div><div class="brief-conclusion"><i>02</i><div><b>优先协调资金与许可问题</b><p>对拨付节奏不匹配和许可办理滞后的事项集中建立协调清单。</p></div></div><div class="brief-conclusion"><i>03</i><div><b>投资规模调整暂未形成结论</b><p>相关项目需补充测算依据，待材料完善后再次研究。</p></div></div></div></section><section class="brief-section"><div class="brief-section-title"><b>明确事项</b><span>按时间排序</span></div><div class="brief-actions-list"><div class="brief-action"><time>本月底前</time><div><b>更新重大项目问题台账</b><p>补充问题来源、协调层级与当前状态</p></div><em>明确</em></div><div class="brief-action"><time>下次会议前</time><div><b>核对3个项目资金计划</b><p>比对建设进度与资金拨付安排</p></div><em>明确</em></div><div class="brief-action"><time>待补充</time><div><b>投资规模调整责任分工</b><p>本次录音未明确具体责任对象和完成时间</p></div><em class="wait">待确认</em></div></div></section><section class="brief-section"><div class="brief-risk"><b>风险与待确认</b><p>个别项目投资规模、资金需求及责任分工仍需补充材料确认；未在会议中明确的内容不作为正式结论。</p></div></section></div><div class="brief-footer"><div><b>重大项目建设调度专题讨论</b><p>根据会议录音整理 · 使用前请核验<br>生成时间：2026年8月22日 17:18</p></div><span>深圳市发展和改革委员会</span></div></div><div class="report-actions"><button onclick="openRecordingTask('${v4RecordingState.taskId}')">返回结果</button><button class="primary" onclick="toast('纪要长图已保存')">下载长图</button></div>`;document.getElementById('fusionLayerBody').scrollTop=0}
+function openRecordingBrief(){document.getElementById('fusionLayerTitle').textContent='图片纪要简报';document.getElementById('fusionLayerMeta').textContent='PNG · 1张长图';document.getElementById('fusionLayerBody').innerHTML=`<div class="brief-page"><div class="brief-hero"><div class="brief-kicker"><span>会议纪要简报</span><b>重大项目建设</b></div><h2>重大项目建设调度<br>专题讨论</h2><p class="brief-subtitle">2026年8月22日 · 录音时长 01:38:26</p><div class="brief-tags"><span>项目进度</span><span>投资完成</span><span>资金计划</span><span>要素保障</span></div><div class="brief-lead"><small>本次会议要点</small><p>总体建设平稳推进，资金拨付与许可办理是当前主要制约，需集中协调3项跨部门事项。</p></div></div><div class="brief-body"><section class="brief-section"><div class="brief-section-title"><b>一图看懂整体情况</b><span>截至本次会议</span></div><div class="brief-stat-grid"><div class="brief-stat"><b>12<em>个</em></b><span>重点项目纳入本次调度</span></div><div class="brief-stat"><b>9<em>个</em></b><span>总体按计划推进</span></div><div class="brief-stat alert"><b>3<em>项</em></b><span>需跨部门协调解决</span></div><div class="brief-stat alert"><b>2<em>项</em></b><span>结论或责任仍待明确</span></div></div></section><section class="brief-section"><div class="brief-section-title"><b>会议重点</b><span>按内容聚合</span></div><div class="brief-focus"><span>年度投资计划</span><span>建设进度</span><span>资金拨付</span><span>用地审批</span><span>施工许可</span><span>市级协调</span></div></section><section class="brief-section"><div class="brief-section-title"><b>重点项目进展</b><span>3个代表项目</span></div><div class="brief-projects"><div class="brief-project"><div class="brief-project-head"><b>综合交通枢纽配套工程</b><span>按计划</span></div><div class="brief-progress"><i style="width:82%"></i></div><p>主体工程有序推进，本月节点完成率82%。</p></div><div class="brief-project"><div class="brief-project-head"><b>重大产业园区基础设施项目</b><span class="warn">需协调</span></div><div class="brief-progress"><i style="width:67%"></i></div><p>资金拨付节奏滞后于建设进度，需核对后续资金计划。</p></div><div class="brief-project"><div class="brief-project-head"><b>XXXXX中心建设项目</b><span class="warn">需关注</span></div><div class="brief-progress"><i style="width:54%"></i></div><p>用地预审已完成，规划许可与施工许可仍在办理。</p></div></div></section><section class="brief-section"><div class="brief-section-title"><b>会议形成的结论</b><span>按语义归并</span></div><div class="brief-conclusions"><div class="brief-conclusion"><i>01</i><div><b>续建项目总体保持正常进度</b><p>大部分项目按年度计划推进，当前无需调整总体建设安排。</p></div></div><div class="brief-conclusion"><i>02</i><div><b>优先协调资金与许可问题</b><p>对拨付节奏不匹配和许可办理滞后的事项集中建立协调清单。</p></div></div><div class="brief-conclusion"><i>03</i><div><b>投资规模调整暂未形成结论</b><p>相关项目需补充测算依据，待材料完善后再次研究。</p></div></div></div></section><section class="brief-section"><div class="brief-section-title"><b>明确事项</b><span>按时间排序</span></div><div class="brief-actions-list"><div class="brief-action"><time>本月底前</time><div><b>更新重大项目问题台账</b><p>补充问题来源、协调层级与当前状态</p></div><em>明确</em></div><div class="brief-action"><time>下次会议前</time><div><b>核对3个项目资金计划</b><p>比对建设进度与资金拨付安排</p></div><em>明确</em></div><div class="brief-action"><time>待补充</time><div><b>投资规模调整责任分工</b><p>本次录音未明确具体责任对象和完成时间</p></div><em class="wait">待确认</em></div></div></section><section class="brief-section"><div class="brief-risk"><b>风险与待确认</b><p>个别项目投资规模、资金需求及责任分工仍需补充材料确认；未在会议中明确的内容不作为正式结论。</p></div></section></div><div class="brief-footer"><div><b>重大项目建设调度专题讨论</b><p>根据会议录音整理 · 使用前请核验<br>生成时间：2026年8月22日 17:18</p></div><span>深圳市XXXXX委员会</span></div></div><div class="report-actions"><button onclick="openRecordingTask('${v4RecordingState.taskId}')">返回结果</button><button class="primary" onclick="toast('纪要长图已保存')">下载长图</button></div>`;document.getElementById('fusionLayerBody').scrollTop=0}
 /* ================= 应用目录与H5统一承载 ================= */
 const v4H5State={tab:'pending',filter:'all',page:1,authExpired:false};
 const V4_H5_DOCS={pending:[
  {type:'平件',date:'2026-08-23',title:'关于报送2026年上半年重大项目推进情况及需协调事项的通知'},
  {type:'急件',date:'2026-08-23',title:'关于加快推进工业企业设备更新重点项目申报工作的函'},
  {type:'平件',date:'2026-08-22',title:'深圳市2026年第三季度经济运行分析工作安排'},
- {type:'阅件',date:'2026-08-22',title:'广东省发展改革委改革动态简报（第32期）'},
+ {type:'阅件',date:'2026-08-22',title:'广东省XXXXX委员会改革动态简报（第32期）'},
  {type:'内呈件',date:'2026-08-21',title:'关于重大项目资金与用地要素保障问题的专题报告'},
- {type:'发文',date:'2026-08-21',title:'深圳市发展改革委关于印发投资项目管理工作指引的通知'}],
+ {type:'发文',date:'2026-08-21',title:'深圳市XXXXX委员会关于印发投资项目管理工作指引的通知'}],
  done:[
- {type:'平件',date:'2026-08-17',title:'2026年第23次委主任办公会议纪要（8月10日）'},
+ {type:'平件',date:'2026-08-17',title:'2026年第23次单位主任办公会议纪要（8月10日）'},
  {type:'平件',date:'2026-08-17',title:'市领导关于2026年上半年财政经济运行情况及政策建议的批示'},
  {type:'平件',date:'2026-08-17',title:'市领导在全市教育领域项目指挥部会议纪要上的批示'},
- {type:'发文',date:'2026-08-16',title:'深圳市发展改革委关于印发重大项目协调机制工作方案的通知'},
- {type:'阅件',date:'2026-08-15',title:'国家发展改革委政策信息专报（第18期）'},
+ {type:'发文',date:'2026-08-16',title:'深圳市XXXXX委员会关于印发重大项目协调机制工作方案的通知'},
+ {type:'阅件',date:'2026-08-15',title:'国家XXXXX部门政策信息专报（第18期）'},
  {type:'内呈件',date:'2026-08-14',title:'关于2026年政府投资计划执行情况的内部报告'}]};
 const v4HomeH5State={kind:'projects',mode:'pending',filter:'all',page:1};
 const V4_HOME_H5={
  projects:{
   title:'项目管理',subtitle:'我的项目事项',pages:9,tabs:[['pending','待处理',4],['done','已处理',18]],filters:[['all','全部'],['前期管理','前期管理'],['审批评审','审批评审'],['建设调度','建设调度']],summary:[['4','待处理'],['1','重点关注'],['0','即将超期']],
   pending:[
-   {type:'建设调度',tag:'重点',tone:'urgent',date:'今天 11:20',title:'轨道交通五期建设规划项目进展填报',meta:'重大项目协调处 · 需更新本月进度'},
-   {type:'前期管理',tag:'待补正',tone:'urgent',date:'今天 09:46',title:'产业创新中心项目可行性研究报告补充材料',meta:'投资处 · 2项要件待补充'},
-   {type:'审批评审',tag:'待审',tone:'processing',date:'昨天 16:08',title:'深圳市第二人民医院改扩建工程概算调整',meta:'社会处 · 调整幅度8.3%'},
-   {type:'建设调度',tag:'待确认',tone:'',date:'8月21日',title:'第三季度重大项目资金计划与用地保障协调事项',meta:'重大项目协调处 · 3项需市级协调'}],
+   {type:'建设调度',tag:'重点',tone:'urgent',date:'今天 11:20',title:'轨道交通五期建设规划项目进展填报',meta:'业务处室B · 需更新本月进度'},
+   {type:'前期管理',tag:'待补正',tone:'urgent',date:'今天 09:46',title:'XXXXX中心项目可行性研究报告补充材料',meta:'业务处室D · 2项要件待补充'},
+   {type:'审批评审',tag:'待审',tone:'processing',date:'昨天 16:08',title:'深圳市第X人民医院改扩建工程概算调整',meta:'业务处室M · 调整幅度8.3%'},
+   {type:'建设调度',tag:'待确认',tone:'',date:'8月21日',title:'第三季度重大项目资金计划与用地保障协调事项',meta:'业务处室B · 3项需市级协调'}],
   done:[
-   {type:'审批评审',tag:'已办',tone:'processing',date:'8月22日',title:'先进制造业园区基础设施项目初步设计概算审核',meta:'投资处 · 已提交下一环节'},
-   {type:'前期管理',tag:'已办',tone:'processing',date:'8月20日',title:'新能源产业基地项目节能审查材料核验',meta:'产业处 · 已完成核验'}]
+   {type:'审批评审',tag:'已办',tone:'processing',date:'8月22日',title:'先进制造业园区基础设施项目初步设计概算审核',meta:'业务处室D · 已提交下一环节'},
+   {type:'前期管理',tag:'已办',tone:'processing',date:'8月20日',title:'新能源产业基地项目节能审查材料核验',meta:'业务处室N · 已完成核验'}]
  },
  internal:{
   title:'内部事项',subtitle:'个人事务与内部流程',pages:12,tabs:[['pending','待处理',4],['done','已处理',26]],filters:[['all','全部'],['请休假','请休假'],['因公出差','因公出差'],['合同采购','合同采购']],summary:[['4','待处理'],['2','今日新增'],['1','需要补充']],
   pending:[
-   {type:'请休假',tag:'待审批',tone:'',date:'今天 10:32',title:'发展规划处工作人员年休假申请',meta:'休假3天 · 工作已交接'},
+   {type:'请休假',tag:'待审批',tone:'',date:'今天 10:32',title:'业务处室J工作人员年休假申请',meta:'休假3天 · 工作已交接'},
    {type:'因公出差',tag:'待审批',tone:'urgent',date:'今天 09:18',title:'赴京参加全国发展改革系统专题培训申请',meta:'8月28日至30日 · 附培训通知'},
    {type:'合同采购',tag:'待核验',tone:'processing',date:'昨天 17:05',title:'2026年重大项目谋划预研咨询服务采购申请',meta:'金额48.6万元 · 采购程序已完成'},
    {type:'因公出差',tag:'待补充',tone:'urgent',date:'8月21日',title:'赴广州开展经济运行专题调研出差申请',meta:'缺少接待单位确认函'}],
   done:[
-   {type:'请休假',tag:'已办',tone:'processing',date:'8月20日',title:'经济运行综合处工作人员事假申请',meta:'已完成审批'},
+   {type:'请休假',tag:'已办',tone:'processing',date:'8月20日',title:'业务处室H工作人员事假申请',meta:'已完成审批'},
    {type:'合同采购',tag:'已办',tone:'processing',date:'8月19日',title:'办公设备耗材采购申请',meta:'已归档'}]
  },
  notices:{
   title:'通知公告',subtitle:'工作通知与会议安排',pages:6,tabs:[['pending','未读',2],['done','已读',31]],filters:[['all','全部'],['工作通知','工作通知'],['会议通知','会议通知']],summary:[['2','未读'],['1','今日发布'],['1','需要反馈']],
   pending:[
-   {type:'会议通知',tag:'需反馈',tone:'urgent',date:'今天 08:55',title:'关于召开第三季度重大项目建设调度会的通知',meta:'8月25日 09:30 · 市民中心C区'},
+   {type:'会议通知',tag:'需反馈',tone:'urgent',date:'今天 08:55',title:'关于召开第三季度重大项目建设调度会的通知',meta:'8月25日 09:30 · 某政务服务中心C区'},
    {type:'工作通知',tag:'新通知',tone:'processing',date:'昨天 18:20',title:'关于报送工业企业设备更新项目进展情况的通知',meta:'8月26日下班前反馈'}],
   done:[
-   {type:'工作通知',tag:'已读',tone:'processing',date:'8月21日',title:'关于做好近期强降雨防范工作的提醒',meta:'办公室'},
+   {type:'工作通知',tag:'已读',tone:'processing',date:'8月21日',title:'关于做好近期强降雨防范工作的提醒',meta:'综合处室G'},
    {type:'会议通知',tag:'已读',tone:'processing',date:'8月20日',title:'委内经济运行分析专题会议通知',meta:'已确认参会'}]
  }
 };
